@@ -145,7 +145,7 @@ main.landing {
 }
 .hero-kicker {
   margin: 0;
-  font: 600 clamp(11px, 1.6vw, 19px)/1.2 Manrope, sans-serif;
+  font: 600 clamp(12px, 2.05vw, 24px)/1.2 Manrope, sans-serif;
   letter-spacing: .5em;
   text-indent: .5em;
   text-transform: uppercase;
@@ -154,9 +154,9 @@ main.landing {
 }
 /* the SVG box carries 0.115×width of empty space above the letter tops and
    0.121×width below them; these margins cancel it so the visual gaps are
-   exactly 30px above and 26px below SOLIA (the JS rides kicker/tagline on
+   exactly 26px above and 26px below SOLIA (the JS rides kicker/tagline on
    the title's translation, so layout spacing holds at every scroll state) */
-.hero-title { margin: calc(30px - clamp(37px, 9.23vw, 118px)) 0 0; line-height: 0; will-change: transform, opacity; }
+.hero-title { margin: calc(26px - clamp(37px, 9.23vw, 118px)) 0 0; line-height: 0; will-change: transform, opacity; }
 .hero-title svg {
   width: clamp(320px, 80vw, 1020px);
   height: auto;
