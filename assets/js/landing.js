@@ -3,16 +3,14 @@
   "use strict";
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-  var sunWrap = document.getElementById("sunWrap");
   var heroInner = document.getElementById("heroInner");
   var heroStage = document.getElementById("hero");
   var header = document.querySelector("header.landing-header");
 
   /* ── scroll choreography ────────────────────────────────────────────────
-     Over the hero stage, the sun shrinks and rises while the welcome text
-     fades; the page body then slides over the fixed sky. */
+     Over the hero stage, the giant wordmark scales down and fades while the
+     page body slides over the fixed space backdrop. */
   var ticking = false;
 
   function clamp01(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
@@ -32,18 +30,11 @@
       var travel = Math.max(1, (heroStage ? heroStage.offsetHeight : vh * 1.7) - vh);
       var p = ease(clamp01(y / travel));
 
-      if (sunWrap) {
-        var scale = 1 - 0.74 * p;               /* 1 → 0.26 */
-        var rise = -0.36 * vh * p;              /* drift upward */
-        sunWrap.style.transform =
-          "translate3d(0," + rise.toFixed(1) + "px,0) scale(" + scale.toFixed(4) + ")";
-        /* linger, then dip behind the page body at the end of the travel */
-        sunWrap.style.opacity = (1 - clamp01((p - 0.82) / 0.18) * 0.9).toFixed(3);
-      }
       if (heroInner) {
-        var tp = clamp01(p / 0.55);             /* text leaves faster than the sun */
+        var tp = clamp01(p / 0.8);
         heroInner.style.opacity = (1 - tp).toFixed(3);
-        heroInner.style.transform = "translate3d(0," + (-40 * tp).toFixed(1) + "px,0)";
+        heroInner.style.transform =
+          "translate3d(0," + (-60 * tp).toFixed(1) + "px,0) scale(" + (1 - 0.12 * tp).toFixed(4) + ")";
       }
     });
   }
@@ -146,7 +137,7 @@
     if (!visible) return;
     ctx.clearRect(0, 0, W, H);
 
-    if (darkScheme.matches) {
+    {
       for (var j = 0; j < stars.length; j++) {
         var s = stars[j];
         s.tw += s.twv;
