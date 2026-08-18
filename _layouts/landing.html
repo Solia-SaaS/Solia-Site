@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solia — your life's operating system</title>
+<meta name="description" content="{{ page.description | default: site.description }}">
+<meta property="og:title" content="Solia">
+<meta property="og:description" content="{{ page.description | default: site.description }}">
+<meta name="theme-color" content="#0D0B06" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#E7E3D7" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/landing.css' | relative_url }}">
+</head>
+<body class="landing">
+
+<!-- fixed scene: sky gradient + particle canvas + the sun. Content scrolls over it. -->
+<div class="sky" aria-hidden="true">
+  <canvas id="fx"></canvas>
+  <div class="sun-wrap" id="sunWrap">
+    <div class="sun">
+      <div class="sun-glow"></div>
+      <div class="sun-rays"></div>
+      <div class="sun-shimmer"></div>
+      <div class="sun-disc"></div>
+    </div>
+  </div>
+</div>
+
+<header class="site landing-header">
+  <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="Solia home">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="{{ '/assets/brand/solia-wordmark-dark.svg' | relative_url }}">
+      <img src="{{ '/assets/brand/solia-wordmark-light.svg' | relative_url }}" alt="Solia" width="112" height="44">
+    </picture>
+  </a>
+  <details class="menu">
+    <summary aria-label="Open menu">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="4" y1="7" x2="20" y2="7"/>
+        <line x1="4" y1="12" x2="20" y2="12"/>
+        <line x1="4" y1="17" x2="20" y2="17"/>
+      </svg>
+    </summary>
+    <nav>
+      <a href="{{ '/support' | relative_url }}">Support</a>
+      <a href="https://legal.getsolia.com">Legal</a>
+    </nav>
+  </details>
+</header>
+
+<!-- section dot navigation -->
+<nav class="dots" aria-label="Page sections">
+  <a href="#top" data-dot="top" aria-label="Welcome"><span></span></a>
+  <a href="#what" data-dot="what" aria-label="What Solia is"><span></span></a>
+  <a href="#plan" data-dot="plan" aria-label="Plan"><span></span></a>
+  <a href="#coach" data-dot="coach" aria-label="Coach"><span></span></a>
+  <a href="#train" data-dot="train" aria-label="Train"><span></span></a>
+  <a href="#climb" data-dot="climb" aria-label="Climb"><span></span></a>
+  <a href="#connect" data-dot="connect" aria-label="Connect"><span></span></a>
+  <a href="#soon" data-dot="soon" aria-label="Coming soon"><span></span></a>
+</nav>
+
+<main class="landing" id="top">
+{{ content }}
+</main>
+
+<script src="{{ '/assets/js/landing.js' | relative_url }}" defer></script>
+</body>
+</html>
