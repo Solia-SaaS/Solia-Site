@@ -154,9 +154,9 @@ main.landing {
 }
 /* the SVG box carries 0.115×width of empty space above the letter tops and
    0.121×width below them; these margins cancel it so the visual gaps are
-   exactly 64px above and 64px below SOLIA (the JS rides kicker/tagline on
+   exactly 88px above and 88px below SOLIA (the JS rides kicker/tagline on
    the title's translation, so layout spacing holds at every scroll state) */
-.hero-title { margin: calc(64px - clamp(37px, 9.23vw, 118px)) 0 0; line-height: 0; will-change: transform, opacity; }
+.hero-title { margin: calc(88px - clamp(37px, 9.23vw, 118px)) 0 0; line-height: 0; will-change: transform, opacity; }
 .hero-title svg {
   width: clamp(320px, 80vw, 1020px);
   height: auto;
@@ -165,7 +165,7 @@ main.landing {
   filter: drop-shadow(0 4px 60px rgba(238, 130, 57, .28));
 }
 .hero-sub {
-  margin: calc(64px - clamp(39px, 9.7vw, 124px)) 0 0;
+  margin: calc(88px - clamp(39px, 9.7vw, 124px)) 0 0;
   font: 500 clamp(13px, 2.5vw, 30px)/1.2 Manrope, sans-serif;
   letter-spacing: .5em;
   text-indent: .5em;
