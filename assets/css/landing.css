@@ -153,15 +153,21 @@ body.landing { display: block; background: var(--sky-top); }
     0 0 40px 10px rgba(238, 130, 57, .30);
   animation: planet-depth var(--orbit-period) var(--orbit-ease) infinite;
 }
-/* x ≈ cos, y ≈ sin (quarter-phase keyframes with sine easing) */
+/* x = RX·cos(2πt), y = −RY·sin(2πt), quarter-phase keyframes with per-segment
+   sine easings (in/out alternating) so the path stays on the drawn ellipse */
 @keyframes orbit-x {
-  0%, 100% { transform: translateX(var(--orbit-rx)); }
-  50%      { transform: translateX(calc(var(--orbit-rx) * -1)); }
+  0%   { transform: translateX(var(--orbit-rx));              animation-timing-function: cubic-bezier(.12, 0, .39, 0); }
+  25%  { transform: translateX(0);                            animation-timing-function: cubic-bezier(.61, 1, .88, 1); }
+  50%  { transform: translateX(calc(var(--orbit-rx) * -1));   animation-timing-function: cubic-bezier(.12, 0, .39, 0); }
+  75%  { transform: translateX(0);                            animation-timing-function: cubic-bezier(.61, 1, .88, 1); }
+  100% { transform: translateX(var(--orbit-rx)); }
 }
 @keyframes orbit-y {
-  0%, 50%, 100% { transform: translateY(0); }
-  25%           { transform: translateY(calc(var(--orbit-ry) * -1)); }
-  75%           { transform: translateY(var(--orbit-ry)); }
+  0%   { transform: translateY(0);                            animation-timing-function: cubic-bezier(.61, 1, .88, 1); }
+  25%  { transform: translateY(calc(var(--orbit-ry) * -1));   animation-timing-function: cubic-bezier(.12, 0, .39, 0); }
+  50%  { transform: translateY(0);                            animation-timing-function: cubic-bezier(.61, 1, .88, 1); }
+  75%  { transform: translateY(var(--orbit-ry));              animation-timing-function: cubic-bezier(.12, 0, .39, 0); }
+  100% { transform: translateY(0); }
 }
 /* smaller + dimmer on the far (top) arc, larger on the near (bottom) arc */
 @keyframes planet-depth {
@@ -249,7 +255,7 @@ main.landing {
 }
 .hero-kicker {
   margin: 0;
-  font-size: clamp(15px, 2.6vw, 19px);
+  font-size: clamp(19px, 3.4vw, 27px);
   font-weight: 600;
   letter-spacing: .42em;
   text-indent: .42em;
@@ -258,16 +264,16 @@ main.landing {
 }
 .hero-title { margin: 10px 0 0; line-height: 0; }
 .hero-title img {
-  width: clamp(260px, 52vmin, 540px);
+  width: clamp(310px, 64vmin, 680px);
   height: auto;
   display: block;
   filter: drop-shadow(0 2px 30px rgba(255, 226, 150, .5));
 }
 /* interstellar-style tagline: thin, wide-tracked caps */
 .hero-sub {
-  margin: 22px 0 0;
-  font-size: clamp(11px, 2.1vw, 16px);
-  font-weight: 300;
+  margin: 24px 0 0;
+  font-size: clamp(14px, 2.7vw, 21px);
+  font-weight: 600;
   letter-spacing: .52em;
   text-indent: .52em;
   text-transform: uppercase;
