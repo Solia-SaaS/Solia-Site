@@ -51,12 +51,31 @@ description: Solia is a Life Operating System designed to align your actions wit
           </radialGradient>
           <clipPath id="hw-sunclip"><circle cx="76" cy="62" r="22"/></clipPath>
           <clipPath id="hw-planetclip"><circle r="4.6"/></clipPath>
-          <!-- warm granulation speckle for the sun's surface -->
+          <!-- coarse bright granulation — big cells so the spin reads -->
           <filter id="hw-granule" x="-15%" y="-15%" width="130%" height="130%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.42" numOctaves="2" seed="7"/>
-            <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 0.82  0 0 0 0 0.45  0 0 0 0.4 0"/>
+            <feTurbulence type="fractalNoise" baseFrequency="0.16" numOctaves="3" seed="7"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 0.88  0 0 0 0 0.5  0 0 0 0.6 0"/>
             <feComposite operator="in" in2="SourceGraphic"/>
           </filter>
+          <!-- darker churn layer, counter-rotating -->
+          <filter id="hw-granule2" x="-15%" y="-15%" width="130%" height="130%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.28" numOctaves="2" seed="13"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0.62  0 0 0 0 0.2  0 0 0 0 0.04  0 0 0 0.5 0"/>
+            <feComposite operator="in" in2="SourceGraphic"/>
+          </filter>
+          <!-- writhing flame rim: turbulence-displaced edge, noise itself animates -->
+          <filter id="hw-flame" x="-40%" y="-40%" width="180%" height="180%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.09 0.11" numOctaves="2" seed="4" result="n">
+              <animate attributeName="baseFrequency" values="0.09 0.11;0.12 0.14;0.09 0.11" dur="6s" repeatCount="indefinite"/>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="6.5" xChannelSelector="R" yChannelSelector="G"/>
+            <feGaussianBlur stdDeviation="0.35"/>
+          </filter>
+          <radialGradient id="hw-flamegrad">
+            <stop offset="0" stop-color="#F8B44B"/>
+            <stop offset="0.8" stop-color="#EE8239"/>
+            <stop offset="1" stop-color="#D2551F"/>
+          </radialGradient>
         </defs>
         <circle cx="76" cy="62" r="42" fill="url(#hw-corona)"/>
         <!-- full orbit ring, drawn behind the sun -->
@@ -83,10 +102,13 @@ description: Solia is a Life Operating System designed to align your actions wit
             </g>
           </g>
         </g>
-        <!-- the sun: disc + rotating granulation, clipped to the disc -->
+        <!-- flame rim: displaced, writhing edge licking past the disc -->
+        <circle class="flame-spin" cx="76" cy="62" r="23.6" fill="url(#hw-flamegrad)" filter="url(#hw-flame)" opacity="0.9"/>
+        <!-- the sun: disc + two counter-rotating churn layers, clipped to the disc -->
         <g clip-path="url(#hw-sunclip)">
           <circle cx="76" cy="62" r="22" fill="url(#hw-sunreal)"/>
           <circle class="sun-spin" cx="76" cy="62" r="23.5" fill="#F8B44B" filter="url(#hw-granule)"/>
+          <circle class="sun-spin-rev" cx="76" cy="62" r="23.5" fill="#E47235" filter="url(#hw-granule2)"/>
         </g>
         <!-- near half of the ring, crossing in front of the sun (same gradient) -->
         <g transform="rotate(-18 76 62)">

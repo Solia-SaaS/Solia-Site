@@ -109,17 +109,18 @@ main.landing {
   color: var(--hero-ink);
   will-change: transform, opacity;
 }
-/* the lockup: WELCOME TO spans the same width as the wordmark below it */
+/* the lockup: kicker matches the tagline's style exactly, sized so both
+   lines span the same width (tagline size × its/kicker glyph-run ratio) */
 .hero-kicker {
   margin: 0;
-  font-size: clamp(26px, 6.9vw, 88px);
-  font-weight: 350;
+  font-size: clamp(36px, 6.7vw, 85px);
+  font-weight: 600;
   line-height: 1.1;
-  letter-spacing: .3em;
-  text-indent: .3em;
+  letter-spacing: .52em;
+  text-indent: .52em;
   text-transform: uppercase;
   opacity: .95;
-  text-shadow: 0 1px 24px rgba(238, 130, 57, .3);
+  text-shadow: 0 1px 18px rgba(238, 130, 57, .35);
 }
 .hero-title { margin: 6px 0 0; line-height: 0; }
 .hero-title svg {
@@ -129,13 +130,18 @@ main.landing {
   overflow: visible;
   filter: drop-shadow(0 4px 60px rgba(238, 130, 57, .28));
 }
-/* the sun's granulation and the planet's surface both rotate */
+/* the sun churns: two counter-rotating granulation layers + writhing flame
+   rim; the planet's surface rotates too */
 .hero-title .sun-spin,
+.hero-title .sun-spin-rev,
+.hero-title .flame-spin,
 .hero-title .planet-spin {
   transform-box: fill-box;
   transform-origin: center;
-  animation: svg-spin 70s linear infinite;
+  animation: svg-spin 22s linear infinite;
 }
+.hero-title .sun-spin-rev { animation: svg-spin 34s linear infinite reverse; }
+.hero-title .flame-spin { animation-duration: 16s; }
 .hero-title .planet-spin { animation-duration: 9s; }
 @keyframes svg-spin { to { transform: rotate(360deg); } }
 
@@ -144,7 +150,8 @@ main.landing {
 @media (prefers-reduced-motion: reduce) {
   .hero-title .planet-anim { display: none; }
   .hero-title .planet-static { display: block; }
-  .hero-title .sun-spin, .hero-title .planet-spin { animation: none; }
+  .hero-title .sun-spin, .hero-title .sun-spin-rev, .hero-title .flame-spin,
+  .hero-title .planet-spin { animation: none; }
 }
 /* interstellar-style tagline: thin, wide-tracked caps */
 .hero-sub {
