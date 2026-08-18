@@ -35,6 +35,7 @@
 </header>
 
 <main{% if page.splash %} class="splash"{% endif %}>
+  {% unless page.splash or page.url == "/" %}<p class="back"><a href="{{ '/' | relative_url }}">&larr; Home</a></p>{% endunless %}
   {{ content }}
 </main>
 

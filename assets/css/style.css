@@ -221,6 +221,31 @@ main.splash {
   box-shadow: 0 0 0 3px rgba(228,114,53,.16);
 }
 
+/* back link on inner pages */
+main .back { margin: 0 0 22px; font-size: 14.5px; }
+main .back a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+main .back a:hover { color: var(--accent); }
+
+/* index page link cards */
+.doc-list { list-style: none; padding: 0; margin: 28px 0 0; }
+.doc-list li { margin: 0 0 12px; }
+.doc-list a {
+  display: block;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+}
+.doc-list a:hover { border-color: var(--accent); color: var(--ink); }
+.doc-list span { display: block; font-weight: 400; font-size: 14.5px; color: var(--muted); margin-top: 3px; }
+
 /* ── footer ─────────────────────────────────────────────────────────────── */
 footer.site {
   border-top: 1px solid var(--rule);
