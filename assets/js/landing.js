@@ -4,23 +4,6 @@
   "use strict";
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var doc = document.documentElement;
-
-  /* ── theme toggle (hero stays black space either way) ─────────────────── */
-  var themeBtn = document.getElementById("themeToggle");
-  var theme = "dark";
-  function applyTheme() {
-    if (theme === "light") doc.setAttribute("data-theme", "light");
-    else doc.removeAttribute("data-theme");
-    if (themeBtn) themeBtn.textContent = theme === "dark" ? "Light" : "Dark";
-  }
-  if (themeBtn) {
-    themeBtn.addEventListener("click", function () {
-      theme = theme === "dark" ? "light" : "dark";
-      applyTheme();
-    });
-  }
-  applyTheme();
 
   /* ── elements + cached layout metrics ─────────────────────────────────── */
   var header = document.getElementById("siteHeader");
@@ -115,18 +98,7 @@
       if (header) header.classList.toggle("scrolled", on);
 
       if (!reduceMotion && heroTitle) {
-        /* 1 · the supporting lines leave over the first 30% of a screen */
-        var s = clamp01(y / (vh * 0.3));
-        s = s * s * (3 - 2 * s);
-        var sub = Math.pow(1 - s, 1.25).toFixed(3);
-        [heroKicker, heroTag, heroCue].forEach(function (el, i) {
-          if (!el) return;
-          if (i === 2) el.style.animation = s > 0.01 ? "none" : "";
-          el.style.opacity = sub;
-          el.style.transform = "translate3d(0," + (-26 * s * (i === 2 ? -1 : 1)).toFixed(1) + "px,0)";
-        });
-
-        /* 2 · SOLIA stays centred in the shrinking gap between the header and
+        /* 1 · SOLIA stays centred in the shrinking gap between the header and
            the incoming panel, scaling down and fading as the gap closes */
         var headerH = metrics.headerH;
         var pTop = Math.min(vh, Math.max(headerH, metrics.panelTop - y));
@@ -142,6 +114,20 @@
         heroTitle.style.opacity = Math.pow(1 - tf, 0.85).toFixed(3);
         heroTitle.style.transform =
           "translate3d(0," + dy.toFixed(1) + "px,0) scale(" + (1 - 0.4 * t).toFixed(4) + ")";
+
+        /* 2 · the supporting lines ride with SOLIA (same dy, so the CSS
+           margins control their gaps exactly) and leave over the first 30%
+           of a screen */
+        var s = clamp01(y / (vh * 0.3));
+        s = s * s * (3 - 2 * s);
+        var sub = Math.pow(1 - s, 1.25).toFixed(3);
+        [heroKicker, heroTag, heroCue].forEach(function (el, i) {
+          if (!el) return;
+          if (i === 2) el.style.animation = s > 0.01 ? "none" : "";
+          el.style.opacity = sub;
+          var off = i === 2 ? (26 * s) : (dy - 26 * s);
+          el.style.transform = "translate3d(0," + off.toFixed(1) + "px,0)";
+        });
       }
 
       /* 3 · tour step from progress through the pinned section */

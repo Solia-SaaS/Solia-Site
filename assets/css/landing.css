@@ -3,19 +3,8 @@
    scopes its own theme vars to body.landing: dark by default, toggled to
    light via data-theme="light" on <html>. The hero is always black space. */
 
+/* single light theme (the hero stays black space) */
 body.landing {
-  --canvas: #14120B;
-  --surface: #1B1913;
-  --raised: #211F19;
-  --rule: #302E29;
-  --ink: #F3F1EA;
-  --ink-soft: #C9C6BD;
-  --muted: #8A8781;
-  --accent: #EE8239;
-  --gold: #F8B44B;
-  --space: #0D0B06;
-}
-html[data-theme="light"] body.landing {
   --canvas: #E7E3D7;
   --surface: #F2EEE3;
   --raised: #ECE8DB;
@@ -25,6 +14,7 @@ html[data-theme="light"] body.landing {
   --muted: #6B6862;
   --accent: #E47235;
   --gold: #E08A2C;
+  --space: #0D0B06;
 }
 
 body.landing {
@@ -79,28 +69,6 @@ body.landing a:hover { color: var(--gold); }
 }
 .landing-header.scrolled .wordmark { opacity: 1; pointer-events: auto; }
 .landing-header .wordmark img { height: 34px; width: auto; display: block; }
-.landing-header .wordmark img.wm-light { display: none; }
-html[data-theme="light"] .landing-header .wordmark img.wm-dark { display: none; }
-html[data-theme="light"] .landing-header .wordmark img.wm-light { display: block; }
-
-.theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: 36px;
-  padding: 0 14px;
-  border: 1px solid rgba(243, 233, 210, .22);
-  border-radius: 999px;
-  background: rgba(27, 25, 19, .5);
-  color: #C9C6BD;
-  font: 500 12px/1 Manrope, sans-serif;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  cursor: pointer;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-}
-.theme-toggle:hover { border-color: rgba(238, 130, 57, .6); color: #F3F1EA; }
 
 .header-cta {
   display: inline-flex;
@@ -177,14 +145,18 @@ main.landing {
 }
 .hero-kicker {
   margin: 0;
-  font: 600 clamp(13px, 2.5vw, 30px)/1.2 Manrope, sans-serif;
+  font: 600 clamp(11px, 1.6vw, 19px)/1.2 Manrope, sans-serif;
   letter-spacing: .5em;
   text-indent: .5em;
   text-transform: uppercase;
   opacity: .92;
   text-shadow: 0 1px 18px rgba(238, 130, 57, .35);
 }
-.hero-title { margin: 8px 0 0; line-height: 0; will-change: transform, opacity; }
+/* the SVG box carries 0.115×width of empty space above the letter tops and
+   0.121×width below them; these margins cancel it so the visual gaps are
+   exactly 30px above and 26px below SOLIA (the JS rides kicker/tagline on
+   the title's translation, so layout spacing holds at every scroll state) */
+.hero-title { margin: calc(30px - clamp(37px, 9.23vw, 118px)) 0 0; line-height: 0; will-change: transform, opacity; }
 .hero-title svg {
   width: clamp(320px, 80vw, 1020px);
   height: auto;
@@ -193,7 +165,7 @@ main.landing {
   filter: drop-shadow(0 4px 60px rgba(238, 130, 57, .28));
 }
 .hero-sub {
-  margin: 12px 0 0;
+  margin: calc(26px - clamp(39px, 9.7vw, 124px)) 0 0;
   font: 500 clamp(13px, 2.5vw, 30px)/1.2 Manrope, sans-serif;
   letter-spacing: .5em;
   text-indent: .5em;
