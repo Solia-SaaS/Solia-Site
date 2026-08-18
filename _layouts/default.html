@@ -19,16 +19,26 @@
       <img src="{{ '/assets/brand/solia-wordmark-light.svg' | relative_url }}" alt="Solia" width="112" height="44">
     </picture>
   </a>
-  <nav>
-    <a href="{{ '/support' | relative_url }}">Support</a>
-    <a href="https://legal.getsolia.com">Legal</a>
-  </nav>
+  <details class="menu">
+    <summary aria-label="Open menu">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="4" y1="7" x2="20" y2="7"/>
+        <line x1="4" y1="12" x2="20" y2="12"/>
+        <line x1="4" y1="17" x2="20" y2="17"/>
+      </svg>
+    </summary>
+    <nav>
+      <a href="{{ '/support' | relative_url }}">Support</a>
+      <a href="https://legal.getsolia.com">Legal</a>
+    </nav>
+  </details>
 </header>
 
-<main{% if page.hero %} class="has-hero"{% endif %}>
+<main{% if page.splash %} class="splash"{% endif %}>
   {{ content }}
 </main>
 
+{% unless page.splash %}
 <footer class="site">
   <p class="acronym"><strong>SOLIA</strong> — System for Optimizing Life with Intelligent Automation</p>
   <p>
@@ -38,5 +48,6 @@
   </p>
   <p><a href="https://legal.getsolia.com/terms-of-service">Terms of Service</a> · <a href="https://legal.getsolia.com/privacy-policy">Privacy Policy</a> · <a href="https://legal.getsolia.com/health-disclaimer">Health Disclaimer</a></p>
 </footer>
+{% endunless %}
 </body>
 </html>
