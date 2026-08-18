@@ -1,20 +1,94 @@
-/* Solia landing — scroll choreography + ambient canvas FX. No dependencies. */
+/* Solia landing — scroll choreography, theme toggle, ambient canvas.
+   Port of the Claude Design draft's logic. No dependencies. */
 (function () {
   "use strict";
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var doc = document.documentElement;
 
-  var heroInner = document.getElementById("heroInner");
-  var heroStage = document.getElementById("hero");
-  var header = document.querySelector("header.landing-header");
+  /* ── theme toggle (hero stays black space either way) ─────────────────── */
+  var themeBtn = document.getElementById("themeToggle");
+  var theme = "dark";
+  function applyTheme() {
+    if (theme === "light") doc.setAttribute("data-theme", "light");
+    else doc.removeAttribute("data-theme");
+    if (themeBtn) themeBtn.textContent = theme === "dark" ? "Light" : "Dark";
+  }
+  if (themeBtn) {
+    themeBtn.addEventListener("click", function () {
+      theme = theme === "dark" ? "light" : "dark";
+      applyTheme();
+    });
+  }
+  applyTheme();
 
-  /* ── scroll choreography ────────────────────────────────────────────────
-     Over the hero stage, the giant wordmark scales down and fades while the
-     page body slides over the fixed space backdrop. */
-  var ticking = false;
+  /* ── elements + cached layout metrics ─────────────────────────────────── */
+  var header = document.getElementById("siteHeader");
+  var mark = document.getElementById("headerMark");
+  var heroTitle = document.getElementById("heroTitle");
+  var heroKicker = document.getElementById("heroKicker");
+  var heroTag = document.getElementById("heroTag");
+  var heroCue = document.getElementById("heroCue");
+  var panel = document.getElementById("panel");
+  var tour = document.getElementById("tour");
+  var railFill = document.getElementById("railFill");
+  var steps = Array.prototype.slice.call(document.querySelectorAll(".tour-step"));
+  var screens = Array.prototype.slice.call(document.querySelectorAll(".screen"));
+  var STEP_COUNT = steps.length || 1;
+  var heroSvg = heroTitle ? heroTitle.querySelector("svg") : null;
+
+  var metrics = null;
+  var baseCenter = null;
+  function offTop(el) { return el ? el.getBoundingClientRect().top + window.scrollY : 0; }
+  function measure() {
+    metrics = {
+      headerH: header ? header.offsetHeight : 68,
+      panelTop: offTop(panel),
+      tourTop: offTop(tour),
+      tourH: tour ? tour.offsetHeight : 1,
+      whatTop: offTop(document.getElementById("what")),
+      soonTop: offTop(document.getElementById("soon"))
+    };
+  }
 
   function clamp01(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
-  function ease(t) { return t * t * (3 - 2 * t); } /* smoothstep */
+
+  /* ── tour + dots state ────────────────────────────────────────────────── */
+  var activeStep = -1;
+  function setStep(i) {
+    if (i === activeStep) return;
+    activeStep = i;
+    steps.forEach(function (el, j) {
+      el.classList.toggle("is-active", j === i);
+      el.classList.toggle("is-before", j < i);
+    });
+    screens.forEach(function (el, j) {
+      el.classList.toggle("is-active", j === i);
+    });
+    if (railFill) {
+      railFill.style.top = (i * (100 / STEP_COUNT)).toFixed(2) + "%";
+      railFill.style.height = (100 / STEP_COUNT).toFixed(2) + "%";
+    }
+  }
+  setStep(0);
+
+  var dots = {};
+  Array.prototype.forEach.call(document.querySelectorAll(".dots a[data-dot]"), function (a) {
+    dots[a.getAttribute("data-dot")] = a;
+  });
+  var activeSection = "";
+  function setSection(id) {
+    if (id === activeSection) return;
+    activeSection = id;
+    Object.keys(dots).forEach(function (k) {
+      dots[k].classList.toggle("active", k === id);
+    });
+  }
+
+  /* ── scroll choreography (single rAF-throttled handler) ───────────────── */
+  var ticking = false;
+  var svgPaused = false;
+  var resumeTimer = null;
 
   function onScroll() {
     if (ticking) return;
@@ -23,26 +97,78 @@
       ticking = false;
       var y = window.scrollY || 0;
       var vh = window.innerHeight || 1;
+      if (!metrics) measure();
 
-      if (header) header.classList.toggle("scrolled", y > vh * 0.55);
-      if (reduceMotion) return;
-
-      var travel = Math.max(1, (heroStage ? heroStage.offsetHeight : vh * 1.7) - vh);
-      var p = ease(clamp01(y / travel));
-
-      if (heroInner) {
-        var tp = clamp01(p / 0.8);
-        heroInner.style.opacity = (1 - tp).toFixed(3);
-        heroInner.style.transform =
-          "translate3d(0," + (-60 * tp).toFixed(1) + "px,0) scale(" + (1 - 0.12 * tp).toFixed(4) + ")";
+      /* the sun's turbulence/lighting filters are expensive to re-rasterise;
+         idle them while the wheel is moving, resume 160ms after it stops */
+      if (heroSvg && heroSvg.pauseAnimations && y < vh * 1.2 && !reduceMotion) {
+        if (!svgPaused) { heroSvg.pauseAnimations(); svgPaused = true; }
+        clearTimeout(resumeTimer);
+        resumeTimer = setTimeout(function () {
+          heroSvg.unpauseAnimations();
+          svgPaused = false;
+        }, 160);
       }
+
+      /* header chrome */
+      var on = y > vh * 0.55;
+      if (header) header.classList.toggle("scrolled", on);
+
+      if (!reduceMotion && heroTitle) {
+        /* 1 · the supporting lines leave over the first 30% of a screen */
+        var s = clamp01(y / (vh * 0.3));
+        s = s * s * (3 - 2 * s);
+        var sub = Math.pow(1 - s, 1.25).toFixed(3);
+        [heroKicker, heroTag, heroCue].forEach(function (el, i) {
+          if (!el) return;
+          if (i === 2) el.style.animation = s > 0.01 ? "none" : "";
+          el.style.opacity = sub;
+          el.style.transform = "translate3d(0," + (-26 * s * (i === 2 ? -1 : 1)).toFixed(1) + "px,0)";
+        });
+
+        /* 2 · SOLIA stays centred in the shrinking gap between the header and
+           the incoming panel, scaling down and fading as the gap closes */
+        var headerH = metrics.headerH;
+        var pTop = Math.min(vh, Math.max(headerH, metrics.panelTop - y));
+        if (baseCenter == null) {
+          heroTitle.style.transform = "none";
+          var r = heroTitle.getBoundingClientRect();
+          baseCenter = r.top + r.height / 2;
+        }
+        var gap = Math.max(0, pTop - headerH);
+        var t = clamp01(1 - gap / (vh - headerH));
+        var dy = (headerH + pTop) / 2 - baseCenter;
+        var tf = Math.min(1, t / 0.85);
+        heroTitle.style.opacity = Math.pow(1 - tf, 0.85).toFixed(3);
+        heroTitle.style.transform =
+          "translate3d(0," + dy.toFixed(1) + "px,0) scale(" + (1 - 0.4 * t).toFixed(4) + ")";
+      }
+
+      /* 3 · tour step from progress through the pinned section */
+      if (tour) {
+        var travel = Math.max(1, metrics.tourH - vh);
+        var p = Math.min(0.9999, Math.max(0, (y - metrics.tourTop) / travel));
+        setStep(Math.min(STEP_COUNT - 1, Math.floor(p * STEP_COUNT)));
+      }
+
+      /* 4 · dot nav section */
+      var sec = "top";
+      if (y + vh * 0.45 > metrics.soonTop) sec = "soon";
+      else if (y + vh * 0.45 > metrics.tourTop) sec = "tour";
+      else if (y + vh * 0.45 > metrics.whatTop) sec = "what";
+      setSection(sec);
     });
   }
   window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", function () {
+    baseCenter = null;
+    metrics = null;
+    onScroll();
+  }, { passive: true });
   onScroll();
 
   /* ── reveal-on-scroll ─────────────────────────────────────────────────── */
-  var reveals = document.querySelectorAll(".reveal");
+  var reveals = document.querySelectorAll("[data-reveal]");
   if ("IntersectionObserver" in window && !reduceMotion) {
     var ro = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -57,74 +183,51 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
-  /* ── dot navigation active state ──────────────────────────────────────── */
-  var dotFor = {
-    hero: "top", what: "what", plan: "plan", coach: "coach",
-    train: "train", climb: "climb", connect: "connect", soon: "soon"
-  };
-  var dots = {};
-  document.querySelectorAll(".dots a[data-dot]").forEach(function (a) {
-    dots[a.getAttribute("data-dot")] = a;
-  });
-  if ("IntersectionObserver" in window) {
-    var so = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (!e.isIntersecting) return;
-        var key = dotFor[e.target.id];
-        if (!key || !dots[key]) return;
-        Object.keys(dots).forEach(function (k) { dots[k].classList.remove("active"); });
-        dots[key].classList.add("active");
-      });
-    }, { rootMargin: "-42% 0px -42% 0px" });
-    Object.keys(dotFor).forEach(function (id) {
-      var el = document.getElementById(id);
-      if (el) so.observe(el);
+  /* ── waitlist (endpoint pending — flips the label for now) ────────────── */
+  var form = document.getElementById("waitlistForm");
+  var formBtn = document.getElementById("waitlistBtn");
+  if (form && formBtn) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      formBtn.textContent = "You're on the list";
     });
   }
 
-  /* ── ambient canvas: drifting light motes (+ stars in dark mode) ──────── */
+  /* ── ambient canvas: drifting motes + twinkling stars ─────────────────── */
   var canvas = document.getElementById("fx");
   if (!canvas || reduceMotion) return;
   var ctx = canvas.getContext("2d");
   if (!ctx) return;
 
-  var W = 0, H = 0, DPR = 1, motes = [], stars = [];
-
-  function resize() {
-    DPR = Math.min(window.devicePixelRatio || 1, 2);
-    W = canvas.clientWidth;
-    H = canvas.clientHeight;
-    canvas.width = Math.round(W * DPR);
-    canvas.height = Math.round(H * DPR);
-    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-    seed();
-  }
+  var W = 0, H = 0, motes = [], stars = [];
 
   function seed() {
-    var moteCount = Math.round(Math.min(70, (W * H) / 26000));
-    motes = [];
-    for (var i = 0; i < moteCount; i++) {
+    motes = []; stars = [];
+    var mc = Math.round(Math.min(70, (W * H) / 26000));
+    for (var i = 0; i < mc; i++) {
       motes.push({
-        x: Math.random() * W,
-        y: Math.random() * H,
-        r: 0.6 + Math.random() * 1.9,
-        v: 0.08 + Math.random() * 0.28,     /* upward drift */
-        sway: Math.random() * Math.PI * 2,
-        swayAmp: 0.2 + Math.random() * 0.5,
+        x: Math.random() * W, y: Math.random() * H,
+        r: 0.6 + Math.random() * 1.9, v: 0.08 + Math.random() * 0.28,
+        sway: Math.random() * 6.28, amp: 0.2 + Math.random() * 0.5,
         a: 0.12 + Math.random() * 0.3
       });
     }
-    stars = [];
-    var starCount = Math.round(Math.min(140, (W * H) / 14000));
-    for (var j = 0; j < starCount; j++) {
+    var sc = Math.round(Math.min(140, (W * H) / 14000));
+    for (var j = 0; j < sc; j++) {
       stars.push({
-        x: Math.random() * W,
-        y: Math.random() * H * 0.75,        /* keep the horizon clear */
+        x: Math.random() * W, y: Math.random() * H * 0.75,
         r: 0.4 + Math.random() * 1.1,
-        tw: Math.random() * Math.PI * 2,
-        twv: 0.008 + Math.random() * 0.02
+        tw: Math.random() * 6.28, twv: 0.008 + Math.random() * 0.02
       });
     }
+  }
+  function resizeCanvas() {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = canvas.clientWidth; H = canvas.clientHeight;
+    canvas.width = Math.round(W * dpr);
+    canvas.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    seed();
   }
 
   var visible = !document.hidden;
@@ -136,37 +239,26 @@
   function frame() {
     if (!visible) return;
     ctx.clearRect(0, 0, W, H);
-
-    {
-      for (var j = 0; j < stars.length; j++) {
-        var s = stars[j];
-        s.tw += s.twv;
-        var tw = 0.35 + 0.65 * (0.5 + 0.5 * Math.sin(s.tw));
-        ctx.globalAlpha = 0.5 * tw;
-        ctx.fillStyle = "#FFF6E0";
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r, 0, 6.2832);
-        ctx.fill();
-      }
+    for (var j = 0; j < stars.length; j++) {
+      var st = stars[j];
+      st.tw += st.twv;
+      ctx.globalAlpha = 0.5 * (0.35 + 0.65 * (0.5 + 0.5 * Math.sin(st.tw)));
+      ctx.fillStyle = "#FFF6E0";
+      ctx.beginPath(); ctx.arc(st.x, st.y, st.r, 0, 6.2832); ctx.fill();
     }
-
     for (var i = 0; i < motes.length; i++) {
       var m = motes[i];
-      m.y -= m.v;
-      m.sway += 0.01;
-      m.x += Math.sin(m.sway) * m.swayAmp * 0.2;
+      m.y -= m.v; m.sway += 0.01; m.x += Math.sin(m.sway) * m.amp * 0.2;
       if (m.y < -6) { m.y = H + 6; m.x = Math.random() * W; }
       ctx.globalAlpha = m.a;
       ctx.fillStyle = "#F8B44B";
-      ctx.beginPath();
-      ctx.arc(m.x, m.y, m.r, 0, 6.2832);
-      ctx.fill();
+      ctx.beginPath(); ctx.arc(m.x, m.y, m.r, 0, 6.2832); ctx.fill();
     }
     ctx.globalAlpha = 1;
     requestAnimationFrame(frame);
   }
 
-  window.addEventListener("resize", resize, { passive: true });
-  resize();
+  window.addEventListener("resize", resizeCanvas, { passive: true });
+  resizeCanvas();
   requestAnimationFrame(frame);
 })();
