@@ -135,6 +135,7 @@ main.landing {
 .hero-title .sun-spin,
 .hero-title .sun-spin-rev,
 .hero-title .flame-spin,
+.hero-title .flame-spin-rev,
 .hero-title .planet-spin {
   transform-box: fill-box;
   transform-origin: center;
@@ -142,6 +143,7 @@ main.landing {
 }
 .hero-title .sun-spin-rev { animation: svg-spin 34s linear infinite reverse; }
 .hero-title .flame-spin { animation-duration: 16s; }
+.hero-title .flame-spin-rev { animation: svg-spin 26s linear infinite reverse; }
 .hero-title .planet-spin { animation-duration: 9s; }
 @keyframes svg-spin { to { transform: rotate(360deg); } }
 
@@ -151,7 +153,7 @@ main.landing {
   .hero-title .planet-anim { display: none; }
   .hero-title .planet-static { display: block; }
   .hero-title .sun-spin, .hero-title .sun-spin-rev, .hero-title .flame-spin,
-  .hero-title .planet-spin { animation: none; }
+  .hero-title .flame-spin-rev, .hero-title .planet-spin { animation: none; }
 }
 /* interstellar-style tagline: thin, wide-tracked caps */
 .hero-sub {

@@ -22,9 +22,26 @@ description: Solia is a Life Operating System designed to align your actions wit
             <stop offset="0.92" stop-color="#D2551F"/>
             <stop offset="1" stop-color="#A83E12"/>
           </radialGradient>
-          <radialGradient id="hw-corona">
-            <stop offset="0" stop-color="#F8B44B" stop-opacity="0.50"/>
-            <stop offset="0.45" stop-color="#EE8239" stop-opacity="0.22"/>
+          <!-- layered corona: tight warm inner glow + wide soft outer scatter,
+               multi-stop for smooth falloff (disc edge sits at ~0.65 / ~0.38) -->
+          <radialGradient id="hw-corona-inner">
+            <stop offset="0.60" stop-color="#FFDF9E" stop-opacity="0.55"/>
+            <stop offset="0.70" stop-color="#FDC97A" stop-opacity="0.30"/>
+            <stop offset="0.80" stop-color="#F8B44B" stop-opacity="0.15"/>
+            <stop offset="0.90" stop-color="#EE8239" stop-opacity="0.06"/>
+            <stop offset="1" stop-color="#EE8239" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="hw-corona-outer">
+            <stop offset="0.36" stop-color="#EE8239" stop-opacity="0.26"/>
+            <stop offset="0.50" stop-color="#EE8239" stop-opacity="0.13"/>
+            <stop offset="0.68" stop-color="#E47235" stop-opacity="0.06"/>
+            <stop offset="0.85" stop-color="#E47235" stop-opacity="0.02"/>
+            <stop offset="1" stop-color="#E47235" stop-opacity="0"/>
+          </radialGradient>
+          <!-- wisp stroke paint: bright at the limb, dissolving outward -->
+          <radialGradient id="hw-wispgrad" gradientUnits="userSpaceOnUse" cx="76" cy="62" r="30">
+            <stop offset="0.68" stop-color="#FFECAA" stop-opacity="0.9"/>
+            <stop offset="0.82" stop-color="#F8B44B" stop-opacity="0.55"/>
             <stop offset="1" stop-color="#EE8239" stop-opacity="0"/>
           </radialGradient>
           <!-- single clean ring gradient: orange at the far end, yellow at the
@@ -67,24 +84,30 @@ description: Solia is a Life Operating System designed to align your actions wit
             <feColorMatrix type="matrix" values="0 0 0 0 0.62  0 0 0 0 0.2  0 0 0 0 0.04  0 0 0 0.5 0"/>
             <feComposite operator="in" in2="SourceGraphic"/>
           </filter>
-          <!-- writhing flame rim: turbulence-displaced edge, noise itself animates -->
-          <filter id="hw-flame" x="-40%" y="-40%" width="180%" height="180%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.09 0.11" numOctaves="2" seed="4" result="n">
-              <animate attributeName="baseFrequency" values="0.09 0.11;0.12 0.14;0.09 0.11" dur="6s" repeatCount="indefinite"/>
+          <!-- solar wisps: displaced, softly blurred, noise itself animates -->
+          <filter id="hw-flame" x="-50%" y="-50%" width="200%" height="200%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.10 0.12" numOctaves="3" seed="4" result="n">
+              <animate attributeName="baseFrequency" values="0.10 0.12;0.13 0.15;0.10 0.12" dur="7s" repeatCount="indefinite"/>
             </feTurbulence>
-            <feDisplacementMap in="SourceGraphic" in2="n" scale="6.5" xChannelSelector="R" yChannelSelector="G"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+            <feGaussianBlur stdDeviation="0.7"/>
+          </filter>
+          <filter id="hw-flame2" x="-50%" y="-50%" width="200%" height="200%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.15 0.17" numOctaves="2" seed="11" result="n">
+              <animate attributeName="baseFrequency" values="0.15 0.17;0.18 0.2;0.15 0.17" dur="9s" repeatCount="indefinite"/>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+            <feGaussianBlur stdDeviation="1.1"/>
+          </filter>
+          <filter id="hw-soft2" x="-30%" y="-30%" width="160%" height="160%">
             <feGaussianBlur stdDeviation="0.35"/>
           </filter>
-          <radialGradient id="hw-flamegrad">
-            <stop offset="0" stop-color="#F8B44B"/>
-            <stop offset="0.8" stop-color="#EE8239"/>
-            <stop offset="1" stop-color="#D2551F"/>
-          </radialGradient>
           <filter id="hw-soft" x="-60%" y="-60%" width="220%" height="220%">
             <feGaussianBlur stdDeviation="1.3"/>
           </filter>
         </defs>
-        <circle cx="76" cy="62" r="42" fill="url(#hw-corona)"/>
+        <circle cx="76" cy="62" r="58" fill="url(#hw-corona-outer)"/>
+        <circle cx="76" cy="62" r="34" fill="url(#hw-corona-inner)"/>
         <!-- full orbit ring, drawn behind the sun -->
         <g transform="rotate(-18 76 62)">
           <ellipse cx="76" cy="62" rx="84" ry="8" fill="none" stroke="url(#hw-ring)" stroke-width="2" opacity="0.9"/>
@@ -109,8 +132,10 @@ description: Solia is a Life Operating System designed to align your actions wit
             </g>
           </g>
         </g>
-        <!-- flame rim: displaced, writhing edge licking past the disc -->
-        <circle class="flame-spin" cx="76" cy="62" r="23.6" fill="url(#hw-flamegrad)" filter="url(#hw-flame)" opacity="0.9"/>
+        <!-- solar wisps: two soft counter-rotating displaced rings; the disc
+             covers their inner halves so only the outer licks show -->
+        <circle class="flame-spin" cx="76" cy="62" r="23.2" fill="none" stroke="url(#hw-wispgrad)" stroke-width="3.4" filter="url(#hw-flame)" opacity="0.75"/>
+        <circle class="flame-spin-rev" cx="76" cy="62" r="24.2" fill="none" stroke="url(#hw-wispgrad)" stroke-width="2.6" filter="url(#hw-flame2)" opacity="0.5"/>
         <!-- the sun: disc + two counter-rotating churn layers, clipped to the disc -->
         <g clip-path="url(#hw-sunclip)">
           <circle cx="76" cy="62" r="22" fill="url(#hw-sunreal)"/>
@@ -129,6 +154,8 @@ description: Solia is a Life Operating System designed to align your actions wit
             </g>
           </g>
         </g>
+        <!-- chromosphere: thin bright rim right at the limb -->
+        <circle cx="76" cy="62" r="22.15" fill="none" stroke="#FFD98A" stroke-width="0.7" filter="url(#hw-soft2)" opacity="0.8"/>
         <!-- near half of the ring, crossing in front of the sun (same gradient) -->
         <g transform="rotate(-18 76 62)">
           <path d="M-8 62A84 8 0 0 0 160 62" fill="none" stroke="url(#hw-ring)" stroke-width="2" stroke-linecap="round"/>
