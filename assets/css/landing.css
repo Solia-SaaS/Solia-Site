@@ -109,14 +109,17 @@ main.landing {
   color: var(--hero-ink);
   will-change: transform, opacity;
 }
+/* the lockup: WELCOME TO spans the same width as the wordmark below it */
 .hero-kicker {
   margin: 0;
-  font-size: clamp(19px, 3.4vw, 27px);
-  font-weight: 600;
-  letter-spacing: .42em;
-  text-indent: .42em;
+  font-size: clamp(26px, 6.9vw, 88px);
+  font-weight: 350;
+  line-height: 1.1;
+  letter-spacing: .3em;
+  text-indent: .3em;
   text-transform: uppercase;
   opacity: .95;
+  text-shadow: 0 1px 24px rgba(238, 130, 57, .3);
 }
 .hero-title { margin: 6px 0 0; line-height: 0; }
 .hero-title svg {
@@ -126,16 +129,27 @@ main.landing {
   overflow: visible;
   filter: drop-shadow(0 4px 60px rgba(238, 130, 57, .28));
 }
+/* the sun's granulation and the planet's surface both rotate */
+.hero-title .sun-spin,
+.hero-title .planet-spin {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: svg-spin 70s linear infinite;
+}
+.hero-title .planet-spin { animation-duration: 9s; }
+@keyframes svg-spin { to { transform: rotate(360deg); } }
+
 /* the animated planet runs by default; reduced motion swaps in the static one */
 .hero-title .planet-static { display: none; }
 @media (prefers-reduced-motion: reduce) {
   .hero-title .planet-anim { display: none; }
   .hero-title .planet-static { display: block; }
+  .hero-title .sun-spin, .hero-title .planet-spin { animation: none; }
 }
 /* interstellar-style tagline: thin, wide-tracked caps */
 .hero-sub {
-  margin: 24px 0 0;
-  font-size: clamp(14px, 2.7vw, 21px);
+  margin: 10px 0 0;
+  font-size: clamp(15px, 2.75vw, 35px);
   font-weight: 600;
   letter-spacing: .52em;
   text-indent: .52em;
