@@ -82,6 +82,94 @@ body.landing { display: block; background: var(--sky-top); }
   animation: rays-spin 90s linear infinite reverse;
 }
 
+/* slowly turning surface mottling — sells the sun as spinning */
+.sun-surface {
+  inset: 2%;
+  background:
+    radial-gradient(22% 18% at 30% 24%, rgba(255, 244, 214, .55) 0%, transparent 70%),
+    radial-gradient(16% 14% at 68% 38%, rgba(200, 83, 31, .30) 0%, transparent 70%),
+    radial-gradient(20% 16% at 44% 70%, rgba(255, 210, 130, .40) 0%, transparent 70%),
+    radial-gradient(14% 12% at 76% 68%, rgba(200, 83, 31, .22) 0%, transparent 70%),
+    radial-gradient(12% 10% at 22% 52%, rgba(255, 236, 180, .35) 0%, transparent 70%);
+  filter: blur(10px);
+  opacity: .8;
+  animation: rays-spin 80s linear infinite;
+}
+
+/* ── orbit + planet (echoes the wordmark's ellipse) ─────────────────────── */
+:root {
+  --orbit-rx: calc(var(--sun-size) * .72);
+  --orbit-ry: calc(var(--sun-size) * .20);
+  --orbit-period: 26s;
+  --orbit-ease: cubic-bezier(.37, 0, .63, 1); /* sine approximation */
+}
+/* disc + surface sit at z2; the ring stays in front (like the wordmark),
+   while the planet's layer drops behind the disc on the far half of the orbit */
+.sun-disc, .sun-surface { z-index: 2; }
+.orbit, .planet-orbit {
+  position: absolute;
+  inset: 0;
+  border-radius: 0 !important;
+  transform: rotate(-18deg);
+  pointer-events: none;
+}
+.orbit { z-index: 3; }
+.planet-orbit {
+  z-index: 1;
+  animation: planet-z var(--orbit-period) linear infinite;
+}
+@keyframes planet-z {
+  0%, 49.99% { z-index: 1; }  /* far arc: behind the disc */
+  50%, 100%  { z-index: 4; }  /* near arc: in front */
+}
+.orbit-ring {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: calc(var(--orbit-rx) * 2);
+  height: calc(var(--orbit-ry) * 2);
+  transform: translate(-50%, -50%);
+  border: 1.5px solid rgba(120, 88, 40, .55);
+  border-radius: 50%;
+  box-shadow: 0 0 18px rgba(248, 180, 75, .25), inset 0 0 18px rgba(248, 180, 75, .18);
+}
+@media (prefers-color-scheme: dark) {
+  .orbit-ring { border-color: rgba(248, 200, 120, .40); }
+}
+.planet-x {
+  position: absolute;
+  left: 50%; top: 50%;
+  animation: orbit-x var(--orbit-period) var(--orbit-ease) infinite;
+}
+.planet-y { animation: orbit-y var(--orbit-period) var(--orbit-ease) infinite; }
+.planet {
+  width: calc(var(--sun-size) * .055);
+  height: calc(var(--sun-size) * .055);
+  margin: calc(var(--sun-size) * -.0275) 0 0 calc(var(--sun-size) * -.0275);
+  border-radius: 50%;
+  transform: rotate(18deg); /* undo orbit tilt so the highlight stays upright */
+  background: radial-gradient(circle at 32% 28%, #FFFFFF 0%, #FFCE8A 18%, var(--amber-bright) 55%, #B54A18 100%);
+  box-shadow:
+    0 0 14px 3px rgba(238, 130, 57, .65),
+    0 0 40px 10px rgba(238, 130, 57, .30);
+  animation: planet-depth var(--orbit-period) var(--orbit-ease) infinite;
+}
+/* x ≈ cos, y ≈ sin (quarter-phase keyframes with sine easing) */
+@keyframes orbit-x {
+  0%, 100% { transform: translateX(var(--orbit-rx)); }
+  50%      { transform: translateX(calc(var(--orbit-rx) * -1)); }
+}
+@keyframes orbit-y {
+  0%, 50%, 100% { transform: translateY(0); }
+  25%           { transform: translateY(calc(var(--orbit-ry) * -1)); }
+  75%           { transform: translateY(var(--orbit-ry)); }
+}
+/* smaller + dimmer on the far (top) arc, larger on the near (bottom) arc */
+@keyframes planet-depth {
+  0%, 100% { scale: 1;    filter: brightness(1); }
+  25%      { scale: .68;  filter: brightness(.82); }
+  75%      { scale: 1.18; filter: brightness(1.08); }
+}
+
 @keyframes rays-spin { to { transform: rotate(360deg); } }
 @keyframes sun-breathe { 50% { transform: scale(1.018); } }
 @keyframes glow-pulse { 50% { opacity: .78; } }
@@ -168,20 +256,23 @@ main.landing {
   text-transform: uppercase;
   opacity: .95;
 }
-.hero-title {
-  margin: 6px 0 0;
-  font-size: clamp(64px, 15vw, 148px);
-  line-height: 1.02;
-  letter-spacing: .06em;
-  text-indent: .06em;
-  font-weight: 760;
-  text-shadow: 0 2px 40px rgba(255, 226, 150, .45);
+.hero-title { margin: 10px 0 0; line-height: 0; }
+.hero-title img {
+  width: clamp(260px, 52vmin, 540px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 2px 30px rgba(255, 226, 150, .5));
 }
+/* interstellar-style tagline: thin, wide-tracked caps */
 .hero-sub {
-  margin: 16px 0 0;
-  font-size: clamp(16px, 3vw, 21px);
-  font-weight: 500;
-  opacity: .95;
+  margin: 22px 0 0;
+  font-size: clamp(11px, 2.1vw, 16px);
+  font-weight: 300;
+  letter-spacing: .52em;
+  text-indent: .52em;
+  text-transform: uppercase;
+  color: #2E2410;
+  opacity: 1;
 }
 .scroll-cue {
   position: absolute;
@@ -416,7 +507,8 @@ main.landing {
 
 /* ── reduced motion ─────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  .sun, .sun-glow, .sun-rays, .sun-shimmer, .scroll-cue, .mini-sun { animation: none; }
+  .sun, .sun-glow, .sun-rays, .sun-shimmer, .sun-surface, .scroll-cue, .mini-sun,
+  .planet-orbit, .planet-x, .planet-y, .planet { animation: none; }
   .reveal { opacity: 1; transform: none; filter: none; transition: none; }
   .hero-stage { height: 100vh; }
   .page-body { margin-top: 0; }
