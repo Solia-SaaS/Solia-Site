@@ -83,6 +83,14 @@ body.landing a:hover { color: var(--gold); }
 }
 .header-cta:hover { background: var(--gold); }
 
+/* menu button (Support / Legal) — style.css provides the base dropdown */
+.landing-header details.menu summary {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+}
+
 /* ── dot navigation ─────────────────────────────────────────────────────── */
 .dots {
   position: fixed;
