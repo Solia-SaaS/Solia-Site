@@ -3,17 +3,17 @@
    scopes its own theme vars to body.landing: dark by default, toggled to
    light via data-theme="light" on <html>. The hero is always black space. */
 
-/* single light theme (the hero stays black space) */
+/* single dark theme — black-space hero, dark panel after the scroll */
 body.landing {
-  --canvas: #E7E3D7;
-  --surface: #F2EEE3;
-  --raised: #ECE8DB;
-  --rule: #D8D3C4;
-  --ink: #1B1913;
-  --ink-soft: #4A4740;
-  --muted: #6B6862;
-  --accent: #E47235;
-  --gold: #E08A2C;
+  --canvas: #14120B;
+  --surface: #1B1913;
+  --raised: #211F19;
+  --rule: #302E29;
+  --ink: #F3F1EA;
+  --ink-soft: #C9C6BD;
+  --muted: #8A8781;
+  --accent: #EE8239;
+  --gold: #F8B44B;
   --space: #0D0B06;
 }
 
