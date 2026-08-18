@@ -29,6 +29,7 @@
       panelTop: offTop(panel),
       tourTop: offTop(tour),
       tourH: tour ? tour.offsetHeight : 1,
+      whyTop: offTop(document.getElementById("why")),
       whatTop: offTop(document.getElementById("what")),
       founderTop: offTop(document.getElementById("founder")),
       soonTop: offTop(document.getElementById("soon"))
@@ -145,6 +146,7 @@
       else if (y + vh * 0.45 > metrics.tourTop) sec = "tour";
       else if (y + vh * 0.45 > metrics.founderTop) sec = "founder";
       else if (y + vh * 0.45 > metrics.whatTop) sec = "what";
+      else if (y + vh * 0.45 > metrics.whyTop) sec = "why";
       setSection(sec);
     });
   }

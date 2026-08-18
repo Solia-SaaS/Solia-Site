@@ -269,28 +269,90 @@ main.landing {
   color: var(--ink-soft);
   max-width: 52ch;
 }
-.acronym-mono {
-  margin: 0;
-  font: 500 12px/1.8 "JetBrains Mono", monospace;
-  letter-spacing: .06em;
+/* why-solia-exists: failure list + closing answer */
+.fail-title {
+  margin: 0 0 6px;
+  font: 500 11px/1 "JetBrains Mono", monospace;
+  letter-spacing: .24em;
+  text-transform: uppercase;
   color: var(--muted);
 }
-.tri {
+.fail-list ul { list-style: none; margin: 0; padding: 0; }
+.fail-list li {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+  font: 400 15px/1.5 Manrope, sans-serif;
+  color: var(--ink-soft);
+}
+.fail-list li::before {
+  content: "—";
+  color: var(--accent);
+  font: 500 12px/1 "JetBrains Mono", monospace;
+}
+.why-answer {
+  margin: clamp(40px, 6vh, 64px) 0 0;
+  max-width: 56ch;
+  font: 400 clamp(17px, 1.8vw, 22px)/1.55 Manrope, sans-serif;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+/* what-solia-is: sub-statement + how-we-do-it list + acronym strip */
+.sub-statement {
+  margin: clamp(18px, 3vh, 28px) 0 0;
+  max-width: 42ch;
+  font: 400 clamp(18px, 2.2vw, 27px)/1.4 Manrope, sans-serif;
+  letter-spacing: -.01em;
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+.how-title {
+  margin: clamp(48px, 8vh, 90px) 0 0;
+  font: 500 11px/1 "JetBrains Mono", monospace;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.how-list { margin-top: 18px; border-top: 1px solid var(--rule); }
+.how-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  margin-top: clamp(56px, 9vh, 110px);
-  background: var(--rule);
-  border-top: 1px solid var(--rule);
+  grid-template-columns: clamp(40px, 5vw, 64px) minmax(0, 1fr);
+  gap: clamp(14px, 2.5vw, 32px);
+  align-items: start;
+  padding: clamp(20px, 3vh, 30px) 0;
   border-bottom: 1px solid var(--rule);
 }
-.tri > div {
-  background: var(--canvas);
-  padding: clamp(24px, 3vw, 38px) clamp(18px, 2.4vw, 32px) clamp(28px, 4vw, 44px);
+.how-num {
+  font: 500 clamp(10.5px, 1vw, 12px)/1.5 "JetBrains Mono", monospace;
+  letter-spacing: .2em;
+  color: var(--accent);
+  padding-top: 4px;
 }
-.tri-code { font: 500 10.5px/1 "JetBrains Mono", monospace; letter-spacing: .2em; color: var(--accent); }
-.tri h3 { margin: 18px 0 8px; font: 600 21px/1.2 Manrope, sans-serif; letter-spacing: -.02em; color: var(--ink); }
-.tri p { margin: 0; font: 400 15px/1.6 Manrope, sans-serif; color: var(--ink-soft); }
+.how-row h3 {
+  margin: 0 0 6px;
+  font: 600 clamp(17px, 1.9vw, 22px)/1.25 Manrope, sans-serif;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+.how-row p {
+  margin: 0;
+  max-width: 62ch;
+  font: 400 clamp(14.5px, 1.35vw, 16.5px)/1.6 Manrope, sans-serif;
+  color: var(--ink-soft);
+}
+.acronym-strip {
+  margin: clamp(44px, 7vh, 80px) 0 0;
+  font: 500 clamp(10px, 1vw, 12px)/1.7 "JetBrains Mono", monospace;
+  letter-spacing: .08em;
+  color: var(--muted);
+}
+.acronym-strip span {
+  color: var(--accent);
+  letter-spacing: .24em;
+}
 
 /* ── reveal-on-scroll ───────────────────────────────────────────────────── */
 [data-reveal] {
