@@ -27,10 +27,14 @@ description: Solia is a Life Operating System designed to align your actions wit
             <stop offset="0.45" stop-color="#EE8239" stop-opacity="0.22"/>
             <stop offset="1" stop-color="#EE8239" stop-opacity="0"/>
           </radialGradient>
-          <!-- single clean ring gradient: orange at the far end, yellow at the tip -->
+          <!-- single clean ring gradient: orange at the far end, yellow at the
+               tip; the gradient itself rotates so the hot end circulates around
+               the ellipse (same direction as the planet, its own speed) -->
           <linearGradient id="hw-ring" gradientUnits="userSpaceOnUse" x1="-8" y1="62" x2="160" y2="62">
             <stop offset="0" stop-color="#E47235"/>
             <stop offset="1" stop-color="#F8B44B"/>
+            <animateTransform attributeName="gradientTransform" type="rotate"
+              from="360 76 62" to="0 76 62" dur="9s" repeatCount="indefinite"/>
           </linearGradient>
           <!-- realistic planet: lit sphere + terminator shading -->
           <radialGradient id="hw-planetbase" cx="0.34" cy="0.3" r="0.85">
@@ -76,6 +80,9 @@ description: Solia is a Life Operating System designed to align your actions wit
             <stop offset="0.8" stop-color="#EE8239"/>
             <stop offset="1" stop-color="#D2551F"/>
           </radialGradient>
+          <filter id="hw-soft" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="1.3"/>
+          </filter>
         </defs>
         <circle cx="76" cy="62" r="42" fill="url(#hw-corona)"/>
         <!-- full orbit ring, drawn behind the sun -->
@@ -109,6 +116,18 @@ description: Solia is a Life Operating System designed to align your actions wit
           <circle cx="76" cy="62" r="22" fill="url(#hw-sunreal)"/>
           <circle class="sun-spin" cx="76" cy="62" r="23.5" fill="#F8B44B" filter="url(#hw-granule)"/>
           <circle class="sun-spin-rev" cx="76" cy="62" r="23.5" fill="#E47235" filter="url(#hw-granule2)"/>
+          <!-- transit shadow: follows the planet, only visible on the disc
+               during the near-arc crossing (clip keeps it off the sky) -->
+          <g class="planet-anim">
+            <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.4999;0.5;1" dur="14s" repeatCount="indefinite"/>
+            <g transform="rotate(-18 76 62)">
+              <g>
+                <circle cx="1.6" cy="1.8" r="5.6" fill="#2A0E02" opacity="0.4" filter="url(#hw-soft)"/>
+                <animateMotion dur="14s" repeatCount="indefinite"
+                  path="M160 62 A84 8 0 0 0 -8 62 A84 8 0 0 0 160 62"/>
+              </g>
+            </g>
+          </g>
         </g>
         <!-- near half of the ring, crossing in front of the sun (same gradient) -->
         <g transform="rotate(-18 76 62)">
