@@ -1,0 +1,12 @@
+title: Solia
+description: Solia is a Life Operating System designed to align your actions with your goals in order to achieve desired outcomes.
+url: https://getsolia.com
+
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: false
+
+exclude:
+  - README.md

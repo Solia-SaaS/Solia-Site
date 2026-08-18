@@ -1,0 +1,171 @@
+/* Solia legal — brand values from workspace/overview/branding.md */
+:root {
+  --amber: #E47235;
+  --amber-bright: #EE8239;
+  --link: #1670B6;
+  --ink: #1B1913;
+  --ink-soft: #4A4740;
+  --muted: #6B6862;
+  --canvas: #E7E3D7;
+  --surface: #F2EEE3;
+  --rule: #D8D3C4;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --link: #2E8FD9;
+    --ink: #F3F1EA;
+    --ink-soft: #C9C6BD;
+    --muted: #989794;
+    --canvas: #14120B;
+    --surface: #1B1913;
+    --rule: #302E29;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-feature-settings: "kern" 1;
+}
+
+/* ── header ─────────────────────────────────────────────────────────────── */
+header.site {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 28px;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--surface);
+}
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 19px;
+  font-weight: 650;
+  letter-spacing: .02em;
+  color: var(--ink);
+  text-decoration: none;
+  margin-right: auto;
+}
+.wordmark .dot {
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 30%, #F8B44B, var(--amber) 70%);
+  box-shadow: 0 0 0 3px rgba(228,114,53,.16);
+}
+header.site nav { display: flex; flex-wrap: wrap; gap: 20px; }
+header.site nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14.5px;
+  padding: 2px 0;
+  border-bottom: 1.5px solid transparent;
+}
+header.site nav a:hover { color: var(--ink); border-bottom-color: var(--amber); }
+
+/* ── content ────────────────────────────────────────────────────────────── */
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 44px 24px 72px;
+}
+
+main h1 {
+  font-size: clamp(28px, 5vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -.015em;
+  margin: 0 0 6px;
+}
+/* the "Version x — last updated" line that follows each H1 */
+main h1 + p em, main h1 + p > em { color: var(--muted); font-style: normal; font-size: 14px; }
+
+main h2 {
+  font-size: 20px;
+  margin: 40px 0 10px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+  letter-spacing: -.01em;
+}
+main h1 + p + h2 { border-top: 0; padding-top: 0; }
+
+main h3 { font-size: 17px; margin: 26px 0 8px; }
+
+main p, main li { color: var(--ink-soft); }
+main strong { color: var(--ink); font-weight: 640; }
+
+main a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+main a:hover { color: var(--amber); }
+
+main ul, main ol { padding-left: 22px; }
+main li { margin: 6px 0; }
+
+main hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
+
+main blockquote {
+  margin: 20px 0;
+  padding: 14px 18px;
+  border-left: 3px solid var(--amber);
+  background: var(--surface);
+  border-radius: 0 8px 8px 0;
+}
+main blockquote p:last-child { margin-bottom: 0; }
+
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 15px;
+  display: block;
+  overflow-x: auto;
+}
+main th, main td {
+  border: 1px solid var(--rule);
+  padding: 9px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+main th { background: var(--surface); color: var(--ink); font-weight: 620; }
+
+main code {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  padding: 1px 5px;
+  font-size: 13.5px;
+}
+
+/* index page link cards */
+.doc-list { list-style: none; padding: 0; margin: 28px 0 0; }
+.doc-list li { margin: 0 0 12px; }
+.doc-list a {
+  display: block;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+}
+.doc-list a:hover { border-color: var(--amber); color: var(--ink); }
+.doc-list span { display: block; font-weight: 400; font-size: 14.5px; color: var(--muted); margin-top: 3px; }
+
+/* ── footer ─────────────────────────────────────────────────────────────── */
+footer.site {
+  border-top: 1px solid var(--rule);
+  background: var(--surface);
+  padding: 26px 24px 40px;
+  color: var(--muted);
+  font-size: 14px;
+}
+footer.site p { max-width: 720px; margin: 0 auto 6px; }
+footer.site a { color: var(--link); text-decoration: none; }
+footer.site a:hover { text-decoration: underline; }
