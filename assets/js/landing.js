@@ -30,6 +30,7 @@
       tourTop: offTop(tour),
       tourH: tour ? tour.offsetHeight : 1,
       whatTop: offTop(document.getElementById("what")),
+      founderTop: offTop(document.getElementById("founder")),
       soonTop: offTop(document.getElementById("soon"))
     };
   }
@@ -41,12 +42,13 @@
   function setStep(i) {
     if (i === activeStep) return;
     activeStep = i;
-    steps.forEach(function (el, j) {
+    steps.forEach(function (el) {
+      var j = parseInt(el.getAttribute("data-step"), 10);
       el.classList.toggle("is-active", j === i);
       el.classList.toggle("is-before", j < i);
     });
-    screens.forEach(function (el, j) {
-      el.classList.toggle("is-active", j === i);
+    screens.forEach(function (el) {
+      el.classList.toggle("is-active", parseInt(el.getAttribute("data-step"), 10) === i);
     });
     if (railFill) {
       railFill.style.top = (i * (100 / STEP_COUNT)).toFixed(2) + "%";
@@ -141,6 +143,7 @@
       var sec = "top";
       if (y + vh * 0.45 > metrics.soonTop) sec = "soon";
       else if (y + vh * 0.45 > metrics.tourTop) sec = "tour";
+      else if (y + vh * 0.45 > metrics.founderTop) sec = "founder";
       else if (y + vh * 0.45 > metrics.whatTop) sec = "what";
       setSection(sec);
     });

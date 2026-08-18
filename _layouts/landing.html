@@ -11,8 +11,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/landing.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<link rel="stylesheet" href="{{ '/assets/css/landing.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body class="landing">
 
@@ -45,6 +45,7 @@
 <nav class="dots" aria-label="Sections">
   <a href="#top" data-dot="top"><span class="dot-label">Welcome</span><span class="dot-line"></span></a>
   <a href="#what" data-dot="what"><span class="dot-label">Overview</span><span class="dot-line"></span></a>
+  <a href="#founder" data-dot="founder"><span class="dot-label">Founder</span><span class="dot-line"></span></a>
   <a href="#tour" data-dot="tour"><span class="dot-label">The app</span><span class="dot-line"></span></a>
   <a href="#soon" data-dot="soon"><span class="dot-label">Early access</span><span class="dot-line"></span></a>
 </nav>
@@ -53,6 +54,6 @@
 {{ content }}
 </main>
 
-<script src="{{ '/assets/js/landing.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/landing.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 </body>
 </html>
