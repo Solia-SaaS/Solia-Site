@@ -729,6 +729,7 @@ main.landing {
   font: 400 17px/1.65 Manrope, sans-serif;
   color: var(--ink-soft);
 }
+.soon-bright { margin-top: 14px; color: var(--gold); }
 .waitlist {
   display: flex;
   gap: 10px;
