@@ -225,11 +225,17 @@
     }
   );
 
+  var soonFx = document.querySelector(".soon-fx");
+  if (soonFx) {
+    var soonCtx = soonFx.getContext("2d");
+    if (soonCtx) seams.push({ el: soonFx, ctx: soonCtx, stars: [], w: 0, h: 0, dense: true });
+  }
+
   function seedSeam(s) {
     s.stars = [];
     /* width-based with a floor so narrow phones still get a real field
        (area-based counts collapsed to ~5 stars on a 390px strip) */
-    var n = Math.round(Math.min(90, Math.max(16, s.w / 22)));
+    var n = Math.round(Math.min(s.dense ? 180 : 90, Math.max(16, (s.w / 22) * (s.dense ? 2.4 : 1))));
     for (var i = 0; i < n; i++) {
       var y = Math.random() * s.h;
       s.stars.push({
