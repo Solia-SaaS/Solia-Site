@@ -523,56 +523,15 @@ main.landing {
   color: var(--muted);
 }
 
-/* ── tour: pinned section ───────────────────────────────────────────────── */
-#tour { position: relative; height: 520vh; }
-.tour-pin {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  height: 100svh;
-  overflow: hidden;
+/* ── the app, 04–08: one normal band per surface ────────────────────────── */
+.app-split {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, .85fr);
-  gap: clamp(24px, 5vw, 80px);
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: clamp(28px, 5vw, 80px);
   align-items: center;
-  padding: 0 clamp(24px, 5vw, 64px);
 }
-.tour-copy {
-  max-width: 1080px;
-  width: 100%;
-  margin-left: auto;
-  position: relative;
-  height: min(560px, 74svh);
-}
-.rail-track {
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 1px;
-  background: var(--rule);
-}
-.rail-fill {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 20%;
-  width: 1px;
-  background: var(--accent);
-  transition: top .5s cubic-bezier(.22, .8, .26, 1), height .5s cubic-bezier(.22, .8, .26, 1);
-}
-.tour-step {
-  position: absolute;
-  left: 0; right: 0;
-  top: 50%;
-  padding-left: clamp(22px, 3vw, 42px);
-  transform: translateY(-50%) translateY(34px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .55s ease, transform .65s cubic-bezier(.22, .8, .26, 1);
-}
-.tour-step.is-active { transform: translateY(-50%); opacity: 1; pointer-events: auto; }
-.tour-step.is-before { transform: translateY(-50%) translateY(-34px); }
-.tour-step .eyebrow-mono { margin-bottom: 22px; }
-.tour-step h2 {
+.app-copy .eyebrow-mono { margin-bottom: 22px; }
+.step-title {
   margin: 0 0 20px;
   max-width: 16ch;
   font: 300 clamp(30px, 4.4vw, 52px)/1.08 Manrope, sans-serif;
@@ -611,10 +570,10 @@ main.landing {
 }
 
 /* the phone (always dark, regardless of theme) */
-.tour-visual { display: flex; justify-content: center; align-items: center; }
+.app-phone { display: flex; justify-content: center; align-items: center; }
 .phone {
   position: relative;
-  height: min(643px, 74svh);
+  height: min(600px, 72svh);
   width: auto;
   aspect-ratio: 9 / 19.3;
   max-width: 70vw;
@@ -816,32 +775,15 @@ main.landing {
   .how-row { grid-template-columns: clamp(40px, 5vw, 64px) minmax(0, 1fr); }
   .how-diff { grid-column: 2; margin-top: 2px; align-self: auto; justify-content: flex-start; }
   .tri { grid-template-columns: 1fr; }
-  .tour-pin {
-    grid-template-columns: 1fr;
-    /* copy on top, phone below */
-    grid-template-rows: minmax(0, 1fr) minmax(0, 36svh);
-    gap: 20px;
-    padding-top: 76px;
-    padding-bottom: 24px;
-  }
-  .tour-copy { height: 100%; margin-left: 0; }
-  /* steps anchor to the top of the copy row (centring clips tall copy) */
-  .tour-step { top: 0; transform: translateY(26px); }
-  .tour-step.is-active { transform: translateY(0); }
-  .tour-step.is-before { transform: translateY(-26px); }
-  .tour-step .eyebrow-mono { margin-bottom: 12px; }
-  .tour-step h2 { font-size: clamp(21px, 5.6vw, 30px); margin-bottom: 12px; }
-  .step-body { font-size: 14px; margin-bottom: 14px; }
-  .ticks { gap: 8px; }
-  .ticks li { font-size: 13px; }
-  .tour-visual { align-items: flex-start; }
-  .phone { height: min(643px, 34svh); }
+  /* app sections: copy on top, phone below */
+  .app-split { grid-template-columns: 1fr; gap: 30px; }
+  .phone { height: min(560px, 58svh); }
   .header-cta { display: none; }
 }
 /* narrow screens: the rail stays, labels drop, content clears its lane */
 @media (max-width: 700px) {
   .dot-label { display: none; }
-  .band, .tour-pin { padding-right: clamp(44px, 12vw, 64px); }
+  .band { padding-right: clamp(44px, 12vw, 64px); }
   .closing .band-inner { padding-right: 0; }
 }
 

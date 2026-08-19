@@ -437,87 +437,30 @@ description: Solia is a Life Operating System designed to align your actions wit
     </div>
   </section>
 
-  <!-- ── App tour: pinned; the phone stays, copy + screen swap per step ──── -->
-  <section id="tour">
-    <div class="tour-pin">
-      <div class="tour-copy">
-        <div class="rail-track" aria-hidden="true"></div>
-        <div class="rail-fill" id="railFill" aria-hidden="true"></div>
-
-        <div class="tour-step" data-step="0">
-          <p class="eyebrow-mono">04 — Schedule</p>
-          <h2>Your day, planned before it starts.</h2>
-          <p class="step-body">Your schedule blocks run from wake time to wake time across days. Each
-             night you plan and fine tune your schedule for the next day so you're
-             ready to tackle each day from the moment you wake up. Speak to it, tap
-             to add blocks, or let Solia plan for you.</p>
-          <ul class="ticks">
-            <li><span class="tick-dot" aria-hidden="true"></span><span>Voice-control lets you effortlessly plan and change your plan on the fly</span></li>
-            <li><span class="tick-dot" aria-hidden="true"></span><span>Templates let you quickly build repeated structure</span></li>
-            <li><span class="tick-dot" aria-hidden="true"></span><span>What you planned vs. actually did, side by side</span></li>
-          </ul>
-        </div>
-
-        <div class="tour-step" data-step="1">
-          <p class="eyebrow-mono">05 — Toolkits</p>
-          <h2>Deep toolkits for every discipline.</h2>
-          <p class="step-body">Purpose-built toolkits plug straight into your day. Fitness is first:
-             workouts logged by voice mid-session, meals captured as they happen —
-             all scored into the same day as everything else.</p>
-          <ul class="ticks">
-            <li><span class="tick-dot" aria-hidden="true"></span><span>Fitness toolkit — first out the door</span></li>
-            <li><span class="tick-dot" aria-hidden="true"></span><span>Per-set logging with intensity lanes</span></li>
-            <li><span class="tick-dot" aria-hidden="true"></span><span>Meals and macros folded into your score</span></li>
-          </ul>
-        </div>
-
-        <div class="tour-step" data-step="2">
-          <p class="eyebrow-mono">06 — Coaching</p>
-          <h2>A coach that actually knows you.</h2>
-          <p class="step-body">Every morning, a sealed report on the day you just lived — and a goal
-             ladder that climbs with you. Read from your real data, not a
-             questionnaire from three weeks ago.</p>
-          <ul class="ticks">
-            <li><span class="tick-dot" aria-hidden="true"></span><span>Daily and weekly reports written for you</span></li>
-            <li><span class="tick-dot" aria-hidden="true"></span><span>Three-tier goals: the star, the season, tomorrow</span></li>
-            <li><span class="tick-dot" aria-hidden="true"></span><span>Every target backed by your own data</span></li>
-          </ul>
-        </div>
-
-        <div class="tour-step" data-step="3">
-          <p class="eyebrow-mono">07 — Social</p>
-          <h2>Rise together.</h2>
-          <p class="step-body">Share the climb. Stories, messages and a feed of how people are really
-             living — not just what they post.</p>
-          <ul class="ticks">
-            <li><span class="tick-dot" aria-hidden="true"></span><span>Stories and posts straight from your day</span></li>
-            <li><span class="tick-dot" aria-hidden="true"></span><span>Fast, modern messaging</span></li>
-            <li><span class="tick-dot" aria-hidden="true"></span><span>Follow the people pushing you</span></li>
-          </ul>
-        </div>
-
-        <div class="tour-step" data-step="4">
-          <p class="eyebrow-mono">08 — Leaderboards</p>
-          <h2>Your whole life is the game.</h2>
-          <p class="step-body">A global leaderboard where consistency is the score. Seasons, tiers and
-             matchups — earned from the way you actually live.</p>
-          <ul class="ticks">
-            <li><span class="tick-dot" aria-hidden="true"></span><span>Seasonal global rankings</span></li>
-            <li><span class="tick-dot" aria-hidden="true"></span><span>Tiers from Novice to Life Maxxed</span></li>
-            <li><span class="tick-dot" aria-hidden="true"></span><span>Head-to-head matchups that keep it honest</span></li>
-          </ul>
-        </div>
+    <!-- ── 04 — Schedule ───────────────────────────────────────── -->
+  <section class="band app-band" id="schedule">
+    <div class="band-inner app-split">
+      <div class="app-copy">
+        <p class="eyebrow-mono" data-reveal>04 — Schedule</p>
+        <h2 class="step-title" data-reveal>Your day, planned before it starts.</h2>
+        <p class="step-body" data-reveal>Your schedule blocks run from wake time to wake time across days. Each
+           night you plan and fine tune your schedule for the next day so you're
+           ready to tackle each day from the moment you wake up. Speak to it, tap
+           to add blocks, or let Solia plan for you.</p>
+        <ul class="ticks" data-reveal>
+          <li><span class="tick-dot" aria-hidden="true"></span><span>Voice-control lets you effortlessly plan and change your plan on the fly</span></li>
+          <li><span class="tick-dot" aria-hidden="true"></span><span>Templates let you quickly build repeated structure</span></li>
+          <li><span class="tick-dot" aria-hidden="true"></span><span>What you planned vs. actually did, side by side</span></li>
+        </ul>
       </div>
-
-      <div class="tour-visual">
+      <div class="app-phone" data-reveal>
         <div class="phone">
           <div class="phone-notch" aria-hidden="true"></div>
           <div class="phone-screen">
             <div class="phone-glow" aria-hidden="true"></div>
-
-            <!-- Schematic placeholders — swap each .screen for a real capture -->
-            <div class="screen" data-step="0">
-              <div class="screen-head"><span class="s-title">Today</span><span class="s-meta">Mon 06:40</span></div>
+            <!-- Schematic placeholder — swap for a real capture -->
+            <div class="screen is-active">
+            <div class="screen-head"><span class="s-title">Today</span><span class="s-meta">Mon 06:40</span></div>
               <div class="srow"><span class="s-mark" style="background:#EE8239"></span><span class="s-mid"><span class="s-label">Deep work — Solia build</span><span class="s-track" style="width:70%"><span class="s-fill" style="width:100%;background:#EE8239"></span></span></span><span class="s-val">3h</span></div>
               <div class="srow"><span class="s-mark" style="background:#F8B44B"></span><span class="s-mid"><span class="s-label">Lower body · strength</span><span class="s-track" style="width:58%"><span class="s-fill" style="width:80%;background:#F8B44B"></span></span></span><span class="s-val">75m</span></div>
               <div class="srow"><span class="s-mark" style="background:#7FA8B8"></span><span class="s-mid"><span class="s-label">Lunch · 720 kcal</span><span class="s-track" style="width:44%"><span class="s-fill" style="width:60%;background:#7FA8B8"></span></span></span><span class="s-val">45m</span></div>
@@ -525,19 +468,35 @@ description: Solia is a Life Operating System designed to align your actions wit
               <div class="srow"><span class="s-mark" style="background:#F8B44B"></span><span class="s-mid"><span class="s-label">Wind-down · reading</span><span class="s-track" style="width:48%"><span class="s-fill" style="width:35%;background:#F8B44B"></span></span></span><span class="s-val">50m</span></div>
               <span class="ph-note">Placeholder — real capture pending</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <div class="screen" data-step="2">
-              <div class="screen-head"><span class="s-title">Daily report</span><span class="s-meta">Score 87</span></div>
-              <div class="srow"><span class="s-mark" style="background:#EE8239"></span><span class="s-mid"><span class="s-label">Adherence to plan</span><span class="s-track" style="width:100%"><span class="s-fill" style="width:92%;background:#EE8239"></span></span></span><span class="s-val">92</span></div>
-              <div class="srow"><span class="s-mark" style="background:#F8B44B"></span><span class="s-mid"><span class="s-label">Training load</span><span class="s-track" style="width:100%"><span class="s-fill" style="width:78%;background:#F8B44B"></span></span></span><span class="s-val">78</span></div>
-              <div class="srow"><span class="s-mark" style="background:#7FA8B8"></span><span class="s-mid"><span class="s-label">Nutrition</span><span class="s-track" style="width:100%"><span class="s-fill" style="width:84%;background:#7FA8B8"></span></span></span><span class="s-val">84</span></div>
-              <div class="srow"><span class="s-mark" style="background:#EE8239"></span><span class="s-mid"><span class="s-label">Recovery</span><span class="s-track" style="width:100%"><span class="s-fill" style="width:69%;background:#EE8239"></span></span></span><span class="s-val">69</span></div>
-              <div class="srow"><span class="s-mark" style="background:#F8B44B"></span><span class="s-mid"><span class="s-label">Focus hours</span><span class="s-track" style="width:100%"><span class="s-fill" style="width:95%;background:#F8B44B"></span></span></span><span class="s-val">95</span></div>
-              <span class="ph-note">Placeholder — real capture pending</span>
-            </div>
-
-            <div class="screen" data-step="1">
-              <div class="screen-head"><span class="s-title">Push day</span><span class="s-meta">Set 3 of 14</span></div>
+  <!-- ── 05 — Toolkits ───────────────────────────────────────── -->
+  <section class="band app-band" id="toolkits">
+    <div class="band-inner app-split">
+      <div class="app-copy">
+        <p class="eyebrow-mono" data-reveal>05 — Toolkits</p>
+        <h2 class="step-title" data-reveal>Deep toolkits for every discipline.</h2>
+        <p class="step-body" data-reveal>Purpose-built toolkits plug straight into your day. Fitness is first:
+           workouts logged by voice mid-session, meals captured as they happen —
+           all scored into the same day as everything else.</p>
+        <ul class="ticks" data-reveal>
+          <li><span class="tick-dot" aria-hidden="true"></span><span>Fitness toolkit — first out the door</span></li>
+          <li><span class="tick-dot" aria-hidden="true"></span><span>Per-set logging with intensity lanes</span></li>
+          <li><span class="tick-dot" aria-hidden="true"></span><span>Meals and macros folded into your score</span></li>
+        </ul>
+      </div>
+      <div class="app-phone" data-reveal>
+        <div class="phone">
+          <div class="phone-notch" aria-hidden="true"></div>
+          <div class="phone-screen">
+            <div class="phone-glow" aria-hidden="true"></div>
+            <!-- Schematic placeholder — swap for a real capture -->
+            <div class="screen is-active">
+            <div class="screen-head"><span class="s-title">Push day</span><span class="s-meta">Set 3 of 14</span></div>
               <div class="srow"><span class="s-mark" style="background:#EE8239"></span><span class="s-mid"><span class="s-label">Incline press · 82.5kg</span><span class="s-track" style="width:62%"><span class="s-fill" style="width:88%;background:#EE8239"></span></span></span><span class="s-val">8</span></div>
               <div class="srow"><span class="s-mark" style="background:#F8B44B"></span><span class="s-mid"><span class="s-label">Weighted dip · 30kg</span><span class="s-track" style="width:56%"><span class="s-fill" style="width:72%;background:#F8B44B"></span></span></span><span class="s-val">10</span></div>
               <div class="srow"><span class="s-mark" style="background:#7FA8B8"></span><span class="s-mid"><span class="s-label">Cable fly · 22kg</span><span class="s-track" style="width:50%"><span class="s-fill" style="width:64%;background:#7FA8B8"></span></span></span><span class="s-val">12</span></div>
@@ -545,9 +504,70 @@ description: Solia is a Life Operating System designed to align your actions wit
               <div class="srow"><span class="s-mark" style="background:#F8B44B"></span><span class="s-mid"><span class="s-label">Protein · 168 / 190g</span><span class="s-track" style="width:70%"><span class="s-fill" style="width:88%;background:#F8B44B"></span></span></span><span class="s-val">88%</span></div>
               <span class="ph-note">Placeholder — real capture pending</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <div class="screen" data-step="3">
-              <div class="screen-head"><span class="s-title">Feed</span><span class="s-meta">Following</span></div>
+  <!-- ── 06 — Coaching ───────────────────────────────────────── -->
+  <section class="band app-band" id="coaching">
+    <div class="band-inner app-split">
+      <div class="app-copy">
+        <p class="eyebrow-mono" data-reveal>06 — Coaching</p>
+        <h2 class="step-title" data-reveal>A coach that actually knows you.</h2>
+        <p class="step-body" data-reveal>Every morning, a sealed report on the day you just lived — and a goal
+           ladder that climbs with you. Read from your real data, not a
+           questionnaire from three weeks ago.</p>
+        <ul class="ticks" data-reveal>
+          <li><span class="tick-dot" aria-hidden="true"></span><span>Daily and weekly reports written for you</span></li>
+          <li><span class="tick-dot" aria-hidden="true"></span><span>Three-tier goals: the star, the season, tomorrow</span></li>
+          <li><span class="tick-dot" aria-hidden="true"></span><span>Every target backed by your own data</span></li>
+        </ul>
+      </div>
+      <div class="app-phone" data-reveal>
+        <div class="phone">
+          <div class="phone-notch" aria-hidden="true"></div>
+          <div class="phone-screen">
+            <div class="phone-glow" aria-hidden="true"></div>
+            <!-- Schematic placeholder — swap for a real capture -->
+            <div class="screen is-active">
+            <div class="screen-head"><span class="s-title">Daily report</span><span class="s-meta">Score 87</span></div>
+              <div class="srow"><span class="s-mark" style="background:#EE8239"></span><span class="s-mid"><span class="s-label">Adherence to plan</span><span class="s-track" style="width:100%"><span class="s-fill" style="width:92%;background:#EE8239"></span></span></span><span class="s-val">92</span></div>
+              <div class="srow"><span class="s-mark" style="background:#F8B44B"></span><span class="s-mid"><span class="s-label">Training load</span><span class="s-track" style="width:100%"><span class="s-fill" style="width:78%;background:#F8B44B"></span></span></span><span class="s-val">78</span></div>
+              <div class="srow"><span class="s-mark" style="background:#7FA8B8"></span><span class="s-mid"><span class="s-label">Nutrition</span><span class="s-track" style="width:100%"><span class="s-fill" style="width:84%;background:#7FA8B8"></span></span></span><span class="s-val">84</span></div>
+              <div class="srow"><span class="s-mark" style="background:#EE8239"></span><span class="s-mid"><span class="s-label">Recovery</span><span class="s-track" style="width:100%"><span class="s-fill" style="width:69%;background:#EE8239"></span></span></span><span class="s-val">69</span></div>
+              <div class="srow"><span class="s-mark" style="background:#F8B44B"></span><span class="s-mid"><span class="s-label">Focus hours</span><span class="s-track" style="width:100%"><span class="s-fill" style="width:95%;background:#F8B44B"></span></span></span><span class="s-val">95</span></div>
+              <span class="ph-note">Placeholder — real capture pending</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 07 — Social ─────────────────────────────────────────── -->
+  <section class="band app-band" id="social">
+    <div class="band-inner app-split">
+      <div class="app-copy">
+        <p class="eyebrow-mono" data-reveal>07 — Social</p>
+        <h2 class="step-title" data-reveal>Rise together.</h2>
+        <p class="step-body" data-reveal>Share the climb. Stories, messages and a feed of how people are really
+           living — not just what they post.</p>
+        <ul class="ticks" data-reveal>
+          <li><span class="tick-dot" aria-hidden="true"></span><span>Stories and posts straight from your day</span></li>
+          <li><span class="tick-dot" aria-hidden="true"></span><span>Fast, modern messaging</span></li>
+          <li><span class="tick-dot" aria-hidden="true"></span><span>Follow the people pushing you</span></li>
+        </ul>
+      </div>
+      <div class="app-phone" data-reveal>
+        <div class="phone">
+          <div class="phone-notch" aria-hidden="true"></div>
+          <div class="phone-screen">
+            <div class="phone-glow" aria-hidden="true"></div>
+            <!-- Schematic placeholder — swap for a real capture -->
+            <div class="screen is-active">
+            <div class="screen-head"><span class="s-title">Feed</span><span class="s-meta">Following</span></div>
               <div class="srow"><span class="s-mark" style="background:#EE8239"></span><span class="s-mid"><span class="s-label">ren · finished Push Day</span><span class="s-track" style="width:56%"><span class="s-fill" style="width:90%;background:#EE8239"></span></span></span><span class="s-val">2m</span></div>
               <div class="srow"><span class="s-mark" style="background:#F8B44B"></span><span class="s-mid"><span class="s-label">sofia.b · 10k personal best</span><span class="s-track" style="width:64%"><span class="s-fill" style="width:76%;background:#F8B44B"></span></span></span><span class="s-val">18m</span></div>
               <div class="srow"><span class="s-mark" style="background:#7FA8B8"></span><span class="s-mid"><span class="s-label">marcus.k · daily report 91</span><span class="s-track" style="width:48%"><span class="s-fill" style="width:66%;background:#7FA8B8"></span></span></span><span class="s-val">1h</span></div>
@@ -555,9 +575,34 @@ description: Solia is a Life Operating System designed to align your actions wit
               <div class="srow"><span class="s-mark" style="background:#EE8239"></span><span class="s-mid"><span class="s-label">you · story posted</span><span class="s-track" style="width:42%"><span class="s-fill" style="width:100%;background:#EE8239"></span></span></span><span class="s-val">now</span></div>
               <span class="ph-note">Placeholder — real capture pending</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <div class="screen" data-step="4">
-              <div class="screen-head"><span class="s-title">Leaderboard</span><span class="s-meta">Season 2</span></div>
+  <!-- ── 08 — Leaderboards ───────────────────────────────────── -->
+  <section class="band app-band" id="leaderboards">
+    <div class="band-inner app-split">
+      <div class="app-copy">
+        <p class="eyebrow-mono" data-reveal>08 — Leaderboards</p>
+        <h2 class="step-title" data-reveal>Your whole life is the game.</h2>
+        <p class="step-body" data-reveal>A global leaderboard where consistency is the score. Seasons, tiers and
+           matchups — earned from the way you actually live.</p>
+        <ul class="ticks" data-reveal>
+          <li><span class="tick-dot" aria-hidden="true"></span><span>Seasonal global rankings</span></li>
+          <li><span class="tick-dot" aria-hidden="true"></span><span>Tiers from Novice to Life Maxxed</span></li>
+          <li><span class="tick-dot" aria-hidden="true"></span><span>Head-to-head matchups that keep it honest</span></li>
+        </ul>
+      </div>
+      <div class="app-phone" data-reveal>
+        <div class="phone">
+          <div class="phone-notch" aria-hidden="true"></div>
+          <div class="phone-screen">
+            <div class="phone-glow" aria-hidden="true"></div>
+            <!-- Schematic placeholder — swap for a real capture -->
+            <div class="screen is-active">
+            <div class="screen-head"><span class="s-title">Leaderboard</span><span class="s-meta">Season 2</span></div>
               <div class="srow"><span class="s-mark" style="background:#F8B44B"></span><span class="s-mid"><span class="s-label">1 · marcus.k</span><span class="s-track" style="width:100%"><span class="s-fill" style="width:100%;background:#F8B44B"></span></span></span><span class="s-val">9,412</span></div>
               <div class="srow"><span class="s-mark" style="background:#EE8239"></span><span class="s-mid"><span class="s-label">2 · ren</span><span class="s-track" style="width:96%"><span class="s-fill" style="width:94%;background:#EE8239"></span></span></span><span class="s-val">9,180</span></div>
               <div class="srow"><span class="s-mark" style="background:#EE8239"></span><span class="s-mid"><span class="s-label">3 · you</span><span class="s-track" style="width:92%"><span class="s-fill" style="width:89%;background:#EE8239"></span></span></span><span class="s-val">8,905</span></div>
@@ -565,7 +610,6 @@ description: Solia is a Life Operating System designed to align your actions wit
               <div class="srow"><span class="s-mark" style="background:#7FA8B8"></span><span class="s-mid"><span class="s-label">5 · dmitri</span><span class="s-track" style="width:82%"><span class="s-fill" style="width:77%;background:#7FA8B8"></span></span></span><span class="s-val">8,102</span></div>
               <span class="ph-note">Placeholder — real capture pending</span>
             </div>
-
           </div>
         </div>
       </div>

@@ -15,11 +15,6 @@
   var heroTag = document.getElementById("heroTag");
   var heroCue = document.getElementById("heroCue");
   var panel = document.getElementById("panel");
-  var tour = document.getElementById("tour");
-  var railFill = document.getElementById("railFill");
-  var steps = Array.prototype.slice.call(document.querySelectorAll(".tour-step"));
-  var screens = Array.prototype.slice.call(document.querySelectorAll(".screen"));
-  var STEP_COUNT = steps.length || 1;
   var heroSvg = heroTitle ? heroTitle.querySelector("svg") : null;
 
   var metrics = null;
@@ -29,8 +24,7 @@
     metrics = {
       headerH: header ? header.offsetHeight : 68,
       panelTop: offTop(panel),
-      tourTop: offTop(tour),
-      tourH: tour ? tour.offsetHeight : 1,
+      appTop: offTop(document.getElementById("schedule")),
       whyTop: offTop(document.getElementById("why")),
       whatTop: offTop(document.getElementById("what")),
       founderTop: offTop(document.getElementById("founder")),
@@ -40,26 +34,7 @@
 
   function clamp01(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
 
-  /* ── tour + dots state ────────────────────────────────────────────────── */
-  var activeStep = -1;
-  function setStep(i) {
-    if (i === activeStep) return;
-    activeStep = i;
-    steps.forEach(function (el) {
-      var j = parseInt(el.getAttribute("data-step"), 10);
-      el.classList.toggle("is-active", j === i);
-      el.classList.toggle("is-before", j < i);
-    });
-    screens.forEach(function (el) {
-      el.classList.toggle("is-active", parseInt(el.getAttribute("data-step"), 10) === i);
-    });
-    if (railFill) {
-      railFill.style.top = (i * (100 / STEP_COUNT)).toFixed(2) + "%";
-      railFill.style.height = (100 / STEP_COUNT).toFixed(2) + "%";
-    }
-  }
-  setStep(0);
-
+  /* ── dots state ───────────────────────────────────────────────────────── */
   var dots = {};
   Array.prototype.forEach.call(document.querySelectorAll(".dots a[data-dot]"), function (a) {
     dots[a.getAttribute("data-dot")] = a;
@@ -141,17 +116,10 @@
         });
       }
 
-      /* 3 · tour step from progress through the pinned section */
-      if (tour) {
-        var travel = Math.max(1, metrics.tourH - vh);
-        var p = Math.min(0.9999, Math.max(0, (y - metrics.tourTop) / travel));
-        setStep(Math.min(STEP_COUNT - 1, Math.floor(p * STEP_COUNT)));
-      }
-
-      /* 4 · dot nav section */
+      /* 3 · dot nav section */
       var sec = "top";
       if (y + vh * 0.45 > metrics.soonTop) sec = "soon";
-      else if (y + vh * 0.45 > metrics.tourTop) sec = "tour";
+      else if (y + vh * 0.45 > metrics.appTop) sec = "tour";
       else if (y + vh * 0.45 > metrics.founderTop) sec = "founder";
       else if (y + vh * 0.45 > metrics.whatTop) sec = "what";
       else if (y + vh * 0.45 > metrics.whyTop) sec = "why";
