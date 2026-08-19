@@ -357,6 +357,9 @@ main.landing {
   color: var(--ink-soft);
   text-wrap: pretty;
 }
+.sub-two { max-width: none; }
+.sub-two > span { display: block; }
+
 .how-title {
   margin: clamp(48px, 8vh, 90px) 0 0;
   font: 500 11px/1 "JetBrains Mono", monospace;
