@@ -400,17 +400,13 @@ main.landing {
   flex-direction: column;
   gap: 9px;
 }
-.acr-name {
-  font: 600 clamp(16px, 1.7vw, 21px)/1 "JetBrains Mono", monospace;
-  letter-spacing: .34em;
-  color: var(--gold);
-}
 .acr-full {
-  font: 500 clamp(10px, 1.05vw, 13px)/1.5 "JetBrains Mono", monospace;
+  font: 500 clamp(11px, 1.25vw, 16px)/1.5 "JetBrains Mono", monospace;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--muted);
 }
+.acr-full em { font-style: normal; font-weight: 600; color: var(--gold); }
 
 /* ── reveal-on-scroll ───────────────────────────────────────────────────── */
 [data-reveal] {
