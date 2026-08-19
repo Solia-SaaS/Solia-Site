@@ -375,13 +375,14 @@ main.landing {
   list-style: none;
   margin: 0;
   padding: 0;
-  /* span the row's full height and distribute the bullets across it, so the
-     column reads as the same vertical band as the title + description */
+  /* span the row's full height: first bullet tops out level with the title,
+     the rest distribute down to the row's bottom edge */
   align-self: stretch;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
+.how-diff li:first-child { padding-top: 0; }
 .how-diff li {
   display: flex;
   gap: 12px;
