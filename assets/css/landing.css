@@ -428,6 +428,12 @@ main.landing {
 }
 .acr-full em { font-style: normal; font-weight: 600; color: var(--gold); }
 .acr-full .acr-sm { font-size: .82em; }
+.founder-sub {
+  margin: clamp(14px, 2.2vh, 24px) 0 0;
+  font: 400 clamp(17px, 1.8vw, 22px)/1.5 Manrope, sans-serif;
+  color: var(--gold);
+  text-wrap: pretty;
+}
 
 /* ── reveal-on-scroll ───────────────────────────────────────────────────── */
 [data-reveal] {
