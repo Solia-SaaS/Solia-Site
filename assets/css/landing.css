@@ -348,18 +348,7 @@ main.landing {
   text-wrap: pretty;
 }
 
-/* what-solia-is: sub-statement + how-we-do-it list + acronym strip */
-.sub-statement {
-  margin: clamp(18px, 3vh, 28px) 0 0;
-  max-width: 42ch;
-  font: 400 clamp(18px, 2.2vw, 27px)/1.4 Manrope, sans-serif;
-  letter-spacing: -.01em;
-  color: var(--ink-soft);
-  text-wrap: pretty;
-}
-.sub-two { max-width: none; }
-.sub-two > span { display: block; }
-
+/* what-solia-is: how-we-do-it list + acronym strip */
 .how-title {
   margin: clamp(48px, 8vh, 90px) 0 0;
   font: 500 11px/1 "JetBrains Mono", monospace;
