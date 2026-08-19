@@ -272,7 +272,7 @@ main.landing {
     /* bright core — a soft line drawn along the seam itself */
     linear-gradient(to bottom,
       transparent 46.5%,
-      rgba(248, 180, 75, .22) 50%,
+      rgba(248, 180, 75, .14) 50%,
       transparent 53.5%),
     /* full-width wash fading out toward each section */
     linear-gradient(to bottom,
