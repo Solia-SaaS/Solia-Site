@@ -268,12 +268,12 @@ main.landing {
   right: 0;
   top: -40px;
   height: 80px;
-  background:
-    /* full-width wash, strongest at the seam, fading into each section */
-    linear-gradient(to bottom,
-      transparent 0%,
-      rgba(238, 130, 57, .045) 50%,
-      transparent 100%);
+  /* soft ellipse centred on the seam: still reaches both edges, but fades
+     gently toward them as well as vertically */
+  background: radial-gradient(110% 50% at 50% 50%,
+    rgba(238, 130, 57, .05) 0%,
+    rgba(238, 130, 57, .022) 55%,
+    transparent 82%);
   pointer-events: none;
 }
 .band-inner { max-width: 1080px; margin: 0 auto; }
