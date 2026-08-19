@@ -375,12 +375,12 @@ main.landing {
   list-style: none;
   margin: 0;
   padding: 0;
-  /* span the row's full height: first bullet tops out level with the title,
-     the rest distribute down to the row's bottom edge */
-  align-self: stretch;
+  /* tight stack pulled up so the first bullet's text sits level with the
+     title's cap height (compensates the small-font half-leading) */
+  margin-top: -4px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .how-diff li:first-child { padding-top: 0; }
 .how-diff li {
@@ -388,7 +388,7 @@ main.landing {
   gap: 12px;
   align-items: baseline;
   margin: 0;
-  padding: 3px 0;
+  padding: 2px 0;
   font: 400 clamp(13.5px, 1.25vw, 15px)/1.55 Manrope, sans-serif;
   color: var(--ink-soft);
 }
