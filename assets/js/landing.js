@@ -195,6 +195,46 @@
     seed();
   }
 
+  /* seam star strips: little twinkling star fields floating in the space
+     between sections, same look as the hero sky */
+  var seams = [];
+  Array.prototype.forEach.call(
+    document.querySelectorAll(".band + .band:not(.closing)"),
+    function (band) {
+      var c = document.createElement("canvas");
+      c.className = "seam-fx";
+      c.setAttribute("aria-hidden", "true");
+      band.appendChild(c);
+      var sctx = c.getContext("2d");
+      if (sctx) seams.push({ el: c, ctx: sctx, stars: [], w: 0, h: 0 });
+    }
+  );
+
+  function seedSeam(s) {
+    s.stars = [];
+    var n = Math.round(Math.min(42, (s.w * s.h) / 14000));
+    for (var i = 0; i < n; i++) {
+      var y = Math.random() * s.h;
+      s.stars.push({
+        x: Math.random() * s.w, y: y,
+        r: 0.4 + Math.random() * 1.0,
+        /* dim toward the strip's top/bottom so the field dissolves into the page */
+        fade: 1 - Math.abs(y - s.h / 2) / (s.h / 2),
+        tw: Math.random() * 6.28, twv: 0.008 + Math.random() * 0.02
+      });
+    }
+  }
+  function resizeSeams() {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    seams.forEach(function (s) {
+      s.w = s.el.clientWidth; s.h = s.el.clientHeight;
+      s.el.width = Math.round(s.w * dpr);
+      s.el.height = Math.round(s.h * dpr);
+      s.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      seedSeam(s);
+    });
+  }
+
   var visible = !document.hidden;
   document.addEventListener("visibilitychange", function () {
     visible = !document.hidden;
@@ -220,10 +260,29 @@
       ctx.beginPath(); ctx.arc(m.x, m.y, m.r, 0, 6.2832); ctx.fill();
     }
     ctx.globalAlpha = 1;
+
+    for (var k = 0; k < seams.length; k++) {
+      var s = seams[k];
+      var r = s.el.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > window.innerHeight) continue;
+      s.ctx.clearRect(0, 0, s.w, s.h);
+      for (var q = 0; q < s.stars.length; q++) {
+        var ss = s.stars[q];
+        ss.tw += ss.twv;
+        s.ctx.globalAlpha = 0.4 * ss.fade * (0.35 + 0.65 * (0.5 + 0.5 * Math.sin(ss.tw)));
+        s.ctx.fillStyle = "#FFF6E0";
+        s.ctx.beginPath(); s.ctx.arc(ss.x, ss.y, ss.r, 0, 6.2832); s.ctx.fill();
+      }
+      s.ctx.globalAlpha = 1;
+    }
     requestAnimationFrame(frame);
   }
 
-  window.addEventListener("resize", resizeCanvas, { passive: true });
+  window.addEventListener("resize", function () {
+    resizeCanvas();
+    resizeSeams();
+  }, { passive: true });
   resizeCanvas();
+  resizeSeams();
   requestAnimationFrame(frame);
 })();
