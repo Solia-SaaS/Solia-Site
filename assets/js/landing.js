@@ -26,7 +26,6 @@
       panelTop: offTop(panel),
       appTop: offTop(document.getElementById("schedule")),
       whyTop: offTop(document.getElementById("why")),
-      whatTop: offTop(document.getElementById("what")),
       founderTop: offTop(document.getElementById("founder")),
       soonTop: offTop(document.getElementById("soon"))
     };
@@ -121,8 +120,7 @@
       if (y + vh * 0.45 > metrics.soonTop) sec = "soon";
       else if (y + vh * 0.45 > metrics.appTop) sec = "tour";
       else if (y + vh * 0.45 > metrics.founderTop) sec = "founder";
-      else if (y + vh * 0.45 > metrics.whatTop) sec = "what";
-      else if (y + vh * 0.45 > metrics.whyTop) sec = "why";
+      else if (y + vh * 0.45 > metrics.whyTop) sec = "overview";
       setSection(sec);
     });
   }
