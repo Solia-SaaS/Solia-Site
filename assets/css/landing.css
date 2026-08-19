@@ -269,6 +269,11 @@ main.landing {
   height: 160px;
   pointer-events: none;
 }
+/* small screens have tighter band gaps — shrink the strip so the stars stay
+   inside the empty seam instead of drifting over content */
+@media (max-width: 700px) {
+  .seam-fx { height: 84px; top: -42px; }
+}
 .band-inner { max-width: 1080px; margin: 0 auto; }
 .band-inner.center { text-align: center; }
 

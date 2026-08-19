@@ -220,7 +220,7 @@
         r: 0.5 + Math.random() * 1.4,
         /* dim toward the strip's top/bottom so the field dissolves into the page */
         fade: 1 - Math.abs(y - s.h / 2) / (s.h / 2),
-        tw: Math.random() * 6.28, twv: 0.025 + Math.random() * 0.05
+        tw: Math.random() * 6.28, twv: 0.016 + Math.random() * 0.032
       });
     }
   }
