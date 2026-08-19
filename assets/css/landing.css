@@ -548,12 +548,12 @@ main.landing {
 .app-copy .eyebrow-mono { margin-bottom: 22px; }
 .step-title {
   margin: 0 0 20px;
-  max-width: 16ch;
-  font: 300 clamp(30px, 4.4vw, 52px)/1.08 Manrope, sans-serif;
+  font: 300 clamp(20px, 2.7vw, 33px)/1.14 Manrope, sans-serif;
   letter-spacing: -.03em;
   color: var(--ink);
-  text-wrap: pretty;
 }
+.step-title > span { display: block; white-space: nowrap; }
+.step-title em { font-style: normal; color: var(--gold); }
 .step-body {
   margin: 0 0 28px;
   max-width: 46ch;
@@ -805,6 +805,7 @@ main.landing {
 /* very narrow phones: keep every app-section bullet on one line */
 @media (max-width: 379px) {
   .ticks li { font-size: 12.6px; }
+  .step-title { font-size: 15.5px; }
 }
 
 /* ── reduced motion ─────────────────────────────────────────────────────── */
