@@ -259,23 +259,6 @@ main.landing {
   position: relative;
   padding: clamp(78px, 12.5vh, 142px) clamp(24px, 5vw, 64px) clamp(60px, 9vh, 104px);
 }
-/* seam glow: a soft orange wash centred on the boundary between two bands,
-   strongest at the midpoint and fading into each section */
-.band + .band:not(.closing)::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -40px;
-  height: 80px;
-  /* soft ellipse centred on the seam: still reaches both edges, but fades
-     gently toward them as well as vertically */
-  background: radial-gradient(78% 50% at 50% 50%,
-    rgba(238, 130, 57, .06) 0%,
-    rgba(238, 130, 57, .024) 50%,
-    transparent 80%);
-  pointer-events: none;
-}
 .band-inner { max-width: 1080px; margin: 0 auto; }
 .band-inner.center { text-align: center; }
 
