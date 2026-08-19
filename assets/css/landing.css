@@ -280,26 +280,26 @@ main.landing {
 /* two-line statement: one impactful sentence per line, sized to hold */
 .statement-two { max-width: none; font-size: clamp(24px, 6.2vw, 80px); }
 .statement-two > span { display: block; white-space: nowrap; }
-.statement-two em { font-style: normal; color: var(--gold); }
+.statement-two em, .why-answer em { font-style: normal; color: var(--gold); }
 /* drawn underline: a thin accent stroke sweeps in beneath the phrase once
-   the headline reveals */
-.statement-two .uline { position: relative; }
-.statement-two .uline::after {
+   its parent reveals */
+.uline { position: relative; }
+.uline::after {
   content: "";
   position: absolute;
   left: 0.02em;
   right: 0.02em;
   bottom: 0.04em;
-  height: 0.05em;
+  height: max(2.5px, 0.05em);
   border-radius: 999px;
   background: linear-gradient(90deg, var(--accent), var(--gold));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform .8s cubic-bezier(.3, 0, .3, 1) .6s;
 }
-.statement-two.in .uline::after { transform: scaleX(1); }
+[data-reveal].in .uline::after { transform: scaleX(1); }
 @media (prefers-reduced-motion: reduce) {
-  .statement-two .uline::after { transform: scaleX(1); transition: none; }
+  .uline::after { transform: scaleX(1); transition: none; }
 }
 
 .split {
