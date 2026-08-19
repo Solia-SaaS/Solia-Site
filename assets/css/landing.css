@@ -431,7 +431,7 @@ main.landing {
 /* founder statement: same two-line style, scaled so the longer second line
    spans the full content width without clipping (nowrap at the standard size
    would overflow by ~45%) */
-.statement-founder { font-size: clamp(15px, 4.05vw, 54px); }
+.statement-founder { font-size: clamp(18px, 4.9vw, 63px); }
 
 /* ── reveal-on-scroll ───────────────────────────────────────────────────── */
 [data-reveal] {
