@@ -601,6 +601,9 @@ main.landing {
   font: 400 clamp(15px, 1.4vw, 17.5px)/1.65 Manrope, sans-serif;
   color: var(--ink-soft);
 }
+/* two-sentence body: each sentence starts on its own line */
+.step-body-two { max-width: none; }
+.step-body-two > span { display: block; }
 .ticks {
   list-style: none;
   padding: 0;
