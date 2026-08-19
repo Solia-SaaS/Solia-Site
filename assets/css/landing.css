@@ -269,15 +269,10 @@ main.landing {
   top: -140px;
   height: 280px;
   background:
-    /* faint core — a whisper of a line along the seam itself */
-    linear-gradient(to bottom,
-      transparent 48.8%,
-      rgba(248, 180, 75, .07) 50%,
-      transparent 51.2%),
-    /* full-width wash fading out toward each section */
+    /* full-width wash, strongest at the seam, fading into each section */
     linear-gradient(to bottom,
       transparent 0%,
-      rgba(238, 130, 57, .06) 50%,
+      rgba(238, 130, 57, .07) 50%,
       transparent 100%);
   pointer-events: none;
 }
