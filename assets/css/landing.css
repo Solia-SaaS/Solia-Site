@@ -277,6 +277,10 @@ main.landing {
   color: var(--ink);
   text-wrap: pretty;
 }
+/* two-line statement: one impactful sentence per line, sized to hold */
+.statement-two { max-width: none; font-size: clamp(17px, 4.2vw, 54px); }
+.statement-two span { display: block; white-space: nowrap; }
+
 .split {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
