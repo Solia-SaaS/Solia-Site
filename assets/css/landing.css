@@ -414,18 +414,26 @@ main.landing {
 }
 .how-diff li:first-child { padding-top: 0; }
 .how-diff li {
-  display: flex;
-  gap: 12px;
-  align-items: baseline;
   margin: 0;
-  padding: 2px 0;
-  font: 400 clamp(13.5px, 1.25vw, 15px)/1.55 Manrope, sans-serif;
+  padding: 3px 0;
+  font: 400 clamp(13.5px, 1.25vw, 15px)/1.6 Manrope, sans-serif;
   color: var(--ink-soft);
 }
-.how-diff li::before {
-  content: "—";
-  color: var(--accent);
-  font: 500 12px/1 "JetBrains Mono", monospace;
+/* them → us comparison pair: the old way struck through, Solia's way after
+   a gold arrow; each phrase wraps as one unit so pairs stack cleanly on
+   narrow screens */
+.vs-them {
+  display: inline-block;
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  text-decoration-thickness: 1px;
+}
+.vs-us { display: inline-block; color: var(--ink-soft); }
+.vs-us::before {
+  content: "→ ";
+  color: var(--gold);
+  font-weight: 600;
 }
 .how-num {
   display: flex;
