@@ -387,6 +387,7 @@ main.landing {
   display: flex;
   gap: 12px;
   align-items: baseline;
+  margin: 0;
   padding: 3px 0;
   font: 400 clamp(13.5px, 1.25vw, 15px)/1.55 Manrope, sans-serif;
   color: var(--ink-soft);
