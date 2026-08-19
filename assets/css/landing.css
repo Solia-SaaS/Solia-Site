@@ -280,6 +280,7 @@ main.landing {
 /* two-line statement: one impactful sentence per line, sized to hold */
 .statement-two { max-width: none; font-size: clamp(24px, 6.2vw, 80px); }
 .statement-two span { display: block; white-space: nowrap; }
+.statement-two em { font-style: normal; color: var(--gold); }
 
 .split {
   display: grid;
