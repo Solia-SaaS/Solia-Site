@@ -268,10 +268,17 @@ main.landing {
   right: 0;
   top: -140px;
   height: 280px;
-  background: radial-gradient(52% 50% at 50% 50%,
-    rgba(238, 130, 57, .085) 0%,
-    rgba(238, 130, 57, .035) 45%,
-    transparent 72%);
+  background:
+    /* bright core — a soft line drawn along the seam itself */
+    linear-gradient(to bottom,
+      transparent 46.5%,
+      rgba(248, 180, 75, .22) 50%,
+      transparent 53.5%),
+    /* full-width wash fading out toward each section */
+    linear-gradient(to bottom,
+      transparent 0%,
+      rgba(238, 130, 57, .10) 50%,
+      transparent 100%);
   pointer-events: none;
 }
 .band-inner { max-width: 1080px; margin: 0 auto; }
