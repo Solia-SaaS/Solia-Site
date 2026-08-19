@@ -375,9 +375,8 @@ main.landing {
   list-style: none;
   margin: 0;
   padding: 0;
-  /* tight stack pulled up so the first bullet's text sits level with the
-     title's cap height (compensates the small-font half-leading) */
-  margin-top: -4px;
+  /* tight stack, first bullet sitting just under the title's cap line */
+  margin-top: 2px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
