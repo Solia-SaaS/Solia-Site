@@ -554,6 +554,30 @@ main.landing {
 }
 .step-title > span { display: block; white-space: nowrap; }
 .step-title em { font-style: normal; color: var(--gold); }
+
+/* toolkit toggle: pill tabs that swap the copy panel + phone screen */
+.tk-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 18px;
+}
+.tk-tab {
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink-soft);
+  font: 600 10.5px/1 "JetBrains Mono", monospace;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color .25s ease, border-color .25s ease, background .25s ease;
+}
+.tk-tab:hover { border-color: var(--accent); color: var(--ink); }
+.tk-tab.is-active { background: var(--accent); border-color: var(--accent); color: #14120B; }
+.tk-panel { display: none; }
+.tk-panel.is-active { display: block; }
 .step-body {
   margin: 0 0 28px;
   max-width: 46ch;

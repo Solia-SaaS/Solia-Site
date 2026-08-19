@@ -332,7 +332,7 @@ description: Solia is a Life Operating System designed to align your actions wit
           </div>
           <ul class="how-diff">
             <li>Each toolkit handles specific operations for each area of your life</li>
-            <li>Purposefully designed and integrated naturally into your schedule</li>
+            <li>Integrated naturally into your schedule and coaching</li>
             <li>Many productivity softwares all in one integrated place, Solia</li>
           </ul>
         </div>
@@ -481,33 +481,80 @@ description: Solia is a Life Operating System designed to align your actions wit
     <div class="band-inner app-split">
       <div class="app-copy">
         <p class="eyebrow-mono" data-reveal>05 — Toolkits</p>
-        <h2 class="step-title step-title-two" data-reveal>
+          <h2 class="step-title step-title-two" data-reveal>
           <span>Custom toolkits.</span>
           <span><em>For every discipline of life.</em></span>
         </h2>
-        <p class="step-body" data-reveal>Each specific area of your life has its own custom toolkit, purpose-built
-             for that discipline and wired into the same schedule as everything else.
-             Fitness and nutrition are first — business, finances, education and more
-             are on the way.</p>
-        <ul class="ticks" data-reveal>
-            <li><span class="tick-dot" aria-hidden="true"></span><span>Fitness first — workouts logged set by set, even mid-session</span></li>
-            <li><span class="tick-dot" aria-hidden="true"></span><span>Meals and macros captured in seconds, by voice</span></li>
-            <li><span class="tick-dot" aria-hidden="true"></span><span>Business, finances, and education coming next</span></li>
-          </ul>
+        <!-- toolkit toggle: new tabs get added here as toolkits ship -->
+        <div class="tk-tabs" data-reveal role="tablist" aria-label="Toolkits">
+          <button class="tk-tab is-active" type="button" data-tk="overview">Overview</button>
+          <button class="tk-tab" type="button" data-tk="fitness">Fitness</button>
+          <button class="tk-tab" type="button" data-tk="soon">Coming soon</button>
+        </div>
+        <div class="tk-panels" data-reveal>
+          <div class="tk-panel is-active" data-tk="overview">
+            <p class="step-body">Each specific area of your life has its own custom toolkit, purpose-built
+               for that discipline and wired into the same schedule as everything else.
+               Fitness and nutrition are first — business, finances, education and more
+               are on the way.</p>
+            <ul class="ticks">
+              <li><span class="tick-dot" aria-hidden="true"></span><span>Each toolkit handles specific operations for its area of life</span></li>
+              <li><span class="tick-dot" aria-hidden="true"></span><span>Integrated naturally into your schedule and coaching</span></li>
+              <li><span class="tick-dot" aria-hidden="true"></span><span>Many productivity softwares all in one integrated place, Solia</span></li>
+            </ul>
+          </div>
+          <div class="tk-panel" data-tk="fitness">
+            <p class="step-body">The first toolkit out the door. Log workouts set by set — even
+               mid-session, by voice — and capture meals and macros in seconds.
+               Everything folds into the same day as the rest of your life.</p>
+            <ul class="ticks">
+              <li><span class="tick-dot" aria-hidden="true"></span><span>Workouts logged set by set, even mid-session</span></li>
+              <li><span class="tick-dot" aria-hidden="true"></span><span>Per-set intensity lanes for honest training data</span></li>
+              <li><span class="tick-dot" aria-hidden="true"></span><span>Meals and macros captured in seconds, by voice</span></li>
+            </ul>
+          </div>
+          <div class="tk-panel" data-tk="soon">
+            <p class="step-body">More toolkits are on the way — business, finances, education and beyond.
+               Each one purpose-built for its discipline and wired into the same
+               system as everything else.</p>
+            <ul class="ticks">
+              <li><span class="tick-dot" aria-hidden="true"></span><span>Business — deep work, operations, and clients</span></li>
+              <li><span class="tick-dot" aria-hidden="true"></span><span>Finances — budgets, accounts, and money goals</span></li>
+              <li><span class="tick-dot" aria-hidden="true"></span><span>Education — study blocks, courses, and mastery</span></li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="app-phone" data-reveal>
         <div class="phone">
           <div class="phone-notch" aria-hidden="true"></div>
           <div class="phone-screen">
             <div class="phone-glow" aria-hidden="true"></div>
-            <!-- Schematic placeholder — swap for a real capture -->
-            <div class="screen is-active">
-            <div class="screen-head"><span class="s-title">Push day</span><span class="s-meta">Set 3 of 14</span></div>
+            <!-- Schematic placeholders — swap each for a real capture -->
+            <div class="screen is-active" data-tk="overview">
+              <div class="screen-head"><span class="s-title">Toolkits</span><span class="s-meta">2 live</span></div>
+              <div class="srow"><span class="s-mark" style="background:#EE8239"></span><span class="s-mid"><span class="s-label">Fitness</span><span class="s-track" style="width:64%"><span class="s-fill" style="width:100%;background:#EE8239"></span></span></span><span class="s-val">LIVE</span></div>
+              <div class="srow"><span class="s-mark" style="background:#F8B44B"></span><span class="s-mid"><span class="s-label">Nutrition</span><span class="s-track" style="width:56%"><span class="s-fill" style="width:100%;background:#F8B44B"></span></span></span><span class="s-val">LIVE</span></div>
+              <div class="srow"><span class="s-mark" style="background:#7FA8B8"></span><span class="s-mid"><span class="s-label">Business</span><span class="s-track" style="width:48%"><span class="s-fill" style="width:20%;background:#7FA8B8"></span></span></span><span class="s-val">SOON</span></div>
+              <div class="srow"><span class="s-mark" style="background:#7FA8B8"></span><span class="s-mid"><span class="s-label">Finances</span><span class="s-track" style="width:44%"><span class="s-fill" style="width:12%;background:#7FA8B8"></span></span></span><span class="s-val">SOON</span></div>
+              <div class="srow"><span class="s-mark" style="background:#7FA8B8"></span><span class="s-mid"><span class="s-label">Education</span><span class="s-track" style="width:40%"><span class="s-fill" style="width:8%;background:#7FA8B8"></span></span></span><span class="s-val">SOON</span></div>
+              <span class="ph-note">Placeholder — real capture pending</span>
+            </div>
+            <div class="screen" data-tk="fitness">
+              <div class="screen-head"><span class="s-title">Push day</span><span class="s-meta">Set 3 of 14</span></div>
               <div class="srow"><span class="s-mark" style="background:#EE8239"></span><span class="s-mid"><span class="s-label">Incline press · 82.5kg</span><span class="s-track" style="width:62%"><span class="s-fill" style="width:88%;background:#EE8239"></span></span></span><span class="s-val">8</span></div>
               <div class="srow"><span class="s-mark" style="background:#F8B44B"></span><span class="s-mid"><span class="s-label">Weighted dip · 30kg</span><span class="s-track" style="width:56%"><span class="s-fill" style="width:72%;background:#F8B44B"></span></span></span><span class="s-val">10</span></div>
               <div class="srow"><span class="s-mark" style="background:#7FA8B8"></span><span class="s-mid"><span class="s-label">Cable fly · 22kg</span><span class="s-track" style="width:50%"><span class="s-fill" style="width:64%;background:#7FA8B8"></span></span></span><span class="s-val">12</span></div>
               <div class="srow"><span class="s-mark" style="background:#EE8239"></span><span class="s-mid"><span class="s-label">Lateral raise · 12kg</span><span class="s-track" style="width:46%"><span class="s-fill" style="width:58%;background:#EE8239"></span></span></span><span class="s-val">15</span></div>
               <div class="srow"><span class="s-mark" style="background:#F8B44B"></span><span class="s-mid"><span class="s-label">Protein · 168 / 190g</span><span class="s-track" style="width:70%"><span class="s-fill" style="width:88%;background:#F8B44B"></span></span></span><span class="s-val">88%</span></div>
+              <span class="ph-note">Placeholder — real capture pending</span>
+            </div>
+            <div class="screen" data-tk="soon">
+              <div class="screen-head"><span class="s-title">On the way</span><span class="s-meta">Roadmap</span></div>
+              <div class="srow"><span class="s-mark" style="background:#7FA8B8"></span><span class="s-mid"><span class="s-label">Business toolkit</span><span class="s-track" style="width:60%"><span class="s-fill" style="width:24%;background:#7FA8B8"></span></span></span><span class="s-val">2026</span></div>
+              <div class="srow"><span class="s-mark" style="background:#7FA8B8"></span><span class="s-mid"><span class="s-label">Finances toolkit</span><span class="s-track" style="width:54%"><span class="s-fill" style="width:16%;background:#7FA8B8"></span></span></span><span class="s-val">2026</span></div>
+              <div class="srow"><span class="s-mark" style="background:#7FA8B8"></span><span class="s-mid"><span class="s-label">Education toolkit</span><span class="s-track" style="width:48%"><span class="s-fill" style="width:10%;background:#7FA8B8"></span></span></span><span class="s-val">2026</span></div>
+              <div class="srow"><span class="s-mark" style="background:#F8B44B"></span><span class="s-mid"><span class="s-label">And more beyond</span><span class="s-track" style="width:42%"><span class="s-fill" style="width:6%;background:#F8B44B"></span></span></span><span class="s-val">—</span></div>
               <span class="ph-note">Placeholder — real capture pending</span>
             </div>
           </div>

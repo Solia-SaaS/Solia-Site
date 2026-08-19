@@ -148,6 +148,21 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
+  /* ── toolkit toggle: swap copy panel + phone screen together ──────────── */
+  var tkTabs = Array.prototype.slice.call(document.querySelectorAll(".tk-tab"));
+  tkTabs.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var k = btn.getAttribute("data-tk");
+      tkTabs.forEach(function (b) { b.classList.toggle("is-active", b === btn); });
+      Array.prototype.forEach.call(document.querySelectorAll(".tk-panel"), function (p) {
+        p.classList.toggle("is-active", p.getAttribute("data-tk") === k);
+      });
+      Array.prototype.forEach.call(document.querySelectorAll("#toolkits .screen"), function (sc) {
+        sc.classList.toggle("is-active", sc.getAttribute("data-tk") === k);
+      });
+    });
+  });
+
   /* ── waitlist (endpoint pending — flips the label for now) ────────────── */
   var form = document.getElementById("waitlistForm");
   var formBtn = document.getElementById("waitlistBtn");
