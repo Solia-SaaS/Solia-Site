@@ -257,7 +257,7 @@ main.landing {
 /* ── bands ──────────────────────────────────────────────────────────────── */
 .band {
   position: relative;
-  padding: clamp(60px, 9vh, 104px) clamp(24px, 5vw, 64px) clamp(46px, 7vh, 80px);
+  padding: clamp(75px, 12vh, 136px) clamp(24px, 5vw, 64px) clamp(58px, 8.5vh, 100px);
 }
 .band-inner { max-width: 1080px; margin: 0 auto; }
 .band-inner.center { text-align: center; }
