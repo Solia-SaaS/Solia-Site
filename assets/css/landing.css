@@ -257,7 +257,7 @@ main.landing {
 /* ── bands ──────────────────────────────────────────────────────────────── */
 .band {
   position: relative;
-  padding: clamp(78px, 12.5vh, 142px) clamp(24px, 5vw, 64px) clamp(60px, 9vh, 104px);
+  padding: clamp(62px, 10vh, 114px) clamp(24px, 5vw, 64px) clamp(48px, 7.2vh, 83px);
 }
 /* seam star strip: a thin twinkling star field floating in the space
    between sections (canvas injected by landing.js) */
