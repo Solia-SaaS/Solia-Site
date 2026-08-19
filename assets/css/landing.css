@@ -272,7 +272,7 @@ main.landing {
     /* full-width wash, strongest at the seam, fading into each section */
     linear-gradient(to bottom,
       transparent 0%,
-      rgba(238, 130, 57, .07) 50%,
+      rgba(238, 130, 57, .045) 50%,
       transparent 100%);
   pointer-events: none;
 }
