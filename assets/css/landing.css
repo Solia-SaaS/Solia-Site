@@ -750,14 +750,14 @@ main.landing {
   pointer-events: none;
 }
 .closing .band-inner { position: relative; max-width: 760px; }
+/* the hero's animated sun, scaled down for the closing */
 .mini-sun {
-  width: 64px; height: 64px;
-  margin: 0 auto 34px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 38% 34%, #FFF3D0 0%, #FDD98A 22%, #F8B44B 44%, #EE8239 72%, #C8531F 100%);
-  box-shadow: 0 0 30px 6px rgba(248, 180, 75, .45), 0 0 90px 22px rgba(238, 130, 57, .25);
+  width: 132px;
+  height: 132px;
+  margin: 0 auto 14px;
   animation: sun-breathe 7s ease-in-out infinite;
 }
+.mini-sun svg { width: 100%; height: 100%; display: block; overflow: visible; }
 @keyframes sun-breathe { 50% { transform: scale(1.02); } }
 .center-statement { margin: 0 auto; max-width: 15ch; }
 .soon-lede {
