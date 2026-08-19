@@ -276,21 +276,6 @@ main.landing {
     transparent 80%);
   pointer-events: none;
 }
-/* whisper label sitting on the seam itself — barely brighter than the glow */
-.band + .band:not(.closing)::after {
-  content: "Scroll for more";
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translate(-50%, -50%);
-  font: 500 9px/1 "JetBrains Mono", monospace;
-  letter-spacing: .34em;
-  text-indent: .34em;
-  text-transform: uppercase;
-  color: rgba(248, 180, 75, .16);
-  pointer-events: none;
-  white-space: nowrap;
-}
 .band-inner { max-width: 1080px; margin: 0 auto; }
 .band-inner.center { text-align: center; }
 
