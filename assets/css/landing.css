@@ -435,6 +435,15 @@ main.landing {
   color: var(--gold);
   font-weight: 600;
 }
+/* wide screens: a pair is always one line */
+@media (min-width: 1024px) {
+  .how-diff li { white-space: nowrap; font-size: clamp(12.5px, 1.18vw, 15px); }
+}
+/* narrower screens: crossed-out line on top, arrow + Solia's way below */
+@media (max-width: 1023px) {
+  .vs-them, .vs-us { display: block; }
+  .how-diff li { padding: 5px 0; }
+}
 .how-num {
   display: flex;
   flex-direction: column;
