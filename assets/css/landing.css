@@ -279,8 +279,22 @@ main.landing {
 }
 /* two-line statement: one impactful sentence per line, sized to hold */
 .statement-two { max-width: none; font-size: clamp(24px, 6.2vw, 80px); }
-.statement-two span { display: block; white-space: nowrap; }
+.statement-two > span { display: block; white-space: nowrap; }
 .statement-two em { font-style: normal; color: var(--gold); }
+/* highlighter wipe: gold sweeps across the phrase once the headline reveals */
+.statement-two .sweep {
+  background: linear-gradient(90deg, var(--gold) 0 48%, var(--ink) 52% 100%);
+  background-size: 210% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  transition: background-position 1.6s cubic-bezier(.3, 0, .3, 1) .55s;
+}
+.statement-two.in .sweep { background-position: 0 0; }
+@media (prefers-reduced-motion: reduce) {
+  .statement-two .sweep { background-position: 0 0; transition: none; }
+}
 
 .split {
   display: grid;
