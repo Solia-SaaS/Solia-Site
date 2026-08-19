@@ -428,12 +428,10 @@ main.landing {
 }
 .acr-full em { font-style: normal; font-weight: 600; color: var(--gold); }
 .acr-full .acr-sm { font-size: .82em; }
-.founder-sub {
-  margin: clamp(14px, 2.2vh, 24px) 0 0;
-  font: 400 clamp(17px, 1.8vw, 22px)/1.5 Manrope, sans-serif;
-  color: var(--gold);
-  text-wrap: pretty;
-}
+/* founder statement: same two-line style, scaled so the longer second line
+   spans the full content width without clipping (nowrap at the standard size
+   would overflow by ~45%) */
+.statement-founder { font-size: clamp(15px, 4.05vw, 54px); }
 
 /* ── reveal-on-scroll ───────────────────────────────────────────────────── */
 [data-reveal] {
