@@ -340,7 +340,7 @@ main.landing {
 }
 .why-answer {
   margin: clamp(40px, 6vh, 64px) 0 0;
-  max-width: 56ch;
+  max-width: 82ch;
   font: 400 clamp(17px, 1.8vw, 22px)/1.55 Manrope, sans-serif;
   color: var(--ink);
   text-wrap: pretty;
