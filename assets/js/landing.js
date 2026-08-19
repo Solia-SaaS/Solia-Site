@@ -212,7 +212,9 @@
 
   function seedSeam(s) {
     s.stars = [];
-    var n = Math.round(Math.min(90, (s.w * s.h) / 7000));
+    /* width-based with a floor so narrow phones still get a real field
+       (area-based counts collapsed to ~5 stars on a 390px strip) */
+    var n = Math.round(Math.min(90, Math.max(16, s.w / 22)));
     for (var i = 0; i < n; i++) {
       var y = Math.random() * s.h;
       s.stars.push({
