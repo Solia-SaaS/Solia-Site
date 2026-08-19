@@ -298,6 +298,8 @@ main.landing {
   transition: transform .8s cubic-bezier(.3, 0, .3, 1) .6s;
 }
 [data-reveal].in .uline::after { transform: scaleX(1); }
+/* this line has descenders — drop its underline below them */
+.why-answer .uline::after { bottom: -0.22em; }
 @media (prefers-reduced-motion: reduce) {
   .uline::after { transform: scaleX(1); transition: none; }
 }
