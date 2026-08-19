@@ -257,7 +257,7 @@ main.landing {
 /* ── bands ──────────────────────────────────────────────────────────────── */
 .band {
   position: relative;
-  padding: clamp(75px, 12vh, 136px) clamp(24px, 5vw, 64px) clamp(58px, 8.5vh, 100px);
+  padding: clamp(84px, 13.5vh, 152px) clamp(24px, 5vw, 64px) clamp(64px, 9.5vh, 110px);
 }
 /* seam glow: a soft orange wash centred on the boundary between two bands,
    strongest at the midpoint and fading into each section */
@@ -269,15 +269,15 @@ main.landing {
   top: -140px;
   height: 280px;
   background:
-    /* bright core — a soft line drawn along the seam itself */
+    /* faint core — a whisper of a line along the seam itself */
     linear-gradient(to bottom,
-      transparent 46.5%,
-      rgba(248, 180, 75, .14) 50%,
-      transparent 53.5%),
+      transparent 48.8%,
+      rgba(248, 180, 75, .07) 50%,
+      transparent 51.2%),
     /* full-width wash fading out toward each section */
     linear-gradient(to bottom,
       transparent 0%,
-      rgba(238, 130, 57, .10) 50%,
+      rgba(238, 130, 57, .06) 50%,
       transparent 100%);
   pointer-events: none;
 }
