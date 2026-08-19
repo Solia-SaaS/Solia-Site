@@ -787,6 +787,11 @@ main.landing {
   .closing .band-inner { padding-right: 0; }
 }
 
+/* very narrow phones: keep every app-section bullet on one line */
+@media (max-width: 379px) {
+  .ticks li { font-size: 12.6px; }
+}
+
 /* ── reduced motion ─────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   body.landing * { animation: none !important; }
