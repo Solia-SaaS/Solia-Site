@@ -421,7 +421,10 @@ main.landing {
   gap: 9px;
 }
 .acr-full {
-  font: 500 clamp(11px, 1.25vw, 16px)/1.5 "JetBrains Mono", monospace;
+  /* scales with the viewport and never wraps — sized so the longest strip
+     (the founder line) stays on one line down to small phones */
+  font: 500 min(1.72vw, 16px)/1.5 "JetBrains Mono", monospace;
+  white-space: nowrap;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--muted);
