@@ -751,8 +751,9 @@ main.landing {
 .soon-agent {
   position: absolute;
   left: calc(50% + 286px);
+  /* the agent body centres on the button; the bubble rides above */
   top: 50%;
-  margin-top: -36px;
+  margin-top: -74px;
   width: 72px;
   pointer-events: none;
 }
