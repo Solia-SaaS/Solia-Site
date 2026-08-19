@@ -153,6 +153,27 @@ main.landing {
   color: #F3E9D2;
   will-change: transform, opacity;
 }
+/* the agent: weightless drift above the lockup; the source art sits on a
+   near-black card, so screen blending melts it into the space backdrop */
+.hero-agent {
+  line-height: 0;
+  margin-bottom: clamp(10px, 2vh, 22px);
+  will-change: transform, opacity;
+}
+.hero-agent img {
+  width: clamp(68px, 9vw, 120px);
+  height: auto;
+  display: block;
+  animation: agent-float 9s ease-in-out infinite;
+  filter: drop-shadow(0 6px 26px rgba(238, 130, 57, .22));
+}
+@keyframes agent-float {
+  0%, 100% { transform: translate(0, 0) rotate(-5deg); }
+  20%      { transform: translate(18px, -14px) rotate(4deg); }
+  45%      { transform: translate(-6px, -24px) rotate(-3deg); }
+  70%      { transform: translate(-20px, -8px) rotate(6deg); }
+}
+
 .hero-kicker {
   margin: 0;
   font: 600 clamp(12px, 2.05vw, 24px)/1.2 Manrope, sans-serif;

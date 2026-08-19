@@ -8,7 +8,9 @@
   /* ── elements + cached layout metrics ─────────────────────────────────── */
   var header = document.getElementById("siteHeader");
   var mark = document.getElementById("headerMark");
+  var heroInner = document.getElementById("heroInner");
   var heroTitle = document.getElementById("heroTitle");
+  var heroAgent = document.getElementById("heroAgent");
   var heroKicker = document.getElementById("heroKicker");
   var heroTag = document.getElementById("heroTag");
   var heroCue = document.getElementById("heroCue");
@@ -106,9 +108,14 @@
         var headerH = metrics.headerH;
         var pTop = Math.min(vh, Math.max(headerH, metrics.panelTop - y));
         if (baseCenter == null) {
+          /* measure relative to the sticky container, not the viewport —
+             otherwise a measurement taken while scrolled past the hero
+             (load restore, resize) records a bogus reference and the
+             lockup comes back displaced */
           heroTitle.style.transform = "none";
           var r = heroTitle.getBoundingClientRect();
-          baseCenter = r.top + r.height / 2;
+          var hi = heroInner ? heroInner.getBoundingClientRect().top : 0;
+          baseCenter = (r.top - hi) + r.height / 2;
         }
         var gap = Math.max(0, pTop - headerH);
         var t = clamp01(1 - gap / (vh - headerH));
@@ -124,11 +131,12 @@
         var s = clamp01(y / (vh * 0.3));
         s = s * s * (3 - 2 * s);
         var sub = Math.pow(1 - s, 1.25).toFixed(3);
-        [heroKicker, heroTag, heroCue].forEach(function (el, i) {
+        [heroAgent, heroKicker, heroTag, heroCue].forEach(function (el) {
           if (!el) return;
-          if (i === 2) el.style.animation = s > 0.01 ? "none" : "";
+          var isCue = el === heroCue;
+          if (isCue) el.style.animation = s > 0.01 ? "none" : "";
           el.style.opacity = sub;
-          var off = i === 2 ? (26 * s) : (dy - 26 * s);
+          var off = isCue ? (26 * s) : (dy - 26 * s);
           el.style.transform = "translate3d(0," + off.toFixed(1) + "px,0)";
         });
       }
