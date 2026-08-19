@@ -426,6 +426,7 @@ main.landing {
   color: var(--muted);
 }
 .acr-full em { font-style: normal; font-weight: 600; color: var(--gold); }
+.acr-full .acr-sm { text-transform: none; font-size: .82em; }
 
 /* ── reveal-on-scroll ───────────────────────────────────────────────────── */
 [data-reveal] {
