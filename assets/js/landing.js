@@ -212,12 +212,12 @@
 
   function seedSeam(s) {
     s.stars = [];
-    var n = Math.round(Math.min(42, (s.w * s.h) / 14000));
+    var n = Math.round(Math.min(90, (s.w * s.h) / 7000));
     for (var i = 0; i < n; i++) {
       var y = Math.random() * s.h;
       s.stars.push({
         x: Math.random() * s.w, y: y,
-        r: 0.4 + Math.random() * 1.0,
+        r: 0.5 + Math.random() * 1.4,
         /* dim toward the strip's top/bottom so the field dissolves into the page */
         fade: 1 - Math.abs(y - s.h / 2) / (s.h / 2),
         tw: Math.random() * 6.28, twv: 0.008 + Math.random() * 0.02
@@ -269,7 +269,7 @@
       for (var q = 0; q < s.stars.length; q++) {
         var ss = s.stars[q];
         ss.tw += ss.twv;
-        s.ctx.globalAlpha = 0.4 * ss.fade * (0.35 + 0.65 * (0.5 + 0.5 * Math.sin(ss.tw)));
+        s.ctx.globalAlpha = 0.75 * ss.fade * (0.25 + 0.75 * (0.5 + 0.5 * Math.sin(ss.tw)));
         s.ctx.fillStyle = "#FFF6E0";
         s.ctx.beginPath(); s.ctx.arc(ss.x, ss.y, ss.r, 0, 6.2832); s.ctx.fill();
       }
