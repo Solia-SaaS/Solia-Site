@@ -575,7 +575,20 @@ main.landing {
 .founder-facts .ticks { gap: 9px; }
 /* sized so every fact stays on one line beside the photo */
 .founder-facts .ticks li { font-size: clamp(9px, 0.9vw, 11.5px); }
-.founder-caption { grid-row: 2; grid-column: 1; margin: 0; text-align: center; }
+.founder-caption {
+  grid-row: 2;
+  grid-column: 1;
+  margin: 0;
+  text-align: center;
+  /* never wider than the photo — a long quote must wrap, not stretch the column */
+  max-width: clamp(150px, 13.7vw, 175px);
+}
+.founder-quote {
+  margin: 16px 0 0;
+  font: 400 italic 12px/1.6 Manrope, sans-serif;
+  color: var(--muted);
+  text-wrap: pretty;
+}
 .founder-card .founder-bio { grid-row: 3; grid-column: 1 / -1; margin: 10px 0 0; }
 .founder-photo {
   /* small headshot, not a poster */
