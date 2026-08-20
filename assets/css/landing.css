@@ -587,7 +587,7 @@ main.landing {
   margin: 16px 0 0;
   font: 400 italic 12px/1.6 Manrope, sans-serif;
   color: var(--muted);
-  text-wrap: pretty;
+  text-align: justify;
 }
 .founder-card .founder-bio { grid-row: 3; grid-column: 1 / -1; margin: 10px 0 0; }
 .founder-photo {
