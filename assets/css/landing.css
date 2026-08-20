@@ -573,6 +573,8 @@ main.landing {
   color: var(--accent);
 }
 .founder-facts .ticks { gap: 9px; }
+/* sized so every fact stays on one line beside the photo */
+.founder-facts .ticks li { font-size: clamp(9px, 0.9vw, 11.5px); }
 .founder-caption { grid-row: 2; grid-column: 1; margin: 0; text-align: center; }
 .founder-card .founder-bio { grid-row: 3; grid-column: 1 / -1; margin: 10px 0 0; }
 .founder-photo {
