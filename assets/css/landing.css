@@ -555,6 +555,9 @@ main.landing {
   /* photo top-left, name + role beneath it, bio riding to the right */
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
+  /* row 1 hugs the photo so the caption sits right beneath it even when
+     the bio (spanning both rows) runs long */
+  grid-template-rows: min-content 1fr;
   gap: 12px clamp(16px, 2vw, 26px);
   align-items: start;
 }
