@@ -556,19 +556,15 @@ main.landing {
   /* photo top-left, name + role beneath it, bio riding to the right */
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
-  /* left column: photo, caption, facts stacked; bio rides the right column */
-  grid-template-rows: min-content min-content 1fr;
+  /* row 1 hugs the photo so the caption sits right beneath it even when
+     the facts panel (spanning both rows) runs long */
+  grid-template-rows: min-content 1fr;
   gap: 12px clamp(16px, 2vw, 26px);
   align-items: start;
 }
 .founder-card .founder-photo { grid-row: 1; grid-column: 1; }
-/* facts stack under the caption in the photo column */
-.founder-facts {
-  grid-row: 3;
-  grid-column: 1;
-  margin-top: 14px;
-  max-width: 212px;
-}
+/* facts panel rides beside the photo; the bio spans the full card width */
+.founder-facts { grid-row: 1 / span 2; grid-column: 2; margin-top: 2px; }
 .facts-title {
   margin: 0 0 10px;
   font: 500 10.5px/1.5 "JetBrains Mono", monospace;
@@ -577,9 +573,8 @@ main.landing {
   color: var(--accent);
 }
 .founder-facts .ticks { gap: 9px; }
-.founder-facts .ticks li { font-size: 13px; }
 .founder-caption { grid-row: 2; grid-column: 1; margin: 0; text-align: center; }
-.founder-card .founder-bio { grid-row: 1 / span 3; grid-column: 2; margin: 2px 0 0; }
+.founder-card .founder-bio { grid-row: 3; grid-column: 1 / -1; margin: 10px 0 0; }
 .founder-photo {
   /* small headshot, not a poster */
   /* matches the widest name ("Brendan Gnydjenko" at full size) */
