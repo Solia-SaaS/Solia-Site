@@ -532,13 +532,55 @@ main.landing {
 /* ── founder video (template — swap the placeholder for a real player) ──── */
 .video-frame {
   margin-top: clamp(36px, 5vh, 58px);
-  max-width: 880px;
+  /* spans the full content width (same span as the divider rules) and keeps
+     16:9 at every viewport */
+  width: 100%;
   aspect-ratio: 16 / 9;
   border-radius: 20px;
   overflow: hidden;
   background: var(--raised);
   border: 1px solid var(--rule);
   box-shadow: 0 30px 70px rgba(0, 0, 0, .35);
+}
+
+/* founders: two cards side by side — photo, name + role, bio */
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 3.2vw, 44px);
+  margin-top: clamp(30px, 4.5vh, 52px);
+}
+.founder-card { margin: 0; }
+.founder-photo {
+  aspect-ratio: 4 / 5;
+  border-radius: 18px;
+  background: var(--raised);
+  border: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.founder-photo .ph-note { margin: 0; }
+.founder-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.founder-name {
+  margin: 16px 0 0;
+  font: 600 clamp(16px, 1.6vw, 19px)/1.3 Manrope, sans-serif;
+  color: var(--ink);
+}
+.founder-role {
+  margin: 5px 0 0;
+  font: 500 10.5px/1.4 "JetBrains Mono", monospace;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.founder-bio {
+  margin: 12px 0 0;
+  font: 400 clamp(14px, 1.3vw, 15.5px)/1.6 Manrope, sans-serif;
+  color: var(--ink-soft);
+}
+@media (max-width: 700px) {
+  .founder-grid { grid-template-columns: 1fr; gap: 34px; }
 }
 .video-frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
 .video-placeholder {
