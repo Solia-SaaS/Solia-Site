@@ -968,12 +968,14 @@ main.landing {
   display: block;
   filter: drop-shadow(0 6px 22px rgba(238, 130, 57, .22));
 }
-/* little chat bubble above the agent, tail pointing down at him */
+/* little chat bubble above the agent — same construction as the hero's
+   thought bubble (owner ruling 2026-08-21): rounded rect, scallop nub merged
+   into one continuous outline, two thought-dots stepping down to him */
 .agent-say {
   position: relative;
   display: block;
   width: max-content;
-  margin: 0 auto 10px;
+  margin: 0 auto 9px; /* the nub extends ~7px below — keep it off dot one */
   padding: 7px 12px 8px;
   border-radius: 12px;
   background: var(--raised);
@@ -987,15 +989,31 @@ main.landing {
 .agent-say::after {
   content: "";
   position: absolute;
-  left: 50%;
-  bottom: -4.5px;
-  width: 8px;
+  left: 38%;
+  bottom: -7px;
+  width: 12px;
   height: 8px;
   background: var(--raised);
-  border-right: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  transform: translateX(-50%) rotate(45deg);
+  border: 1px solid var(--rule);
+  border-top: 0;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
 }
+.agent-say-dots {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: max-content;
+  margin: 0 auto 5px;
+}
+.agent-say-dots i {
+  display: block;
+  border-radius: 50%;
+  background: var(--raised);
+  border: 1px solid var(--rule);
+}
+.agent-say-dots i:nth-child(1) { width: 6px; height: 6px; transform: translateX(-5px); }
+.agent-say-dots i:nth-child(2) { width: 4px; height: 4px; transform: translateX(-1px); }
 @media (max-width: 760px) { .soon-agent { display: none; } }
 .soon-glow {
   position: absolute;
