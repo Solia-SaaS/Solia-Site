@@ -165,7 +165,8 @@ main.landing {
   animation: agent-float 9s ease-in-out infinite;
 }
 .hero-agent img {
-  width: clamp(68px, 9vw, 120px);
+  /* vh term: same height budget as the bubble above (choreography anchor) */
+  width: min(clamp(68px, 9vw, 120px), 12vh);
   height: auto;
   display: block;
   margin: 0 auto;
@@ -177,10 +178,13 @@ main.landing {
    horizontal scroll-snap; click advances; n/4 counter centred at the top. */
 .hero-say {
   position: relative;
-  /* scales with the hero like the agent art does — AND with viewport height
-     (the vh cap): on short desktop windows the hero overflowed and the
-     bubble poked off the top of the screen (owner report) */
-  width: min(clamp(208px, 21vw, 300px), 36vh);
+  /* scales with the hero like the agent art does — AND with viewport height:
+     the scroll choreography pins SOLIA to the viewport centre and rides the
+     bubble/agent/kicker on that anchor, so everything above the letters must
+     fit in (50vh − 88px − letter half-height); a too-tall bubble is shoved
+     off the top of the screen (owner screenshot). 25vh keeps the block
+     inside that budget on ordinary desktop windows. */
+  width: min(clamp(208px, 21vw, 300px), 25vh);
   aspect-ratio: 20 / 9;
   margin: 0 auto 10px; /* the nub extends ~7px below — keep it off dot one */
   /* fully round oval with only a whisper of unevenness — the earlier corner
