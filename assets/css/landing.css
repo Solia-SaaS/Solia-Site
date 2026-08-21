@@ -160,8 +160,13 @@ main.landing {
   will-change: transform, opacity;
 }
 /* bubble + art float TOGETHER (the .soon-agent pattern) — the drift moved
-   from the img up to this wrapper when Pluto's bubble arrived (2026-08-21) */
+   from the img up to this wrapper when Pluto's bubble arrived (2026-08-21).
+   --say-w lives HERE so the bubble AND its sibling dots share it: every
+   bubble measurement below is a fraction of it, cloning the iOS geometry
+   (200×88, r16, 12px type) at any size — mixed px/vw/vh sizing is what made
+   the web bubble drift from the app's proportions (owner screenshots). */
 .hero-agent-float {
+  --say-w: min(clamp(208px, 21vw, 300px), 25vh);
   animation: agent-float 9s ease-in-out infinite;
 }
 .hero-agent img {
@@ -178,25 +183,15 @@ main.landing {
    horizontal scroll-snap; click advances; n/4 counter centred at the top. */
 .hero-say {
   position: relative;
-  /* scales with the hero like the agent art does — AND with viewport height:
-     the scroll choreography pins SOLIA to the viewport centre and rides the
-     bubble/agent/kicker on that anchor, so everything above the letters must
-     fit in (50vh − 88px − letter half-height); a too-tall bubble is shoved
-     off the top of the screen (owner screenshot). 25vh keeps the block
-     inside that budget on ordinary desktop windows.
-     --say-w drives EVERY inner measurement (text, padding, counter), so the
-     type always scales with the box itself — at wide-and-short windows a
-     vw/vh-sized font outgrew the vh-capped box and clipped into the counter
-     (owner report). */
-  --say-w: min(clamp(208px, 21vw, 300px), 25vh);
   width: var(--say-w);
-  aspect-ratio: 20 / 9;
-  margin: 0 auto 11px; /* the nub extends ~10px below — keep it off dot one */
-  /* a long rounded-corner rectangle, like the closing text box (owner
-     ruling — replaces the oval) */
-  border-radius: 16px;
-  /* the closing section's agent bubble palette (.agent-say) — owner ruling */
-  background: var(--raised);
+  height: calc(var(--say-w) * .44);           /* iOS: 88/200 */
+  margin: 0 auto calc(var(--say-w) * .055);   /* nub hangs into this gap */
+  border-radius: calc(var(--say-w) * .08);    /* iOS: 16/200 */
+  /* glass (owner ruling 2026-08-21): translucent raised surface + backdrop
+     blur; border-radius clips the blur to the box */
+  background: color-mix(in srgb, #211F19 62%, transparent);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
   border: 1px solid var(--rule);
   box-shadow: 0 8px 22px rgba(0, 0, 0, .45);
   line-height: normal;
@@ -211,42 +206,43 @@ main.landing {
   content: "";
   position: absolute;
   left: 36%;
-  bottom: -10px;
-  width: clamp(16px, 1.6vw, 22px);
-  height: 11px;
-  background: var(--raised);
+  bottom: calc(var(--say-w) * -.05);
+  width: calc(var(--say-w) * .09);            /* iOS: 18/200 */
+  height: calc(var(--say-w) * .05);
+  background: var(--raised); /* opaque so the erase trick keeps the outline continuous */
   border: 1px solid var(--rule);
   border-top: 0;
   border-radius: 0 0 50% 50% / 0 0 100% 100%;
 }
-/* chevron paging arrows on the oval's flanks — only the direction you can
-   actually go is shown (JS toggles data-hidden by page) */
+/* chevron paging arrows hugging the flanks, toned to the bubble's ground —
+   only the direction you can actually go is shown (JS toggles data-hidden) */
 .hero-say-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: clamp(24px, 2.2vw, 30px);
-  height: clamp(28px, 2.6vw, 34px);
+  width: calc(var(--say-w) * .12);
+  height: calc(var(--say-w) * .14);
   display: flex;
   align-items: center;
   justify-content: center;
   background: none;
   border: 0;
   padding: 0;
-  color: #A8A498;
-  font: 600 clamp(17px, 1.5vw, 22px)/1 Manrope, sans-serif;
+  /* barely-there: a step off the bubble's raised ground, not a UI element */
+  color: #4E4A42;
+  font: 600 calc(var(--say-w) * .085)/1 Manrope, sans-serif;
   cursor: pointer;
 }
 .hero-say-nav:hover { color: var(--gold); }
-.hero-say-nav.prev { left: clamp(8px, 1vw, 14px); }
-.hero-say-nav.next { right: clamp(8px, 1vw, 14px); }
+.hero-say-nav.prev { left: calc(var(--say-w) * .01); }
+.hero-say-nav.next { right: calc(var(--say-w) * .01); }
 .hero-say-nav[data-hidden="true"] { visibility: hidden; }
 /* two thought-dots stepping down toward Pluto's head */
 .hero-say-dots {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(7px, 0.9vw, 12px); /* spread apart, the last just off his head */
+  gap: calc(var(--say-w) * .033); /* spread apart, the last just off his head */
   width: max-content;
   margin: 0 auto 0; /* sit right on Pluto — owner ruling: closer to his head */
 }
@@ -256,14 +252,14 @@ main.landing {
   background: var(--raised);
   border: 1px solid var(--rule);
 }
-.hero-say-dots span:nth-child(1) { width: clamp(8px, 0.85vw, 11px); height: clamp(8px, 0.85vw, 11px); transform: translateX(-12px); }
-.hero-say-dots span:nth-child(2) { width: clamp(5px, 0.55vw, 7px); height: clamp(5px, 0.55vw, 7px); transform: translateX(-4px); }
+.hero-say-dots span:nth-child(1) { width: calc(var(--say-w) * .04); height: calc(var(--say-w) * .04); transform: translateX(calc(var(--say-w) * -.06)); }
+.hero-say-dots span:nth-child(2) { width: calc(var(--say-w) * .025); height: calc(var(--say-w) * .025); transform: translateX(calc(var(--say-w) * -.02)); }
 .hero-say-count {
   position: absolute;
-  top: calc(var(--say-w) * .053);
+  top: calc(var(--say-w) * .055);
   left: 50%;
   transform: translateX(-50%);
-  font: 500 calc(var(--say-w) * .043)/1 "JetBrains Mono", monospace;
+  font: 500 calc(var(--say-w) * .045)/1 "JetBrains Mono", monospace;
   letter-spacing: .08em;
   color: #9A968D;
 }
@@ -283,12 +279,12 @@ main.landing {
   align-items: center;
   justify-content: center;
   margin: 0;
-  /* everything in box-widths (--say-w): top padding clears the counter,
-     side padding clears the chevrons, and the type can never outgrow the
-     box at any window size */
-  padding: calc(var(--say-w) * .095) calc(var(--say-w) * .145) calc(var(--say-w) * .05);
+  /* everything in box-widths (--say-w), iOS ratios: top padding clears the
+     counter, side padding clears the chevrons, and the type can never
+     outgrow the box at any window size */
+  padding: calc(var(--say-w) * .10) calc(var(--say-w) * .16) calc(var(--say-w) * .05);
   text-align: center;
-  font: 500 calc(var(--say-w) * .054)/1.4 Manrope, sans-serif;
+  font: 500 calc(var(--say-w) * .06)/1.4 Manrope, sans-serif; /* iOS: 12/200 */
   color: var(--gold); /* matches the closing bubble's text */
 }
 @keyframes agent-float {
@@ -981,7 +977,11 @@ main.landing {
   position: relative;
   display: block;
   width: max-content;
-  margin: 0 auto 9px; /* the nub extends ~7px below — keep it off dot one */
+  /* auto margins CANNOT centre a max-content box wider than its container
+     (they resolve to 0 and it hangs off to the right — owner screenshot);
+     centre with left/translate instead */
+  left: 50%;
+  margin: 0 0 9px; /* the nub extends ~7px below — keep it off dot one */
   padding: 7px 12px 8px;
   border-radius: 12px;
   background: var(--raised);
@@ -989,7 +989,7 @@ main.landing {
   font: 600 12.5px/1 Manrope, sans-serif;
   letter-spacing: .03em;
   color: var(--gold);
-  transform: rotate(-3deg);
+  transform: translateX(-50%) rotate(-3deg);
   box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
 }
 .agent-say::after {
