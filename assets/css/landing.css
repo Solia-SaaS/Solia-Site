@@ -1025,7 +1025,9 @@ main.landing {
 @media (max-width: 760px) {
   .soon-agent {
     position: static;
-    margin-top: 14px;
+    /* the agent-float drift rises up to 24px — the margin must absorb the
+       whole excursion or the bubble bumps the button at the animation's top */
+    margin-top: 34px;
     /* full-row container (flex-basis outranks width in flex layout — a
        56px width here made the 100%-width img fill the whole form) with
        the ART pinned small below */
