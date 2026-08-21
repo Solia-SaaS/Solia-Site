@@ -183,10 +183,15 @@ main.landing {
      bubble/agent/kicker on that anchor, so everything above the letters must
      fit in (50vh − 88px − letter half-height); a too-tall bubble is shoved
      off the top of the screen (owner screenshot). 25vh keeps the block
-     inside that budget on ordinary desktop windows. */
-  width: min(clamp(208px, 21vw, 300px), 25vh);
+     inside that budget on ordinary desktop windows.
+     --say-w drives EVERY inner measurement (text, padding, counter), so the
+     type always scales with the box itself — at wide-and-short windows a
+     vw/vh-sized font outgrew the vh-capped box and clipped into the counter
+     (owner report). */
+  --say-w: min(clamp(208px, 21vw, 300px), 25vh);
+  width: var(--say-w);
   aspect-ratio: 20 / 9;
-  margin: 0 auto 13px; /* the nub extends ~10px below — keep it off dot one */
+  margin: 0 auto 11px; /* the nub extends ~10px below — keep it off dot one */
   /* a long rounded-corner rectangle, like the closing text box (owner
      ruling — replaces the oval) */
   border-radius: 16px;
@@ -243,7 +248,7 @@ main.landing {
   align-items: center;
   gap: clamp(7px, 0.9vw, 12px); /* spread apart, the last just off his head */
   width: max-content;
-  margin: 0 auto 3px;
+  margin: 0 auto 0; /* sit right on Pluto — owner ruling: closer to his head */
 }
 .hero-say-dots span {
   display: block;
@@ -255,10 +260,10 @@ main.landing {
 .hero-say-dots span:nth-child(2) { width: clamp(5px, 0.55vw, 7px); height: clamp(5px, 0.55vw, 7px); transform: translateX(-4px); }
 .hero-say-count {
   position: absolute;
-  top: clamp(11px, 1.2vw, 16px);
+  top: calc(var(--say-w) * .053);
   left: 50%;
   transform: translateX(-50%);
-  font: 500 clamp(9px, 0.8vw, 11px)/1 "JetBrains Mono", monospace;
+  font: 500 calc(var(--say-w) * .043)/1 "JetBrains Mono", monospace;
   letter-spacing: .08em;
   color: #9A968D;
 }
@@ -278,11 +283,12 @@ main.landing {
   align-items: center;
   justify-content: center;
   margin: 0;
-  /* generous side padding keeps text inside the oval's wide middle band
-     (and clear of the chevrons); top clears the counter line */
-  padding: clamp(20px, 2vw, 27px) clamp(32px, 3.2vw, 46px) clamp(10px, 1.1vw, 15px);
+  /* everything in box-widths (--say-w): top padding clears the counter,
+     side padding clears the chevrons, and the type can never outgrow the
+     box at any window size */
+  padding: calc(var(--say-w) * .095) calc(var(--say-w) * .145) calc(var(--say-w) * .05);
   text-align: center;
-  font: 500 min(clamp(12px, 1.05vw, 15px), 2.3vh)/1.4 Manrope, sans-serif;
+  font: 500 calc(var(--say-w) * .054)/1.4 Manrope, sans-serif;
   color: var(--gold); /* matches the closing bubble's text */
 }
 @keyframes agent-float {
