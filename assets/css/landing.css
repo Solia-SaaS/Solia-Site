@@ -177,9 +177,11 @@ main.landing {
    horizontal scroll-snap; click advances; n/4 counter centred at the top. */
 .hero-say {
   position: relative;
-  width: min(208px, 62vw);
-  height: 88px;
-  margin: 0 auto 2px; /* hug Pluto — the dots below carry the remaining gap */
+  /* scales with the hero like the agent art does (68→120px clamp) — a fixed
+     208px read shrunken next to the desktop wordmark (owner report) */
+  width: clamp(208px, 21vw, 300px);
+  aspect-ratio: 20 / 9;
+  margin: 0 auto 10px; /* the nub extends ~7px below — keep it off dot one */
   /* fully round oval with only a whisper of unevenness — the earlier corner
      mix read squared-off on the right */
   border-radius: 50% / 56% 54% 55% 57%;
@@ -194,34 +196,56 @@ main.landing {
   content: "";
   position: absolute;
   left: 36%;
-  bottom: -6px;
-  width: 15px;
-  height: 12px;
+  bottom: -7px;
+  width: clamp(15px, 1.5vw, 21px);
+  height: clamp(12px, 1.2vw, 17px);
   border-radius: 50%;
   background: #F3E9D2;
 }
+/* chevron paging arrows on the oval's flanks — only the direction you can
+   actually go is shown (JS toggles data-hidden by page) */
+.hero-say-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(24px, 2.2vw, 30px);
+  height: clamp(28px, 2.6vw, 34px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: #A8A498;
+  font: 600 clamp(17px, 1.5vw, 22px)/1 Manrope, sans-serif;
+  cursor: pointer;
+}
+.hero-say-nav:hover { color: #14120B; }
+.hero-say-nav.prev { left: clamp(8px, 1vw, 14px); }
+.hero-say-nav.next { right: clamp(8px, 1vw, 14px); }
+.hero-say-nav[data-hidden="true"] { visibility: hidden; }
 /* two thought-dots stepping down toward Pluto's head */
 .hero-say-dots {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 7px; /* dots spread apart, the last landing just off his head */
+  gap: clamp(7px, 0.9vw, 12px); /* spread apart, the last just off his head */
   width: max-content;
-  margin: 0 auto 2px;
+  margin: 0 auto 3px;
 }
 .hero-say-dots span {
   display: block;
   border-radius: 50%;
   background: #F3E9D2;
 }
-.hero-say-dots span:nth-child(1) { width: 8px; height: 8px; transform: translateX(-12px); }
-.hero-say-dots span:nth-child(2) { width: 5px; height: 5px; transform: translateX(-4px); }
+.hero-say-dots span:nth-child(1) { width: clamp(8px, 0.85vw, 11px); height: clamp(8px, 0.85vw, 11px); transform: translateX(-12px); }
+.hero-say-dots span:nth-child(2) { width: clamp(5px, 0.55vw, 7px); height: clamp(5px, 0.55vw, 7px); transform: translateX(-4px); }
 .hero-say-count {
   position: absolute;
-  top: 11px;
+  top: clamp(11px, 1.2vw, 16px);
   left: 50%;
   transform: translateX(-50%);
-  font: 500 9px/1 "JetBrains Mono", monospace;
+  font: 500 clamp(9px, 0.8vw, 11px)/1 "JetBrains Mono", monospace;
   letter-spacing: .08em;
   color: #9A968D;
 }
@@ -241,11 +265,11 @@ main.landing {
   align-items: center;
   justify-content: center;
   margin: 0;
-  /* generous side padding keeps text inside the oval's wide middle band;
-     top clears the counter line */
-  padding: 20px 28px 10px;
+  /* generous side padding keeps text inside the oval's wide middle band
+     (and clear of the chevrons); top clears the counter line */
+  padding: clamp(20px, 2vw, 27px) clamp(32px, 3.2vw, 46px) clamp(10px, 1.1vw, 15px);
   text-align: center;
-  font: 500 12px/1.4 Manrope, sans-serif;
+  font: 500 clamp(12px, 1.05vw, 15px)/1.4 Manrope, sans-serif;
   color: #14120B;
 }
 @keyframes agent-float {
