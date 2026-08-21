@@ -399,17 +399,38 @@ main.landing {
   text-transform: uppercase;
   color: var(--accent);
 }
+/* Longhand + px-first fallbacks ON PURPOSE (owner field report 2026-08-21:
+   a statement line rendered microscopic on an older iOS Safari) — clamp()
+   inside the `font` SHORTHAND is a known parse gap in older WebKit, and a
+   dropped shorthand leaves font-size to whatever cascades in. Every browser
+   gets the px value first; ones that parse clamp() upgrade. */
 .statement {
   margin: 0;
   max-width: 19ch;
-  font: 300 clamp(34px, 5.4vw, 62px)/1.08 Manrope, sans-serif;
+  font-family: Manrope, sans-serif;
+  font-weight: 300;
+  line-height: 1.08;
+  font-size: 40px;
+  font-size: clamp(34px, 5.4vw, 62px);
   letter-spacing: -.03em;
   color: var(--ink);
   text-wrap: pretty;
 }
 /* two-line statement: one impactful sentence per line, sized to hold */
-.statement-two { max-width: none; font-size: clamp(24px, 6.2vw, 80px); }
-.statement-two > span { display: block; white-space: nowrap; }
+.statement-two {
+  max-width: none;
+  font-size: 32px;
+  font-size: clamp(24px, 6.2vw, 80px);
+}
+.statement-two > span {
+  display: block;
+  white-space: nowrap;
+  /* belt-and-braces for old-Safari cascade weirdness: the lines may never
+     size independently of their statement */
+  font-size: inherit;
+  font-family: inherit;
+  letter-spacing: inherit;
+}
 .statement-two em, .why-answer em { font-style: normal; color: var(--gold); }
 /* drawn underline: a thin accent stroke sweeps in beneath the phrase once
    its parent reveals */
@@ -624,7 +645,7 @@ main.landing {
 /* founder statement: same two-line style, scaled so the longer second line
    spans the full content width without clipping (nowrap at the standard size
    would overflow by ~45%) */
-.statement-founder { font-size: clamp(18px, 5.3vw, 68px); }
+.statement-founder { font-size: 28px; font-size: clamp(18px, 5.3vw, 68px); }
 
 /* ── reveal-on-scroll ───────────────────────────────────────────────────── */
 [data-reveal] {
