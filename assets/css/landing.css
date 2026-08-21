@@ -1026,12 +1026,16 @@ main.landing {
   .soon-agent {
     position: static;
     margin-top: 14px;
-    width: 56px;
+    /* full-row container (flex-basis outranks width in flex layout — a
+       56px width here made the 100%-width img fill the whole form) with
+       the ART pinned small below */
+    width: 100%;
     flex-basis: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+  .soon-agent img { width: 56px; }
   .agent-say {
     /* flex centring replaces the desktop left/translate trick */
     left: auto;
