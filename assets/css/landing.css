@@ -193,31 +193,25 @@ main.landing {
   margin: 0 auto calc(var(--say-w) * .055);   /* nub hangs into this gap */
   border-radius: calc(var(--say-w) * .08);    /* iOS: 16/200 */
   /* glass (owner ruling 2026-08-21): translucent raised surface + backdrop
-     blur; border-radius clips the blur to the box */
+     blur; border-radius clips the blur to the box. The OUTLINE (incl. the
+     nub) is the .hero-say-shape svg — a translucent fill can't share a
+     seamless outline with a CSS-border nub. */
   background: color-mix(in srgb, #211F19 62%, transparent);
   -webkit-backdrop-filter: blur(12px);
           backdrop-filter: blur(12px);
-  border: 1px solid var(--rule);
   box-shadow: 0 8px 22px rgba(0, 0, 0, .45);
   line-height: normal;
   cursor: pointer;
   transform: rotate(-2deg);
 }
-/* the scallop nub, MERGED into the bubble's outline: a bottom-half bump with
-   no top border, overlapping the bubble's border by 1px so its background
-   erases that segment — one continuous outer line (owner ruling), not a
-   circle sitting on top */
-.hero-say::after {
-  content: "";
+.hero-say-shape {
   position: absolute;
-  left: 36%;
-  bottom: calc(var(--say-w) * -.05);
-  width: calc(var(--say-w) * .09);            /* iOS: 18/200 */
-  height: calc(var(--say-w) * .05);
-  background: var(--raised); /* opaque so the erase trick keeps the outline continuous */
-  border: 1px solid var(--rule);
-  border-top: 0;
-  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(var(--say-w) * .47); /* 94/200 — box plus the nub's dip */
+  overflow: visible;
+  pointer-events: none;
 }
 /* chevron paging arrows hugging the flanks, toned to the bubble's ground —
    only the direction you can actually go is shown (JS toggles data-hidden) */
@@ -254,7 +248,10 @@ main.landing {
 .hero-say-dots span {
   display: block;
   border-radius: 50%;
-  background: var(--raised);
+  /* glass like the box above */
+  background: color-mix(in srgb, #211F19 62%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
   border: 1px solid var(--rule);
 }
 .hero-say-dots span:nth-child(1) { width: calc(var(--say-w) * .04); height: calc(var(--say-w) * .04); transform: translateX(calc(var(--say-w) * -.06)); }
@@ -990,25 +987,25 @@ main.landing {
   margin: 0 0 9px; /* the nub extends ~7px below — keep it off dot one */
   padding: 7px 12px 8px;
   border-radius: 12px;
-  background: var(--raised);
-  border: 1px solid var(--rule);
+  /* glass, same recipe as the hero bubble; outline (incl. nub) lives in the
+     .agent-say-shape svg — see the hero note */
+  background: color-mix(in srgb, #211F19 62%, transparent);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   font: 600 12.5px/1 Manrope, sans-serif;
   letter-spacing: .03em;
   color: var(--gold);
   transform: translateX(-50%) rotate(-3deg);
   box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
 }
-.agent-say::after {
-  content: "";
+.agent-say-shape {
   position: absolute;
-  left: 38%;
-  bottom: -7px;
-  width: 12px;
-  height: 8px;
-  background: var(--raised);
-  border: 1px solid var(--rule);
-  border-top: 0;
-  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 5px); /* the nub's dip below the box */
+  overflow: visible;
+  pointer-events: none;
 }
 .agent-say-dots {
   display: flex;
@@ -1021,19 +1018,22 @@ main.landing {
 .agent-say-dots i {
   display: block;
   border-radius: 50%;
-  background: var(--raised);
+  background: color-mix(in srgb, #211F19 62%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
   border: 1px solid var(--rule);
 }
-/* dots step from UNDER THE NUB (left of the bubble's centre) down-right to
-   his head — auto-centring them looked like they hung from the middle */
-.agent-say-dots i:nth-child(1) { width: 6px; height: 6px; transform: translateX(-9px); }
-.agent-say-dots i:nth-child(2) { width: 4px; height: 4px; transform: translateX(-4px); }
-/* small screens: Pluto joins the flow beside the request-access button
-   instead of hiding (owner ruling 2026-08-21) */
+/* dots step from UNDER THE NUB (bump centred at 40% of the bubble — moved
+   left 2026-08-21, it met the box too far right) down-right to his head */
+.agent-say-dots i:nth-child(1) { width: 6px; height: 6px; transform: translateX(-11px); }
+.agent-say-dots i:nth-child(2) { width: 4px; height: 4px; transform: translateX(-5px); }
+/* small screens: the request-access button stays SCREEN-CENTRED (like the
+   iOS Sign in pill) and Pluto sits absolutely off to its right */
 @media (max-width: 760px) {
-  .waitlist { align-items: center; }
   .soon-agent {
-    position: static;
+    left: calc(50% + 87px);
+    top: auto;
+    bottom: -27px;
     margin-top: 0;
     width: 56px;
   }
