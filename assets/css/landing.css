@@ -186,10 +186,10 @@ main.landing {
      inside that budget on ordinary desktop windows. */
   width: min(clamp(208px, 21vw, 300px), 25vh);
   aspect-ratio: 20 / 9;
-  margin: 0 auto 10px; /* the nub extends ~7px below — keep it off dot one */
-  /* fully round oval with only a whisper of unevenness — the earlier corner
-     mix read squared-off on the right */
-  border-radius: 50% / 56% 54% 55% 57%;
+  margin: 0 auto 13px; /* the nub extends ~10px below — keep it off dot one */
+  /* a long rounded-corner rectangle, like the closing text box (owner
+     ruling — replaces the oval) */
+  border-radius: 16px;
   /* the closing section's agent bubble palette (.agent-say) — owner ruling */
   background: var(--raised);
   border: 1px solid var(--rule);
@@ -198,17 +198,21 @@ main.landing {
   cursor: pointer;
   transform: rotate(-2deg);
 }
-/* the little scallop nub attached at the bubble's bottom, left of centre */
+/* the scallop nub, MERGED into the bubble's outline: a bottom-half bump with
+   no top border, overlapping the bubble's border by 1px so its background
+   erases that segment — one continuous outer line (owner ruling), not a
+   circle sitting on top */
 .hero-say::after {
   content: "";
   position: absolute;
   left: 36%;
-  bottom: -7px;
-  width: clamp(15px, 1.5vw, 21px);
-  height: clamp(12px, 1.2vw, 17px);
-  border-radius: 50%;
+  bottom: -10px;
+  width: clamp(16px, 1.6vw, 22px);
+  height: 11px;
   background: var(--raised);
   border: 1px solid var(--rule);
+  border-top: 0;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
 }
 /* chevron paging arrows on the oval's flanks — only the direction you can
    actually go is shown (JS toggles data-hidden by page) */
