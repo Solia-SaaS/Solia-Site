@@ -171,34 +171,50 @@ main.landing {
   margin: 0 auto;
   filter: drop-shadow(0 6px 26px rgba(238, 130, 57, .22));
 }
-/* Pluto's intro — a classic comic speech balloon (owner rulings 2026-08-21):
-   logo-cream oval hanging UP-RIGHT of his head, pointed tail off the
-   lower-left reaching back down to his antenna. Four messages, horizontal
-   scroll-snap; click advances; n/4 counter centred at the top of the oval. */
+/* Pluto's intro — a hand-drawn THOUGHT bubble (owner sketch 2026-08-21):
+   wobbly logo-cream oval centred above his head, a small scallop nub at the
+   bottom, then two thought-dots drifting down to him. Four messages,
+   horizontal scroll-snap; click advances; n/4 counter centred at the top. */
 .hero-say {
   position: relative;
   width: min(208px, 62vw);
   height: 88px;
-  margin: 0 auto 16px;
-  border-radius: 50%;
+  margin: 0 auto 4px;
+  /* uneven corner radii = the sketch's organic, hand-drawn oval */
+  border-radius: 48% 52% 45% 55% / 62% 55% 48% 58%;
   background: #F3E9D2; /* the SOLIA wordmark cream */
   box-shadow: 0 8px 22px rgba(0, 0, 0, .45);
   line-height: normal;
   cursor: pointer;
-  transform: translateX(min(58px, 13vw)) rotate(-2deg);
+  transform: rotate(-2deg);
 }
+/* the little scallop nub attached at the bubble's bottom, left of centre */
 .hero-say::after {
   content: "";
   position: absolute;
-  left: 9%;
-  bottom: -13px;
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 13px solid transparent;
-  border-top: 24px solid #F3E9D2;
-  transform: rotate(-26deg); /* tip reaches down-left toward the antenna */
+  left: 36%;
+  bottom: -6px;
+  width: 15px;
+  height: 12px;
+  border-radius: 50%;
+  background: #F3E9D2;
 }
+/* two thought-dots stepping down toward Pluto's head */
+.hero-say-dots {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: max-content;
+  margin: 0 auto 6px;
+}
+.hero-say-dots span {
+  display: block;
+  border-radius: 50%;
+  background: #F3E9D2;
+}
+.hero-say-dots span:nth-child(1) { width: 8px; height: 8px; transform: translateX(-12px); }
+.hero-say-dots span:nth-child(2) { width: 5px; height: 5px; transform: translateX(-4px); }
 .hero-say-count {
   position: absolute;
   top: 11px;
