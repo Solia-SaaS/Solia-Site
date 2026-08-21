@@ -176,8 +176,7 @@ main.landing {
 .hero-say {
   position: relative;
   width: min(252px, 74vw);
-  margin: 0 auto 12px;
-  padding: 9px 14px 10px;
+  margin: 0 auto 5px; /* the thought-dots below bridge the rest to Pluto */
   border-radius: 14px;
   background: var(--raised);
   border: 1px solid var(--rule);
@@ -186,22 +185,28 @@ main.landing {
   line-height: normal;
   cursor: pointer;
 }
-.hero-say::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -4.5px;
-  width: 8px;
-  height: 8px;
-  background: var(--raised);
-  border-right: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  transform: translateX(-50%) rotate(45deg);
+/* descending thought-bubble dots, staggered like drifting puffs */
+.hero-say-dots {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  width: max-content;
+  margin: 0 auto 7px;
 }
+.hero-say-dots span {
+  display: block;
+  border-radius: 50%;
+  background: var(--raised);
+  border: 1px solid var(--rule);
+}
+.hero-say-dots span:nth-child(1) { width: 9px;   height: 9px;   transform: translateX(4px); }
+.hero-say-dots span:nth-child(2) { width: 6.5px; height: 6.5px; transform: translateX(-2px); }
+.hero-say-dots span:nth-child(3) { width: 4.5px; height: 4.5px; transform: translateX(2px); }
 .hero-say-count {
   position: absolute;
-  top: 7px;
-  right: 11px;
+  top: 8px;
+  right: 12px;
   font: 500 10px/1 "JetBrains Mono", monospace;
   letter-spacing: .08em;
   color: var(--muted);
@@ -218,7 +223,9 @@ main.landing {
   flex: 0 0 100%;
   scroll-snap-align: start;
   margin: 0;
-  padding-right: 30px; /* keeps the last words clear of the n/4 counter */
+  /* top padding clears the n/4 counter's own line — text can never run
+     under it, whatever the message length */
+  padding: 24px 14px 10px;
   font: 500 13px/1.5 Manrope, sans-serif;
   color: var(--ink);
 }
