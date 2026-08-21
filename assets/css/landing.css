@@ -171,39 +171,40 @@ main.landing {
   margin: 0 auto;
   filter: drop-shadow(0 6px 26px rgba(238, 130, 57, .22));
 }
-/* Pluto's intro — a classic comic speech balloon (owner screenshot
-   2026-08-21): white oval, pointed tail off the lower-left aiming at him.
-   Four messages, horizontal scroll-snap; click advances; n/4 counter sits
-   centred at the top of the oval (never under the curve, never over text). */
+/* Pluto's intro — a classic comic speech balloon (owner rulings 2026-08-21):
+   logo-cream oval hanging UP-RIGHT of his head, pointed tail off the
+   lower-left reaching back down to his antenna. Four messages, horizontal
+   scroll-snap; click advances; n/4 counter centred at the top of the oval. */
 .hero-say {
   position: relative;
-  width: min(258px, 76vw);
-  height: 104px;
-  margin: 0 auto 20px; /* room for the tail spike below the oval */
+  width: min(208px, 62vw);
+  height: 88px;
+  margin: 0 auto 16px;
   border-radius: 50%;
-  background: #FFFFFF;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, .45);
+  background: #F3E9D2; /* the SOLIA wordmark cream */
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .45);
   line-height: normal;
   cursor: pointer;
+  transform: translateX(min(58px, 13vw)) rotate(-2deg);
 }
 .hero-say::after {
   content: "";
   position: absolute;
-  left: 27%;
-  bottom: -16px;
+  left: 9%;
+  bottom: -13px;
   width: 0;
   height: 0;
-  border-left: 7px solid transparent;
-  border-right: 15px solid transparent;
-  border-top: 26px solid #FFFFFF;
-  transform: rotate(14deg);
+  border-left: 6px solid transparent;
+  border-right: 13px solid transparent;
+  border-top: 24px solid #F3E9D2;
+  transform: rotate(-26deg); /* tip reaches down-left toward the antenna */
 }
 .hero-say-count {
   position: absolute;
-  top: 13px;
+  top: 11px;
   left: 50%;
   transform: translateX(-50%);
-  font: 500 10px/1 "JetBrains Mono", monospace;
+  font: 500 9px/1 "JetBrains Mono", monospace;
   letter-spacing: .08em;
   color: #9A968D;
 }
@@ -225,9 +226,9 @@ main.landing {
   margin: 0;
   /* generous side padding keeps text inside the oval's wide middle band;
      top clears the counter line */
-  padding: 26px 34px 14px;
+  padding: 20px 28px 10px;
   text-align: center;
-  font: 500 13px/1.45 Manrope, sans-serif;
+  font: 500 12px/1.4 Manrope, sans-serif;
   color: #14120B;
 }
 @keyframes agent-float {
