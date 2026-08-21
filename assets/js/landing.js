@@ -166,7 +166,9 @@
     });
     if (say) {
       say.addEventListener("click", function () {
-        sayGo((sayIndex() + 1) % sayN);
+        /* no wraparound: the ends are one-directional (owner ruling) —
+           clicking on the last message does nothing */
+        sayGo(Math.min(sayN - 1, sayIndex() + 1));
       });
     }
     updateSayUi();
