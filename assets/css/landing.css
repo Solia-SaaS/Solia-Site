@@ -1027,28 +1027,26 @@ main.landing {
    left 2026-08-21, it met the box too far right) down-right to his head */
 .agent-say-dots i:nth-child(1) { width: 6px; height: 6px; transform: translateX(-11px); }
 .agent-say-dots i:nth-child(2) { width: 4px; height: 4px; transform: translateX(-5px); }
-/* small screens: the request-access button stays SCREEN-CENTRED (like the
-   iOS Sign in pill) and Pluto sits absolutely off to its right. The form
-   reserves the assembly's height below (the iOS row does the same with
-   minHeight) so bubble + dots + Pluto never overlap the input above or the
-   pill below. */
+/* small screens (owner ruling 2026-08-21): Pluto flows BELOW the
+   request-access button, centred — his own full-width row, so nothing can
+   overlap the input above or the pill below */
 @media (max-width: 760px) {
-  .waitlist { padding-bottom: 62px; }
   .soon-agent {
-    left: calc(50% + 87px);
-    /* below the input row (52px + 10px gap): the bubble rides beside the
-       button, Pluto hangs into the reserved padding */
-    top: 62px;
-    margin-top: 0;
+    position: static;
+    margin-top: 14px;
     width: 56px;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .agent-say { font-size: 11px; padding: 6px 10px 7px; }
-}
-/* very small phones: no room beside the button for the bubble — Pluto alone */
-@media (max-width: 374px) {
-  .agent-say,
-  .agent-say-dots { display: none; }
-  .soon-agent { top: 66px; }
+  .agent-say {
+    /* flex centring replaces the desktop left/translate trick */
+    left: auto;
+    transform: rotate(-3deg);
+    font-size: 11px;
+    padding: 6px 10px 7px;
+  }
 }
 .soon-glow {
   position: absolute;
