@@ -177,15 +177,18 @@ main.landing {
    horizontal scroll-snap; click advances; n/4 counter centred at the top. */
 .hero-say {
   position: relative;
-  /* scales with the hero like the agent art does (68→120px clamp) — a fixed
-     208px read shrunken next to the desktop wordmark (owner report) */
-  width: clamp(208px, 21vw, 300px);
+  /* scales with the hero like the agent art does — AND with viewport height
+     (the vh cap): on short desktop windows the hero overflowed and the
+     bubble poked off the top of the screen (owner report) */
+  width: min(clamp(208px, 21vw, 300px), 36vh);
   aspect-ratio: 20 / 9;
   margin: 0 auto 10px; /* the nub extends ~7px below — keep it off dot one */
   /* fully round oval with only a whisper of unevenness — the earlier corner
      mix read squared-off on the right */
   border-radius: 50% / 56% 54% 55% 57%;
-  background: #F3E9D2; /* the SOLIA wordmark cream */
+  /* the closing section's agent bubble palette (.agent-say) — owner ruling */
+  background: var(--raised);
+  border: 1px solid var(--rule);
   box-shadow: 0 8px 22px rgba(0, 0, 0, .45);
   line-height: normal;
   cursor: pointer;
@@ -200,7 +203,8 @@ main.landing {
   width: clamp(15px, 1.5vw, 21px);
   height: clamp(12px, 1.2vw, 17px);
   border-radius: 50%;
-  background: #F3E9D2;
+  background: var(--raised);
+  border: 1px solid var(--rule);
 }
 /* chevron paging arrows on the oval's flanks — only the direction you can
    actually go is shown (JS toggles data-hidden by page) */
@@ -220,7 +224,7 @@ main.landing {
   font: 600 clamp(17px, 1.5vw, 22px)/1 Manrope, sans-serif;
   cursor: pointer;
 }
-.hero-say-nav:hover { color: #14120B; }
+.hero-say-nav:hover { color: var(--gold); }
 .hero-say-nav.prev { left: clamp(8px, 1vw, 14px); }
 .hero-say-nav.next { right: clamp(8px, 1vw, 14px); }
 .hero-say-nav[data-hidden="true"] { visibility: hidden; }
@@ -236,7 +240,8 @@ main.landing {
 .hero-say-dots span {
   display: block;
   border-radius: 50%;
-  background: #F3E9D2;
+  background: var(--raised);
+  border: 1px solid var(--rule);
 }
 .hero-say-dots span:nth-child(1) { width: clamp(8px, 0.85vw, 11px); height: clamp(8px, 0.85vw, 11px); transform: translateX(-12px); }
 .hero-say-dots span:nth-child(2) { width: clamp(5px, 0.55vw, 7px); height: clamp(5px, 0.55vw, 7px); transform: translateX(-4px); }
@@ -269,8 +274,8 @@ main.landing {
      (and clear of the chevrons); top clears the counter line */
   padding: clamp(20px, 2vw, 27px) clamp(32px, 3.2vw, 46px) clamp(10px, 1.1vw, 15px);
   text-align: center;
-  font: 500 clamp(12px, 1.05vw, 15px)/1.4 Manrope, sans-serif;
-  color: #14120B;
+  font: 500 min(clamp(12px, 1.05vw, 15px), 2.3vh)/1.4 Manrope, sans-serif;
+  color: var(--gold); /* matches the closing bubble's text */
 }
 @keyframes agent-float {
   0%, 100% { transform: translate(0, 0) rotate(-5deg); }
