@@ -1018,9 +1018,21 @@ main.landing {
   background: var(--raised);
   border: 1px solid var(--rule);
 }
-.agent-say-dots i:nth-child(1) { width: 6px; height: 6px; transform: translateX(-5px); }
-.agent-say-dots i:nth-child(2) { width: 4px; height: 4px; transform: translateX(-1px); }
-@media (max-width: 760px) { .soon-agent { display: none; } }
+/* dots step from UNDER THE NUB (left of the bubble's centre) down-right to
+   his head — auto-centring them looked like they hung from the middle */
+.agent-say-dots i:nth-child(1) { width: 6px; height: 6px; transform: translateX(-9px); }
+.agent-say-dots i:nth-child(2) { width: 4px; height: 4px; transform: translateX(-4px); }
+/* small screens: Pluto joins the flow beside the request-access button
+   instead of hiding (owner ruling 2026-08-21) */
+@media (max-width: 760px) {
+  .waitlist { align-items: center; }
+  .soon-agent {
+    position: static;
+    margin-top: 0;
+    width: 56px;
+  }
+  .agent-say { font-size: 11px; padding: 6px 10px 7px; }
+}
 .soon-glow {
   position: absolute;
   left: 50%;

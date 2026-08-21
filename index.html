@@ -797,9 +797,11 @@ description: Solia is a Life Operating System designed to align your actions wit
          Leave your email to apply to be a tester for early access.</p>
       <p class="soon-lede soon-bright" data-reveal>Your future is bright with Solia.</p>
       <form class="waitlist" id="waitlistForm" data-reveal>
-        <div class="soon-agent" aria-hidden="true"><span class="agent-say">Click it!</span><span class="agent-say-dots"><i></i><i></i></span><img src="{{ '/assets/brand/agent-astro-bean.png' | relative_url }}" alt=""></div>
         <input type="email" required placeholder="you@email.com" aria-label="Email address">
         <button type="submit" id="waitlistBtn">Request access</button>
+        <!-- after the button on purpose: desktop position is absolute, and on
+             small screens he flows into the row beside the button -->
+        <div class="soon-agent" aria-hidden="true"><span class="agent-say">Let&rsquo;s get started!</span><span class="agent-say-dots"><i></i><i></i></span><img src="{{ '/assets/brand/agent-astro-bean.png' | relative_url }}" alt=""></div>
       </form>
     </div>
   </section>
