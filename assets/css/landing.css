@@ -256,15 +256,6 @@ main.landing {
 }
 .hero-say-dots span:nth-child(1) { width: calc(var(--say-w) * .04); height: calc(var(--say-w) * .04); transform: translateX(calc(var(--say-w) * -.06)); }
 .hero-say-dots span:nth-child(2) { width: calc(var(--say-w) * .025); height: calc(var(--say-w) * .025); transform: translateX(calc(var(--say-w) * -.02)); }
-.hero-say-count {
-  position: absolute;
-  top: calc(var(--say-w) * .055);
-  left: 50%;
-  transform: translateX(-50%);
-  font: 500 calc(var(--say-w) * .045)/1 "JetBrains Mono", monospace;
-  letter-spacing: .08em;
-  color: #9A968D;
-}
 .hero-say-track {
   display: flex;
   height: 100%;
@@ -281,10 +272,10 @@ main.landing {
   align-items: center;
   justify-content: center;
   margin: 0;
-  /* everything in box-widths (--say-w), iOS ratios: top padding clears the
-     counter, side padding clears the chevrons, and the type can never
-     outgrow the box at any window size */
-  padding: calc(var(--say-w) * .10) calc(var(--say-w) * .16) calc(var(--say-w) * .05);
+  /* everything in box-widths (--say-w), iOS ratios: side padding clears the
+     chevrons, and the type can never outgrow the box at any window size
+     (counter removed 2026-08-21 → text truly centred) */
+  padding: calc(var(--say-w) * .05) calc(var(--say-w) * .16);
   text-align: center;
   font: 500 calc(var(--say-w) * .06)/1.4 Manrope, sans-serif; /* iOS: 12/200 */
   color: var(--gold); /* matches the closing bubble's text */

@@ -132,13 +132,12 @@
   }, { passive: true });
   onScroll();
 
-  /* ── Pluto's hero bubble: n/4 counter, chevrons, click-to-advance ─────── */
+  /* ── Pluto's hero bubble: chevrons + click-to-advance ─────────────────── */
   var sayTrack = document.getElementById("heroSayTrack");
-  var sayCount = document.getElementById("heroSayCount");
   var say = document.getElementById("heroSay");
   var sayPrev = document.getElementById("heroSayPrev");
   var sayNext = document.getElementById("heroSayNext");
-  if (sayTrack && sayCount) {
+  if (sayTrack) {
     var sayN = sayTrack.children.length;
     var sayIndex = function () {
       var w = sayTrack.clientWidth || 1;
@@ -146,7 +145,6 @@
     };
     var updateSayUi = function () {
       var i = sayIndex();
-      sayCount.textContent = (i + 1) + "/" + sayN;
       /* only the direction you can actually page toward is offered */
       if (sayPrev) sayPrev.setAttribute("data-hidden", i === 0 ? "true" : "false");
       if (sayNext) sayNext.setAttribute("data-hidden", i === sayN - 1 ? "true" : "false");
