@@ -1028,16 +1028,27 @@ main.landing {
 .agent-say-dots i:nth-child(1) { width: 6px; height: 6px; transform: translateX(-11px); }
 .agent-say-dots i:nth-child(2) { width: 4px; height: 4px; transform: translateX(-5px); }
 /* small screens: the request-access button stays SCREEN-CENTRED (like the
-   iOS Sign in pill) and Pluto sits absolutely off to its right */
+   iOS Sign in pill) and Pluto sits absolutely off to its right. The form
+   reserves the assembly's height below (the iOS row does the same with
+   minHeight) so bubble + dots + Pluto never overlap the input above or the
+   pill below. */
 @media (max-width: 760px) {
+  .waitlist { padding-bottom: 62px; }
   .soon-agent {
     left: calc(50% + 87px);
-    top: auto;
-    bottom: -27px;
+    /* below the input row (52px + 10px gap): the bubble rides beside the
+       button, Pluto hangs into the reserved padding */
+    top: 62px;
     margin-top: 0;
     width: 56px;
   }
   .agent-say { font-size: 11px; padding: 6px 10px 7px; }
+}
+/* very small phones: no room beside the button for the bubble — Pluto alone */
+@media (max-width: 374px) {
+  .agent-say,
+  .agent-say-dots { display: none; }
+  .soon-agent { top: 66px; }
 }
 .soon-glow {
   position: absolute;
