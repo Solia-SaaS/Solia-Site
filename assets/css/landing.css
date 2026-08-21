@@ -189,7 +189,8 @@ main.landing {
 .hero-say {
   position: relative;
   width: var(--say-w);
-  height: calc(var(--say-w) * .44);           /* iOS: 88/200 */
+  height: calc(var(--say-w) * .36);           /* iOS: 72/200 — trimmed
+     2026-08-21: less dead space above/below the text */
   margin: 0 auto calc(var(--say-w) * .055);   /* nub hangs into this gap */
   border-radius: calc(var(--say-w) * .08);    /* iOS: 16/200 */
   /* glass (owner ruling 2026-08-21): translucent raised surface + backdrop
@@ -209,7 +210,7 @@ main.landing {
   top: 0;
   left: 0;
   width: 100%;
-  height: calc(var(--say-w) * .47); /* 94/200 — box plus the nub's dip */
+  height: calc(var(--say-w) * .39); /* 78/200 — box plus the nub's dip */
   overflow: visible;
   pointer-events: none;
 }
