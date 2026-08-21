@@ -179,9 +179,10 @@ main.landing {
   position: relative;
   width: min(208px, 62vw);
   height: 88px;
-  margin: 0 auto 4px;
-  /* uneven corner radii = the sketch's organic, hand-drawn oval */
-  border-radius: 48% 52% 45% 55% / 62% 55% 48% 58%;
+  margin: 0 auto 2px; /* hug Pluto — the dots below carry the remaining gap */
+  /* fully round oval with only a whisper of unevenness — the earlier corner
+     mix read squared-off on the right */
+  border-radius: 50% / 56% 54% 55% 57%;
   background: #F3E9D2; /* the SOLIA wordmark cream */
   box-shadow: 0 8px 22px rgba(0, 0, 0, .45);
   line-height: normal;
@@ -204,9 +205,9 @@ main.landing {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 7px; /* dots spread apart, the last landing just off his head */
   width: max-content;
-  margin: 0 auto 6px;
+  margin: 0 auto 2px;
 }
 .hero-say-dots span {
   display: block;
