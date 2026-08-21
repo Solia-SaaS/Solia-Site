@@ -171,48 +171,45 @@ main.landing {
   margin: 0 auto;
   filter: drop-shadow(0 6px 26px rgba(238, 130, 57, .22));
 }
-/* Pluto's intro — one bubble, four messages, horizontal scroll-snap; click
-   advances too. The n/4 counter lives in the top-right corner. */
+/* Pluto's intro — a classic comic speech balloon (owner screenshot
+   2026-08-21): white oval, pointed tail off the lower-left aiming at him.
+   Four messages, horizontal scroll-snap; click advances; n/4 counter sits
+   centred at the top of the oval (never under the curve, never over text). */
 .hero-say {
   position: relative;
-  width: min(252px, 74vw);
-  margin: 0 auto 5px; /* the thought-dots below bridge the rest to Pluto */
-  border-radius: 14px;
-  background: var(--raised);
-  border: 1px solid var(--rule);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
-  text-align: left;
+  width: min(258px, 76vw);
+  height: 104px;
+  margin: 0 auto 20px; /* room for the tail spike below the oval */
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .45);
   line-height: normal;
   cursor: pointer;
 }
-/* descending thought-bubble dots, staggered like drifting puffs */
-.hero-say-dots {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  width: max-content;
-  margin: 0 auto 7px;
+.hero-say::after {
+  content: "";
+  position: absolute;
+  left: 27%;
+  bottom: -16px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 26px solid #FFFFFF;
+  transform: rotate(14deg);
 }
-.hero-say-dots span {
-  display: block;
-  border-radius: 50%;
-  background: var(--raised);
-  border: 1px solid var(--rule);
-}
-.hero-say-dots span:nth-child(1) { width: 9px;   height: 9px;   transform: translateX(4px); }
-.hero-say-dots span:nth-child(2) { width: 6.5px; height: 6.5px; transform: translateX(-2px); }
-.hero-say-dots span:nth-child(3) { width: 4.5px; height: 4.5px; transform: translateX(2px); }
 .hero-say-count {
   position: absolute;
-  top: 8px;
-  right: 12px;
+  top: 13px;
+  left: 50%;
+  transform: translateX(-50%);
   font: 500 10px/1 "JetBrains Mono", monospace;
   letter-spacing: .08em;
-  color: var(--muted);
+  color: #9A968D;
 }
 .hero-say-track {
   display: flex;
+  height: 100%;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
@@ -222,12 +219,16 @@ main.landing {
 .hero-say-track p {
   flex: 0 0 100%;
   scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
-  /* top padding clears the n/4 counter's own line — text can never run
-     under it, whatever the message length */
-  padding: 24px 14px 10px;
-  font: 500 13px/1.5 Manrope, sans-serif;
-  color: var(--ink);
+  /* generous side padding keeps text inside the oval's wide middle band;
+     top clears the counter line */
+  padding: 26px 34px 14px;
+  text-align: center;
+  font: 500 13px/1.45 Manrope, sans-serif;
+  color: #14120B;
 }
 @keyframes agent-float {
   0%, 100% { transform: translate(0, 0) rotate(-5deg); }
