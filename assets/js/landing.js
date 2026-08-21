@@ -132,6 +132,30 @@
   }, { passive: true });
   onScroll();
 
+  /* ── Pluto's hero bubble: n/4 counter + click-to-advance ──────────────── */
+  var sayTrack = document.getElementById("heroSayTrack");
+  var sayCount = document.getElementById("heroSayCount");
+  var say = document.getElementById("heroSay");
+  if (sayTrack && sayCount) {
+    var sayN = sayTrack.children.length;
+    var sayIndex = function () {
+      var w = sayTrack.clientWidth || 1;
+      return Math.max(0, Math.min(sayN - 1, Math.round(sayTrack.scrollLeft / w)));
+    };
+    sayTrack.addEventListener("scroll", function () {
+      sayCount.textContent = (sayIndex() + 1) + "/" + sayN;
+    }, { passive: true });
+    if (say) {
+      say.addEventListener("click", function () {
+        var next = (sayIndex() + 1) % sayN;
+        sayTrack.scrollTo({
+          left: next * sayTrack.clientWidth,
+          behavior: reduceMotion ? "auto" : "smooth",
+        });
+      });
+    }
+  }
+
   /* ── reveal-on-scroll ─────────────────────────────────────────────────── */
   var reveals = document.querySelectorAll("[data-reveal]");
   if ("IntersectionObserver" in window && !reduceMotion) {

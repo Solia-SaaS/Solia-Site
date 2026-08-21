@@ -7,9 +7,22 @@ description: Solia is a Life Operating System designed to align your actions wit
 <!-- ══ 1 · WELCOME — full-screen sun stage (always black space) ═════════════ -->
 <section class="hero-stage" id="hero">
   <div class="hero-inner" id="heroInner">
-    <!-- the agent, drifting in space above the lockup -->
-    <div class="hero-agent" id="heroAgent" aria-hidden="true">
-      <img src="{{ '/assets/brand/agent-astro-bean.png' | relative_url }}" alt="">
+    <!-- the agent, drifting in space above the lockup, with Pluto's intro
+         bubble riding the same float (the .soon-agent pattern). The bubble is
+         real content now, so aria-hidden moved down to the art only. -->
+    <div class="hero-agent" id="heroAgent">
+      <div class="hero-agent-float">
+        <div class="hero-say" id="heroSay" role="group" aria-label="A message from Pluto" aria-roledescription="carousel">
+          <span class="hero-say-count" id="heroSayCount" aria-hidden="true">1/4</span>
+          <div class="hero-say-track" id="heroSayTrack">
+            <p>Hey, I&rsquo;m Pluto!</p>
+            <p>The brains inside Solia and your new biggest helper.</p>
+            <p>You can tell me what to do or let me think for you.</p>
+            <p>Together we can make anything happen!</p>
+          </div>
+        </div>
+        <img src="{{ '/assets/brand/agent-astro-bean.png' | relative_url }}" alt="" aria-hidden="true">
+      </div>
     </div>
     <p class="hero-kicker" id="heroKicker">Welcome to</p>
     <h1 class="hero-title" id="heroTitle" aria-label="SOLIA">
