@@ -158,39 +158,11 @@ body.tx a.tx-card { color: var(--ink); }
 .tx-card-arrow { font-family: Manrope, sans-serif; font-size: 16px; letter-spacing: 0; color: var(--accent); transition: transform .25s ease; }
 .tx-card:hover .tx-card-arrow { transform: translateX(3px); }
 
-/* one-document pages (legal.getsolia.com): a shorter hero over the text */
+/* one-document pages (/delete-account): a shorter hero over the text */
 .tx-hero-doc .tx-title { font-size: clamp(38px, 6.2vw, 76px); }
 .tx-hero-doc .tx-updated { display: flex; } /* its own line, above the status note */
 .tx-hero-doc .tx-doc-status { margin-top: 18px; }
 .tx-hero-doc + .tx-layout { margin-top: clamp(-24px, -2vh, -8px); }
-
-/* the legal index's link to the one-page version */
-.tx-wide {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px 24px;
-  flex-wrap: wrap;
-  margin-top: 14px;
-  padding: 20px 22px;
-  border: 1px solid var(--rule);
-  border-radius: 16px;
-  background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 10%, var(--surface)), var(--surface));
-  transition: border-color .25s ease;
-}
-body.tx a.tx-wide { color: var(--ink); }
-.tx-wide:hover { border-color: color-mix(in srgb, var(--accent) 70%, var(--rule)); }
-.tx-wide:hover .tx-card-arrow { transform: translateX(3px); }
-.tx-wide-text { font-size: 16px; font-weight: 600; }
-.tx-wide-meta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font: 500 11px/1 "JetBrains Mono", monospace;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
 
 /* ── reading layout: contents beside the documents ────────────────────────── */
 .tx-layout {
@@ -246,7 +218,7 @@ body.tx .tx-toc-sections a[aria-current="true"] { color: var(--ink); border-left
 .js .tx-toc-doc:not(.is-active):not(.is-current) .tx-toc-sections { display: none; }
 .tx-toc-doc.is-current > .tx-toc-doc-link { color: var(--ink); }
 .tx-toc-doc.is-current > .tx-toc-doc-link .tx-toc-num { color: var(--accent); }
-/* "Other documents" on a legal.getsolia.com page */
+/* "Other documents" on a one-document page (/delete-account) */
 .tx-toc-group {
   margin: 22px 10px 6px;
   font: 500 10.5px/1 "JetBrains Mono", monospace;
