@@ -1126,6 +1126,24 @@ main.landing {
   transition: background .25s ease;
 }
 .waitlist button:hover { background: var(--gold); }
+/* the Terms & Agreements link, last thing on the page, under the form */
+.soon-terms {
+  margin: 30px 0 0;
+  font: 600 14px/1.4 Manrope, sans-serif;
+  letter-spacing: .02em;
+}
+.soon-terms a {
+  display: inline-block;
+  padding: 10px 4px; /* a comfortable tap target without moving the text */
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  text-underline-offset: 4px;
+}
+.soon-terms a:hover { color: var(--gold); text-decoration-color: currentColor; }
+/* Pluto flows below the button on small screens; his drift is already
+   absorbed by his own margin, so the link can sit closer */
+@media (max-width: 760px) { .soon-terms { margin-top: 18px; } }
 .soon-pill {
   display: inline-flex;
   align-items: center;
