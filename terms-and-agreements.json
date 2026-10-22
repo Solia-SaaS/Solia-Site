@@ -5,7 +5,7 @@
       "key": "tos",
       "title": "Solia Terms of Service",
       "version": "1.0",
-      "updated": "2026-10-21",
+      "updated": "2026-10-22",
       "status": "Draft for test-cohort review. Not approved for public launch while [OPERATOR LEGAL NAME] remains unresolved.",
       "blocks": [
         {
@@ -393,7 +393,7 @@
         },
         {
           "kind": "p",
-          "text": "The Service depends on third parties, including Supabase (hosting), OpenAI and Anthropic (AI processing and web search), Apple (sign-in, device checks, maps, music previews, notifications, app distribution), Google (sign-in and email delivery), Expo (notification routing), Open Food Facts and government food databases (nutrition data), Wikimedia (recipe images), and — when payments launch — Apple In-App Purchase and/or Stripe. Your use of features they power may also be subject to their terms. The Service also links to third-party websites, such as stores and the sources of grocery prices. We are not responsible for third-party services or websites we do not control, but we choose our processors as described in the Privacy Policy."
+          "text": "The Service depends on third parties, including Supabase (hosting), OpenAI and Anthropic (AI processing and web search), Apple (sign-in, device checks, maps, music previews, notifications, app distribution), Google (sign-in and email delivery), Expo (notification routing), Open Food Facts, government and national food composition tables, published research and manufacturers' product labels (nutrition data, credited under Data Sources & Licenses), Wikimedia (recipe images), and — when payments launch — Apple In-App Purchase and/or Stripe. Your use of features they power may also be subject to their terms. The Service also links to third-party websites, such as stores and the sources of grocery prices. We are not responsible for third-party services or websites we do not control, but we choose our processors as described in the Privacy Policy."
         },
         {
           "kind": "h",
