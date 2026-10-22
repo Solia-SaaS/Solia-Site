@@ -33,6 +33,10 @@
           "text": "You must be at least 16 years old to use Solia. By creating an account you represent that you are 16 or older and that the birthdate you provide is accurate. We may suspend or delete accounts we reasonably believe belong to users under 16."
         },
         {
+          "kind": "p",
+          "text": "If you are under the age of majority where you live (for example, 18 in Ontario), you may buy a membership or usage credits only with the permission of a parent or guardian, who is then responsible for the purchase."
+        },
+        {
           "kind": "h",
           "text": "3. Your account"
         },
@@ -159,6 +163,16 @@
           "text": "enters members into daily matches automatically (see section 11)."
         },
         {
+          "kind": "li",
+          "lead": "Usage credits",
+          "text": "are used automatically, without asking each time, once you reach a usage limit (see sections 15 and 16)."
+        },
+        {
+          "kind": "li",
+          "lead": "Your nights:",
+          "text": "if you are not a member, Solia still adds each night's sleep to your schedule from your Weekly Structure, without a coaching report."
+        },
+        {
           "kind": "h",
           "text": "7. Health and fitness"
         },
@@ -172,7 +186,7 @@
         },
         {
           "kind": "li",
-          "text": "Food plans are generated from what you tell us when you set one up (household, budget, shopping area, stores, kitchen equipment, pantry, restrictions and preferences) and from your logged data. A member can generate one new plan per week and revise it."
+          "text": "Food plans are generated from what you tell us when you set one up (household, budget, shopping area, stores, kitchen equipment, pantry, restrictions and preferences) and from your logged data. A member can generate one plan for each week and revise it, within the usage limits in section 15."
         },
         {
           "kind": "li",
@@ -266,11 +280,12 @@
         },
         {
           "kind": "li",
-          "text": "Ranked is for members, and every member is entered automatically. Daily matches compare scores calculated from your coaching data; some score inputs are graded by AI. If your membership ends you leave Ranked, and your rating is kept if you return."
+          "lead": "Viewing is open, playing is for members.",
+          "text": "Anyone signed in can view the Ranked ladder and players' Ranked profiles. Every member is entered into matches automatically. Daily matches compare scores calculated from your coaching data; some score inputs are graded by AI. If your membership ends you stop playing and are shown as Unranked, and your rating is kept if you return."
         },
         {
           "kind": "li",
-          "text": "Other players see your username, avatar, rank, tier, scores, match results and current-status summary — not the underlying details of your day."
+          "text": "Anyone signed in can see your username, avatar, rank, tier, scores, match results and current-status summary on the ladder and your Ranked profile — not the underlying details of your day."
         },
         {
           "kind": "li",
@@ -312,7 +327,7 @@
         },
         {
           "kind": "li",
-          "text": "create accounts to get around device, account, or usage limits;"
+          "text": "create accounts to get around device, account, or usage limits, or to get the onboarding Pluto allowance again;"
         },
         {
           "kind": "li",
@@ -332,72 +347,206 @@
         },
         {
           "kind": "h",
-          "text": "13. Membership, fees and usage limits"
+          "text": "13. Membership"
         },
         {
           "kind": "li",
-          "lead": "Member features:",
-          "text": "some features need a Solia membership: the Fitness toolkit, meal photos and barcode scanning, weekly food plans and shopping lists, coaching reports, Ranked, and scheduling with Pluto by voice or text. Scheduling with the tap controls, food search, and manual meal logging stay free."
+          "lead": "Free with every account:",
+          "text": "the Schedule and Weekly Structure, edited by tap; tasks and to-dos; social features and messages; viewing the Ranked ladder and players' Ranked profiles; the Schedule and Tasks sections of the Data page; Settings; Help; and onboarding, including your onboarding report and first plan."
         },
         {
           "kind": "li",
-          "lead": "Testing period:",
-          "text": "membership checkout is not available yet. Any test membership during testing carries no charge."
+          "lead": "Pluto during onboarding:",
+          "text": "while you complete onboarding you can speak or type to Pluto without a membership, up to a one-time allowance of US$2 of AI processing (measured as in section 15). The allowance is once per person: deleting your account and creating a new one does not reset it. We apply it using the sign-in fingerprints described in the Privacy Policy."
         },
         {
           "kind": "li",
-          "lead": "Pricing:",
-          "text": "the price, billing period, and included features are shown before you pay."
+          "lead": "Members also get:",
+          "text": "the Fitness and Nutrition toolkits (including generated workouts, food logging, meal photos, barcode scanning, and weekly food plans and shopping lists); Pluto by voice or text after onboarding, on the Schedule, Weekly Structure, Templates and Schedule Targets; coaching reports; Ranked matches; and the Nutrition, Fitness and Coaching sections of the Data page."
         },
         {
           "kind": "li",
-          "lead": "Auto-renewal:",
-          "text": "memberships renew automatically until cancelled. You can cancel at any time, effective at the end of the current billing period."
+          "lead": "Plans:",
+          "text": "there are two plans, Standard and Pro, each billed monthly or annually. Both include every member feature. Pro has double Standard's usage allowance (section 15)."
         },
         {
           "kind": "li",
-          "lead": "Where you buy governs how you cancel and get refunds:",
-          "text": "purchases made through Apple's In-App Purchase are managed and refunded through your Apple account and Apple's terms; purchases made on our website through our payment processor (planned: Stripe) are managed through your Solia account and refunded per the refund terms shown at purchase and applicable consumer law."
+          "lead": "Prices",
+          "text": "(US dollars, before tax): Standard US$39.99 a month or US$399.99 a year; Pro US$99.99 a month or US$999.99 a year. Checkout shows the plan, price and billing period again before you pay."
         },
         {
           "kind": "li",
-          "lead": "Price changes",
-          "text": "apply to subsequent billing periods only, with advance notice and — where required — your consent."
+          "lead": "Introductory prices and price changes:",
+          "text": "current prices are a limited-time introductory offer and may end. We may change prices for new purchases at any time. For an existing membership, a new price applies only from a renewal after we have given you advance notice and, where the law requires it, your consent."
         },
         {
           "kind": "li",
-          "text": "We do not store full payment card numbers; payment processing is handled by Apple or Stripe."
-        },
-        {
-          "kind": "li",
-          "lead": "Usage limits:",
-          "text": "to keep AI features sustainable, each account has a monthly AI usage allowance, and some features have their own limits (for example a daily number of generated workouts or custom-food estimates, and one new food plan per week). When you reach a limit, that feature pauses until the limit resets. We may change these limits."
+          "lead": "Taxes:",
+          "text": "prices do not include taxes. Where sales tax, GST/HST, VAT or a similar tax applies, it is added at checkout based on where you are. Your bank may charge its own currency conversion fees."
         },
         {
           "kind": "li",
           "lead": "When a membership ends,",
-          "text": "member features lock; your data, history, and Ranked rating are kept."
+          "text": "member features lock; your data, history, Ranked rating and any unexpired usage credits are kept."
+        },
+        {
+          "kind": "li",
+          "lead": "Testing period:",
+          "text": "while Solia is in testing, membership checkout and credit purchases are test transactions: no payment is taken and nothing is charged. The payment terms in sections 13 to 16 apply once paid checkout opens."
+        },
+        {
+          "kind": "h",
+          "text": "14. Payments, renewal, plan changes and refunds"
+        },
+        {
+          "kind": "li",
+          "lead": "Where you buy:",
+          "text": "memberships and usage credits are sold on Solia's website, and payments are processed by Stripe. Where the app links you to that checkout (for example, on the US App Store), you are buying from Solia, not from Apple: Apple is not the seller, and Apple's purchase management and refund processes do not apply. We do not receive or store your full card number."
+        },
+        {
+          "kind": "li",
+          "lead": "Auto-renewal:",
+          "text": "a membership renews automatically at the end of each billing period (every month or every year), at your plan's price at that time, using your payment method on file, until you cancel."
+        },
+        {
+          "kind": "li",
+          "lead": "Cancelling:",
+          "text": "you can cancel at any time in Settings → Membership. Cancelling stops the next renewal; you keep member access until the end of the period you have paid for."
+        },
+        {
+          "kind": "li",
+          "lead": "Upgrades take effect immediately:",
+          "text": "moving from Standard to Pro on the same billing period, from monthly to annual on the same plan, or from Standard monthly to Pro annual starts a new billing period on the new plan right away, and your usage limits start over from that moment. You pay the new plan's price minus what you paid for your current period."
+        },
+        {
+          "kind": "li",
+          "lead": "Every other change takes effect when your paid period ends:",
+          "text": "for example, moving from Pro to Standard, from annual to monthly, or from Standard annual to Pro monthly is scheduled for the end of your current paid period. Nothing is charged until then, and you keep your current plan until then."
+        },
+        {
+          "kind": "li",
+          "lead": "Refunds:",
+          "text": "payments are non-refundable. There are no refunds or credits for partly used billing periods, unused usage limits or unused usage credits, except where the law requires them."
+        },
+        {
+          "kind": "li",
+          "lead": "Failed payments and chargebacks:",
+          "text": "if a renewal payment cannot be collected, your membership ends. If a payment is reversed or disputed with your bank or card issuer, we may pause your membership, or remove the credits bought with that payment, while the dispute is open."
         },
         {
           "kind": "li",
           "lead": "Statutory rights:",
-          "text": "if you are a consumer in a jurisdiction with mandatory withdrawal/cooling-off rights for digital purchases (e.g., the EU/UK 14-day right), those rights apply to website purchases as presented at checkout, and nothing in these Terms limits them."
+          "text": "if you are a consumer in a jurisdiction with mandatory withdrawal or cooling-off rights for digital purchases (for example, the EU/UK 14-day right), those rights apply as presented at checkout, and nothing in these Terms limits them."
+        },
+        {
+          "kind": "h",
+          "text": "15. Usage limits"
         },
         {
           "kind": "li",
-          "text": "These Terms will be updated (with re-acceptance) when paid checkout launches."
+          "lead": "Why there are limits:",
+          "text": "Pluto, the toolkits, food plans and coaching reports use paid AI processing. To keep them sustainable, each membership has one shared usage allowance across all of them, with a daily, weekly and monthly limit."
+        },
+        {
+          "kind": "li",
+          "lead": "What is measured:",
+          "text": "each limit is measured in US dollars of Solia's own cost for the AI processing your requests use. A limit is a measure of usage, not a balance you own: unused allowance does not carry over, has no cash value and is not refunded."
+        },
+        {
+          "kind": "li",
+          "lead": "Standard allowance:",
+          "text": "US$20 a month, of which at most US$3 in a day and US$8 in a week."
+        },
+        {
+          "kind": "li",
+          "lead": "Pro allowance",
+          "text": "is double: US$40 a month, of which at most US$6 in a day and US$16 in a week."
+        },
+        {
+          "kind": "li",
+          "lead": "Per-section usage:",
+          "text": "the app shows how your usage splits between Pluto, the toolkits, food plans and coaching reports. That split is for your information; the limits apply to the total."
+        },
+        {
+          "kind": "li",
+          "lead": "Coaching reports",
+          "text": "count toward your allowance but keep running after it is used up, so your reports are not interrupted. They have their own monthly safeguard against runaway processing; if it is ever reached, reports wait until it resets, and they are not lost."
+        },
+        {
+          "kind": "li",
+          "lead": "When limits reset:",
+          "text": "limits are counted from the moment your membership starts, or from your last upgrade. A day is the 24 hours from that time of day, a week is seven of those days, and a month runs to the same date and time the next month (or the last day of a shorter month). Usage before that moment does not count, except that Pluto use during onboarding counts toward your first monthly limit if you join before finishing onboarding."
+        },
+        {
+          "kind": "li",
+          "lead": "Reaching a limit:",
+          "text": "a request that starts while you are under every limit finishes in full, even if it takes you over. After that, new requests (other than coaching reports) are paused until the limit resets (the app shows when) or until you use usage credits (section 16)."
+        },
+        {
+          "kind": "li",
+          "lead": "Not counted:",
+          "text": "your onboarding report and first plan do not count toward these limits."
+        },
+        {
+          "kind": "li",
+          "lead": "Other limits:",
+          "text": "some features also have their own limits, such as a daily number of generated workouts, target suggestions or custom-food estimates, and one food plan for each week."
+        },
+        {
+          "kind": "li",
+          "lead": "Changes:",
+          "text": "we may change usage limits, with advance notice in the app."
         },
         {
           "kind": "h",
-          "text": "14. Third-party services and content"
+          "text": "16. Usage credits"
+        },
+        {
+          "kind": "li",
+          "lead": "What they are:",
+          "text": "usage credits let you keep using Solia's AI features after you reach a usage limit. Credits come in packs of US$5, US$10, US$25, US$50 or US$100, and anyone with a Solia account can buy them."
+        },
+        {
+          "kind": "li",
+          "lead": "What they are not:",
+          "text": "credits are a usage balance with Solia only. They are not cash, have no cash value, cannot be transferred, sold or exchanged, cannot pay for a membership, and are not OpenAI, Anthropic or any other provider's credits."
+        },
+        {
+          "kind": "li",
+          "lead": "When they are used:",
+          "text": "only for requests made after a usage limit has been reached, automatically and without asking each time. Coaching reports never use credits. A request that starts under a limit never uses credits, even if it goes over. Credits do not unlock member features: without a membership, they can be used only for Pluto during onboarding, after the onboarding allowance is used up."
+        },
+        {
+          "kind": "li",
+          "lead": "How much they cover:",
+          "text": "credits are charged at 1.5 times Solia's cost of the AI processing a request uses, so each US$1 of credits covers about US$0.67 of AI processing, measured the same way as the usage limits. The number of days a pack is estimated to last, shown before you buy, is an estimate based on your recent usage, not a promise."
+        },
+        {
+          "kind": "li",
+          "lead": "Expiry:",
+          "text": "each purchase expires 12 months after you buy it. Credits that expire soonest are used first."
+        },
+        {
+          "kind": "li",
+          "lead": "Going below zero:",
+          "text": "if a request costs more than your remaining credits, it still finishes and your balance goes below zero by the difference. Your next purchase pays that off first; we do not bill you for it separately."
+        },
+        {
+          "kind": "li",
+          "lead": "No refunds:",
+          "text": "credits are non-refundable, except where the law requires otherwise. Unused credits are lost when they expire or when you delete your account."
+        },
+        {
+          "kind": "h",
+          "text": "17. Third-party services and content"
         },
         {
           "kind": "p",
-          "text": "The Service depends on third parties, including Supabase (hosting), OpenAI and Anthropic (AI processing and web search), Apple (sign-in, device checks, maps, music previews, notifications, app distribution), Google (sign-in and email delivery), Expo (notification routing), Open Food Facts, government and national food composition tables, published research and manufacturers' product labels (nutrition data, credited under Data Sources & Licenses), Wikimedia (recipe images), and — when payments launch — Apple In-App Purchase and/or Stripe. Your use of features they power may also be subject to their terms. The Service also links to third-party websites, such as stores and the sources of grocery prices. We are not responsible for third-party services or websites we do not control, but we choose our processors as described in the Privacy Policy."
+          "text": "The Service depends on third parties, including Supabase (hosting), OpenAI and Anthropic (AI processing and web search), Apple (sign-in, device checks, maps, music previews, notifications, app distribution), Google (sign-in and email delivery), Expo (notification routing), Stripe (payments), Open Food Facts, government and national food composition tables, published research and manufacturers' product labels (nutrition data, credited under Data Sources & Licenses), and Wikimedia (recipe images). Your use of features they power may also be subject to their terms. The Service also links to third-party websites, such as stores and the sources of grocery prices. We are not responsible for third-party services or websites we do not control, but we choose our processors as described in the Privacy Policy."
         },
         {
           "kind": "h",
-          "text": "15. Notifications and email"
+          "text": "18. Notifications and email"
         },
         {
           "kind": "li",
@@ -407,16 +556,16 @@
         {
           "kind": "li",
           "lead": "Email:",
-          "text": "we send sign-in and device verification codes and notices about your account, such as linking a sign-in method or deleting your account. We do not send marketing email from the app."
+          "text": "we send sign-in and device verification codes and notices about your account and membership, such as linking a sign-in method, payment receipts and renewals, or deleting your account. Receipts may come from Stripe on our behalf. We do not send marketing email from the app."
         },
         {
           "kind": "h",
-          "text": "16. Termination"
+          "text": "19. Termination"
         },
         {
           "kind": "li",
           "lead": "By you:",
-          "text": "delete your account at any time in-app (Settings → Account Management → Delete account). Deletion removes your data as described in the Privacy Policy."
+          "text": "delete your account at any time in-app (Settings → Account Management → Delete account). Deletion removes your data as described in the Privacy Policy. It also ends any membership at once, with no refund for the rest of the paid period, and unused usage credits are lost, except where the law requires otherwise. If you only want to stop paying, cancel your membership instead (section 14)."
         },
         {
           "kind": "li",
@@ -429,7 +578,7 @@
         },
         {
           "kind": "h",
-          "text": "17. Service changes and availability"
+          "text": "20. Service changes and availability"
         },
         {
           "kind": "p",
@@ -437,7 +586,7 @@
         },
         {
           "kind": "h",
-          "text": "18. Disclaimer of warranties"
+          "text": "21. Disclaimer of warranties"
         },
         {
           "kind": "p",
@@ -445,7 +594,7 @@
         },
         {
           "kind": "h",
-          "text": "19. Limitation of liability"
+          "text": "22. Limitation of liability"
         },
         {
           "kind": "p",
@@ -453,7 +602,7 @@
         },
         {
           "kind": "h",
-          "text": "20. Indemnity"
+          "text": "23. Indemnity"
         },
         {
           "kind": "p",
@@ -461,7 +610,7 @@
         },
         {
           "kind": "h",
-          "text": "21. Apple App Store terms (iOS users)"
+          "text": "24. Apple App Store terms (iOS users)"
         },
         {
           "kind": "p",
@@ -470,6 +619,10 @@
         {
           "kind": "li",
           "text": "These Terms are between you and Solia only — not Apple. Apple is not responsible for the App or its content."
+        },
+        {
+          "kind": "li",
+          "text": "Memberships and usage credits are sold by Solia on its website, not by Apple (section 14)."
         },
         {
           "kind": "li",
@@ -506,7 +659,7 @@
         },
         {
           "kind": "h",
-          "text": "22. Changes to these Terms & Agreements"
+          "text": "25. Changes to these Terms & Agreements"
         },
         {
           "kind": "p",
@@ -514,7 +667,7 @@
         },
         {
           "kind": "h",
-          "text": "23. Governing law and disputes"
+          "text": "26. Governing law and disputes"
         },
         {
           "kind": "p",
@@ -522,7 +675,7 @@
         },
         {
           "kind": "h",
-          "text": "24. General"
+          "text": "27. General"
         },
         {
           "kind": "p",
@@ -530,7 +683,7 @@
         },
         {
           "kind": "h",
-          "text": "25. Contact"
+          "text": "28. Contact"
         },
         {
           "kind": "p",
@@ -542,7 +695,7 @@
       "key": "privacy",
       "title": "Solia Privacy Policy",
       "version": "1.0",
-      "updated": "2026-10-21",
+      "updated": "2026-10-22",
       "status": "Draft for test-cohort use. Not approved for public launch while [OPERATOR LEGAL NAME] remains unresolved.",
       "blocks": [
         {
@@ -556,7 +709,7 @@
         },
         {
           "kind": "p",
-          "text": "Solia is a personal planning app for users age 16 and older. It provides scheduling, to-dos, fitness and nutrition tracking, AI-generated workouts and food plans, social and messaging features, and AI-generated coaching, scores, and rankings. This policy covers the Solia apps and the website getsolia.com. We do not knowingly collect data from children under 16."
+          "text": "Solia is a personal planning app for users age 16 and older. It provides scheduling, to-dos, fitness and nutrition tracking, AI-generated workouts and food plans, social and messaging features, AI-generated coaching, scores, and rankings, and paid memberships and usage credits. This policy covers the Solia apps and the website getsolia.com. We do not knowingly collect data from children under 16."
         },
         {
           "kind": "h",
@@ -618,6 +771,11 @@
           "text": "— bug reports and suggestions (including dictated notes and the screenshots or recordings you attach) and the content and account reports you file. Support, safety, and abuse review."
         },
         {
+          "kind": "li",
+          "lead": "Purchases",
+          "text": "— your membership plan (Standard or Pro, monthly or annual), when it started, renews or ends, upgrades, scheduled changes and cancellations, the amounts charged, your usage credit purchases, balance and expiry dates, and the references Stripe returns to us for each payment (such as customer and payment IDs and payment status). Used to provide your membership and credits, apply usage limits, keep accounting and tax records, and prevent fraud. Your card and billing details are entered on Stripe's checkout; we never receive or store your full card number."
+        },
+        {
           "kind": "p",
           "lead": "Information about other people.",
           "text": "Some features let you enter information about others, such as household members in a food plan or your children's ages during onboarding. Only enter it if you are allowed to share it with us, and no more than the feature needs. We use it only to provide that feature to you."
@@ -644,12 +802,12 @@
         {
           "kind": "li",
           "lead": "AI usage records",
-          "text": "— for each AI request: the feature, model, token counts, and cost, never the text. Used for usage limits, billing, and abuse prevention."
+          "text": "— for each AI request: the feature, model, token counts, and cost, never the text. We add these up for each section (Pluto, Fitness, Nutrition, Food plans, Coaching reports) to apply your plan's daily, weekly and monthly usage limits and to charge usage credits. Also used for billing and abuse prevention."
         },
         {
           "kind": "li",
           "lead": "Device and identity checks",
-          "text": "— when a new account is set up, Apple's App Attest confirms the request comes from a genuine copy of the app, and Apple's DeviceCheck keeps a small counter for the device so each device can set up a limited number of accounts (currently three in any 12 months). We also keep keyed one-way fingerprints (hashes) of your email address and Apple or Google account identifier, which cannot be read back as the original values, so the same sign-in cannot set up Solia again within 24 hours."
+          "text": "— when a new account is set up, Apple's App Attest confirms the request comes from a genuine copy of the app, and Apple's DeviceCheck keeps a small counter for the device so each device can set up a limited number of accounts (currently three in any 12 months). We also keep keyed one-way fingerprints (hashes) of your email address and Apple or Google account identifier, which cannot be read back as the original values. They are used only for two onboarding limits: the same sign-in cannot set up Solia again within 24 hours, and the onboarding Pluto allowance is given only once per person, so we record against the fingerprint how much of it has been used."
         },
         {
           "kind": "p",
@@ -743,6 +901,11 @@
         },
         {
           "kind": "li",
+          "lead": "Stripe",
+          "text": "processes membership and usage credit payments on our website. It receives what you enter at checkout (your card and billing details, such as name, email address and billing country or postal code), the plan or credit pack you buy and its price, and a reference to your Solia account, and it collects information about the device and browser used at checkout, including through cookies, to prevent fraud. Stripe handles payment data under its own privacy policy and the payment-card security standard (PCI DSS); we receive only the payment references and status described under \"Purchases\"."
+        },
+        {
+          "kind": "li",
           "lead": "Open Food Facts",
           "text": "receives scanned barcodes and product names when we look up packaged foods."
         },
@@ -767,7 +930,7 @@
         {
           "kind": "li",
           "lead": "Current-status summary:",
-          "text": "an AI-written summary of your recent progress and goals. It appears on your social profile (to everyone who can view it) and on your Ranked profile, which other members can open. It is on by default; turn it off in Settings → Privacy → Current status."
+          "text": "an AI-written summary of your recent progress and goals. It appears on your social profile (to everyone who can view it) and on your Ranked profile, which anyone signed in to Solia can open. It is on by default; turn it off in Settings → Privacy → Current status."
         },
         {
           "kind": "li",
@@ -779,7 +942,7 @@
         },
         {
           "kind": "li",
-          "text": "Leaderboards show your username, avatar, rank, tier, scores, and match results, not the underlying details of your day. Your saved scores can be used as a benchmark opponent for other players."
+          "text": "The Ranked ladder and Ranked profiles, which anyone signed in can view, show your username, avatar, rank, tier, scores, and match results, not the underlying details of your day. Your saved scores can be used as a benchmark opponent for other players."
         },
         {
           "kind": "li",
@@ -797,7 +960,7 @@
         {
           "kind": "li",
           "lead": "Account deletion:",
-          "text": "the in-app Delete account flow (Settings → Account Management) removes the authentication record and account-owned profile, schedule, to-dos and tasks, fitness, nutrition, food plans and private recipes, social, scores, coaching reports, and storage data. You can also contact privacy@getsolia.com; we may require identity verification."
+          "text": "the in-app Delete account flow (Settings → Account Management) removes the authentication record and account-owned profile, schedule, to-dos and tasks, fitness, nutrition, food plans and private recipes, social, scores, coaching reports, membership and usage credit, and storage data. Deletion ends any membership and its renewals, and unused credits are lost (see the Terms of Service). You can also contact privacy@getsolia.com; we may require identity verification."
         },
         {
           "kind": "li",
@@ -822,12 +985,17 @@
         {
           "kind": "li",
           "lead": "Voice transcripts and Pluto conversation:",
-          "text": "the text of your voice commands and Pluto's replies is stored with your schedule and Weekly Structure while your account is active. Clear chat in the app removes the conversation, and account deletion removes it with the rest of your data. Solia never stores the audio. A per-request usage record (model, token counts, cost) is kept without the text for billing, limits, and abuse prevention."
+          "text": "the text of your voice commands and Pluto's replies is stored with your schedule and Weekly Structure while your account is active. Clear chat in the app removes the conversation, and account deletion removes it with the rest of your data. Solia never stores the audio. A per-request usage record (model, token counts, cost) is kept without the text for usage limits, credits, billing, and abuse prevention."
+        },
+        {
+          "kind": "li",
+          "lead": "Payment records:",
+          "text": "Stripe keeps its records of your payments under its own terms and the law. Payment records that tax and accounting law requires us to keep, such as receipts and invoices, are kept for the period that law sets (in Canada, generally six years), even after you delete your account, and are used for nothing else."
         },
         {
           "kind": "li",
           "lead": "Kept after deletion:",
-          "text": "the keyed fingerprints described under \"Device and identity checks\" are kept after you delete your account, so that deleting and re-creating an account cannot be used to get around its limits. Apple keeps your device's DeviceCheck counter; we cannot erase it, and it holds no personal information. Shared catalog estimates for packaged foods and commute-time estimates contain no personal information and are not deleted."
+          "text": "the keyed fingerprints described under \"Device and identity checks\", with the time of the last onboarding report and how much of the onboarding Pluto allowance was used, are kept after you delete your account, so that deleting and re-creating an account cannot be used to get around those onboarding limits. They are used for nothing else and are kept for as long as Solia has those limits. Apple keeps your device's DeviceCheck counter; we cannot erase it, and it holds no personal information. Shared catalog estimates for packaged foods and commute-time estimates contain no personal information and are not deleted."
         },
         {
           "kind": "li",
@@ -853,7 +1021,7 @@
         },
         {
           "kind": "p",
-          "text": "Where a legal basis is required, we rely on contract to provide the requested service; your consent for health-related information, information about other people you choose to enter, and optional microphone, camera and photo, location, and notification features; and legitimate interests for security, abuse prevention, usage limits, support, and service reliability. You can withdraw consent by removing the information, turning off the permission in your device settings, or stopping use of the feature. Scores and coaching do not make decisions with legal or similarly significant effects."
+          "text": "Where a legal basis is required, we rely on contract to provide the requested service, including your membership, usage credits and their payments; legal obligation to keep tax and accounting records; your consent for health-related information, information about other people you choose to enter, and optional microphone, camera and photo, location, and notification features; and legitimate interests for security, fraud and abuse prevention, usage limits, support, and service reliability. You can withdraw consent by removing the information, turning off the permission in your device settings, or stopping use of the feature. Scores and coaching do not make decisions with legal or similarly significant effects."
         },
         {
           "kind": "p",
@@ -866,6 +1034,10 @@
         {
           "kind": "li",
           "text": "Make your account private, turn off your current-status summary, and manage notifications in Settings."
+        },
+        {
+          "kind": "li",
+          "text": "See your plan, usage and credits, and cancel your membership's renewal, in Settings → Membership."
         },
         {
           "kind": "li",

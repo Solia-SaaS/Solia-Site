@@ -20,6 +20,7 @@ description: How to permanently delete your account and data, in the app or by e
       <ol class="tx-toc-sections">
         <li><a href="#delete-account-in-the-app">In the app</a></li>
         <li><a href="#delete-account-by-email">By email</a></li>
+        <li><a href="#delete-account-memberships-and-usage-credits">Memberships and usage credits</a></li>
         <li><a href="#delete-account-what-deletion-does">What deletion does</a></li>
         <li><a href="#delete-account-delayed-cleanup">Delayed cleanup</a></li>
         <li><a href="#delete-account-kept-after-deletion">Kept after deletion</a></li>
@@ -49,9 +50,11 @@ description: How to permanently delete your account and data, in the app or by e
 <p>Open <strong>Settings → Account Management → Delete account</strong> and confirm with the emailed code (or with your linked Apple account). This is the fastest route.</p>
 <h3 id="delete-account-by-email"><span>By email</span></h3>
 <p>Email <strong><a href="mailto:privacy@getsolia.com">privacy@getsolia.com</a></strong> from the address associated with your account. We may request additional identity verification and respond within the period required by applicable law.</p>
+<h3 id="delete-account-memberships-and-usage-credits"><span>Memberships and usage credits</span></h3>
+<p>Deleting your account ends any Solia membership at once and stops its renewals; the rest of the paid period is not refunded. Unused usage credits are lost and are not refunded. Both apply except where the law requires otherwise. If you only want to stop paying, cancel renewal in <strong>Settings → Membership</strong> instead: your account stays, and you keep member access until the end of the period you paid for.</p>
 <h3 id="delete-account-what-deletion-does"><span>What deletion does</span></h3>
 <ul>
-<li>Deletes the authentication record and account-owned profile, schedule, to-do and task, fitness, nutrition, food-plan and private-recipe, social, score, coaching-report, and storage data.</li>
+<li>Deletes the authentication record and account-owned profile, schedule, to-do and task, fitness, nutrition, food-plan and private-recipe, social, score, coaching-report, membership and usage-credit, and storage data.</li>
 <li>Deletes the complete one-to-one message thread, pair background, and mute state for both participants when either participant deletes their account.</li>
 <li>Removes the departing account's membership, content, and identifiers from surviving groups and businesses. Ownership transfers deterministically when another member remains; empty containers may be deleted.</li>
 <li>Removes moderation reports filed by the departing account. A report filed by another user may survive with its target account ID removed and replaced by a random deletion-specific correlation key.</li>
@@ -60,7 +63,9 @@ description: How to permanently delete your account and data, in the app or by e
 <h3 id="delete-account-delayed-cleanup"><span>Delayed cleanup</span></h3>
 <p>Deleted messaging media, pair backgrounds, and group avatars or backgrounds can leave a restricted service-only cleanup item containing a storage path and retry metadata. Cleanup waits at least 24 hours and deletes only after current reference checks find no live product reference. An Apple-linked deletion can leave a restricted revocation item until Apple confirms token revocation. These records are not available to app users and are retained only until the work succeeds.</p>
 <h3 id="delete-account-kept-after-deletion"><span>Kept after deletion</span></h3>
-<p>Keyed one-way fingerprints of the account's email address and Apple or Google identifier are kept so that deleting and re-creating an account cannot be used to get around Solia's setup limits; they cannot be read back as the original values. Apple keeps the device's DeviceCheck counter, which holds no personal information. Requests already sent to an AI provider are kept by that provider only for the limited period its API terms allow.</p>
+<p>Keyed one-way fingerprints of the account's email address and Apple or Google identifier are kept, with the time of the last onboarding report and how much of the one-time onboarding Pluto allowance was used. They are used only so that deleting and re-creating an account cannot get around Solia's onboarding limits (a sign-in cannot set up Solia again within 24 hours, and the onboarding Pluto allowance is given once per person). They cannot be read back as the original values, and are kept for as long as Solia has those limits.</p>
+<p>Stripe keeps its records of your payments under its own terms and the law. Payment records that tax and accounting law requires Solia to keep, such as receipts and invoices, are kept for the period that law sets (in Canada, generally six years).</p>
+<p>Apple keeps the device's DeviceCheck counter, which holds no personal information. Requests already sent to an AI provider are kept by that provider only for the limited period its API terms allow.</p>
 <h3 id="delete-account-backups"><span>Backups</span></h3>
 <p>Deleted data may remain in access-restricted backups for up to about 30 days before those backups expire.</p>
 <p>See the <a href="/terms#privacy-policy">Privacy Policy</a> for the complete retention and deletion terms.</p>
