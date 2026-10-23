@@ -5,7 +5,7 @@
       "key": "tos",
       "title": "Solia Terms of Service",
       "version": "1.0",
-      "updated": "2026-10-22",
+      "updated": "2026-10-23",
       "status": "Draft for test-cohort review. Not approved for public launch while [OPERATOR LEGAL NAME] remains unresolved.",
       "blocks": [
         {
@@ -352,12 +352,12 @@
         {
           "kind": "li",
           "lead": "Free with every account:",
-          "text": "the Schedule and Weekly Structure, edited by tap; tasks and to-dos; social features and messages; viewing the Ranked ladder and players' Ranked profiles; the Schedule and Tasks sections of the Data page; Settings; Help; and onboarding, including your onboarding report and first plan."
+          "text": "the Schedule and Weekly Structure, edited by tap; tasks and to-dos; social features and messages; viewing the Ranked ladder and players' Ranked profiles; the Schedule and Tasks sections of the Data page; Settings; Help; and onboarding, including your onboarding report and first plan (within the onboarding limits in section 15)."
         },
         {
           "kind": "li",
           "lead": "Pluto during onboarding:",
-          "text": "while you complete onboarding you can speak or type to Pluto without a membership, up to a one-time allowance of US$2 of AI processing (measured as in section 15). The allowance is once per person: deleting your account and creating a new one does not reset it. We apply it using the sign-in fingerprints described in the Privacy Policy."
+          "text": "while you complete onboarding you can speak or type to Pluto without a membership, up to a one-time allowance of US$2 of AI processing (measured as in section 15). The allowance is once per person: deleting your account and creating a new one does not reset it. We apply it using the sign-in fingerprints described in the Privacy Policy. Past it, continuing with Pluto requires a membership."
         },
         {
           "kind": "li",
@@ -425,8 +425,23 @@
         },
         {
           "kind": "li",
-          "lead": "Refunds:",
-          "text": "payments are non-refundable. There are no refunds or credits for partly used billing periods, unused usage limits or unused usage credits, except where the law requires them."
+          "lead": "The Solia Promise (progress guarantee):",
+          "text": "if your first 30 days as a member show no real progress, we refund your first month. It applies to your first membership only, monthly or annual, once per person (we use the sign-in fingerprints described in the Privacy Policy to apply it once). Request it in the app or by contacting us (section 28) within 30 days after your first 30 days as a member end."
+        },
+        {
+          "kind": "li",
+          "lead": "How the Solia Promise judges progress:",
+          "text": "when you ask, our automated system reviews the data in your Solia account from your first 30 days as a member: your schedule and what you recorded doing, your targets and goals, and your coaching reports. If that review shows you stuck to your plan and made no real progress, we refund you. If it shows progress, or shows you did not stick to your plan, there is no refund. The review's decision is final, except where the law gives you more."
+        },
+        {
+          "kind": "li",
+          "lead": "What the Solia Promise refunds:",
+          "text": "the price of one month: for a monthly plan, your first monthly payment; for an annual plan, one twelfth of the annual price you paid. It goes back to your original payment method. Usage credits are not covered. A refund does not cancel your membership; cancel it separately if you want to stop paying (it then ends when your paid period ends)."
+        },
+        {
+          "kind": "li",
+          "lead": "No other refunds:",
+          "text": "apart from the Solia Promise, payments are non-refundable for any reason, including partly used billing periods, unused usage limits, unused usage credits, cancellation, account deletion or not using Solia, except where the law requires a refund."
         },
         {
           "kind": "li",
@@ -455,12 +470,12 @@
         {
           "kind": "li",
           "lead": "Standard allowance:",
-          "text": "US$20 a month, of which at most US$3 in a day and US$8 in a week."
+          "text": "US$15 a month, of which at most US$2.25 in a day and US$6 in a week."
         },
         {
           "kind": "li",
           "lead": "Pro allowance",
-          "text": "is three times Standard's: US$60 a month, of which at most US$9 in a day and US$24 in a week."
+          "text": "is three times Standard's: US$45 a month, of which at most US$6.75 in a day and US$18 in a week."
         },
         {
           "kind": "li",
@@ -484,8 +499,8 @@
         },
         {
           "kind": "li",
-          "lead": "Not counted:",
-          "text": "your onboarding report and first plan do not count toward these limits."
+          "lead": "Onboarding:",
+          "text": "your onboarding report and the final review of your first plan each include up to US$1 of AI processing without a membership, and that free part does not count toward these limits. Past it, a member's onboarding report or review counts toward their allowance like any other request; without a membership, continuing requires joining."
         },
         {
           "kind": "li",
@@ -514,7 +529,7 @@
         {
           "kind": "li",
           "lead": "When they are used:",
-          "text": "only for requests made after a usage limit has been reached, automatically and without asking each time. Coaching reports never use credits. A request that starts under a limit never uses credits, even if it goes over. Credits do not unlock member features: without a membership, credits you already hold can be used only for Pluto during onboarding, after the onboarding allowance is used up."
+          "text": "only for requests made after a usage limit has been reached, automatically and without asking each time. Coaching reports never use credits. A request that starts under a limit never uses credits, even if it goes over. Credits do not unlock member features and cannot be used without a membership, including during onboarding; credits you hold when a membership ends are kept until they expire and can be used again if you rejoin."
         },
         {
           "kind": "li",
@@ -695,7 +710,7 @@
       "key": "privacy",
       "title": "Solia Privacy Policy",
       "version": "1.0",
-      "updated": "2026-10-22",
+      "updated": "2026-10-23",
       "status": "Draft for test-cohort use. Not approved for public launch while [OPERATOR LEGAL NAME] remains unresolved.",
       "blocks": [
         {
@@ -807,7 +822,7 @@
         {
           "kind": "li",
           "lead": "Device and identity checks",
-          "text": "— when a new account is set up, Apple's App Attest confirms the request comes from a genuine copy of the app, and Apple's DeviceCheck keeps a small counter for the device so each device can set up a limited number of accounts (currently three in any 12 months). We also keep keyed one-way fingerprints (hashes) of your email address and Apple or Google account identifier, which cannot be read back as the original values. They are used only for two onboarding limits: the same sign-in cannot set up Solia again within 24 hours, and the onboarding Pluto allowance is given only once per person, so we record against the fingerprint how much of it has been used."
+          "text": "— when a new account is set up, Apple's App Attest confirms the request comes from a genuine copy of the app, and Apple's DeviceCheck keeps a small counter for the device so each device can set up a limited number of accounts (currently three in any 12 months). We also keep keyed one-way fingerprints (hashes) of your email address and Apple or Google account identifier, which cannot be read back as the original values. They are used only for two onboarding limits and the Solia Promise: the same sign-in cannot set up Solia again within 24 hours, the onboarding Pluto allowance is given only once per person, so we record against the fingerprint how much of it has been used, and the Solia Promise refund (Terms of Service, section 14) is given only once per person, so we record against the fingerprint whether it was given."
         },
         {
           "kind": "p",
@@ -995,7 +1010,7 @@
         {
           "kind": "li",
           "lead": "Kept after deletion:",
-          "text": "the keyed fingerprints described under \"Device and identity checks\", with the time of the last onboarding report and how much of the onboarding Pluto allowance was used, are kept after you delete your account, so that deleting and re-creating an account cannot be used to get around those onboarding limits. They are used for nothing else and are kept for as long as Solia has those limits. Apple keeps your device's DeviceCheck counter; we cannot erase it, and it holds no personal information. Shared catalog estimates for packaged foods and commute-time estimates contain no personal information and are not deleted."
+          "text": "the keyed fingerprints described under \"Device and identity checks\", with the time of the last onboarding report, how much of the onboarding Pluto allowance was used and whether the Solia Promise refund (Terms of Service, section 14) was given, are kept after you delete your account, so that deleting and re-creating an account cannot be used to get around those onboarding limits or to claim the Solia Promise twice. They are used for nothing else and are kept for as long as Solia has those limits. Apple keeps your device's DeviceCheck counter; we cannot erase it, and it holds no personal information. Shared catalog estimates for packaged foods and commute-time estimates contain no personal information and are not deleted."
         },
         {
           "kind": "li",
