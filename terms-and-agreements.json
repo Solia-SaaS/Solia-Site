@@ -367,7 +367,7 @@
         {
           "kind": "li",
           "lead": "Plans:",
-          "text": "there are two plans, Standard and Pro, each billed monthly or annually. Both include every member feature. Pro has double Standard's usage allowance (section 15)."
+          "text": "there are two plans, Standard and Pro, each billed monthly or annually. Both include every member feature. Pro has three times Standard's usage allowance (section 15)."
         },
         {
           "kind": "li",
@@ -460,7 +460,7 @@
         {
           "kind": "li",
           "lead": "Pro allowance",
-          "text": "is double: US$40 a month, of which at most US$6 in a day and US$16 in a week."
+          "text": "is three times Standard's: US$60 a month, of which at most US$9 in a day and US$24 in a week."
         },
         {
           "kind": "li",
@@ -504,7 +504,7 @@
         {
           "kind": "li",
           "lead": "What they are:",
-          "text": "usage credits let you keep using Solia's AI features after you reach a usage limit. Credits come in packs of US$5, US$10, US$25, US$50 or US$100, and anyone with a Solia account can buy them."
+          "text": "usage credits let you keep using Solia's AI features after you reach a usage limit. Credits come in packs of US$5, US$10, US$25, US$50 or US$100, and only members can buy them."
         },
         {
           "kind": "li",
@@ -514,7 +514,7 @@
         {
           "kind": "li",
           "lead": "When they are used:",
-          "text": "only for requests made after a usage limit has been reached, automatically and without asking each time. Coaching reports never use credits. A request that starts under a limit never uses credits, even if it goes over. Credits do not unlock member features: without a membership, they can be used only for Pluto during onboarding, after the onboarding allowance is used up."
+          "text": "only for requests made after a usage limit has been reached, automatically and without asking each time. Coaching reports never use credits. A request that starts under a limit never uses credits, even if it goes over. Credits do not unlock member features: without a membership, credits you already hold can be used only for Pluto during onboarding, after the onboarding allowance is used up."
         },
         {
           "kind": "li",
