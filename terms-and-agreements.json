@@ -5,7 +5,7 @@
       "key": "tos",
       "title": "Solia Terms of Service",
       "version": "1.0",
-      "updated": "2026-10-23",
+      "updated": "2026-11-16",
       "status": "Draft for test-cohort review. Not approved for public launch while [OPERATOR LEGAL NAME] remains unresolved.",
       "blocks": [
         {
@@ -14,7 +14,7 @@
         },
         {
           "kind": "p",
-          "text": "Solia (the \"App\" or \"Service\") is a personal life-planning application. You plan your days and weeks, track workouts, meals and sleep, talk to Solia's assistant Pluto, receive AI-generated coaching reports, workouts, food plans, scores and rankings, and connect with other people."
+          "text": "Solia (the \"App\" or \"Service\") is a personal life-planning application. You plan your days and weeks, track workouts, meals and sleep, talk to SOLIA, the app's assistant, receive AI-generated coaching reports, workouts, food plans, scores and rankings, and connect with other people."
         },
         {
           "kind": "p",
@@ -82,7 +82,7 @@
         },
         {
           "kind": "li",
-          "lead": "Pluto,",
+          "lead": "SOLIA,",
           "text": "the assistant you speak or type to, which can read and change your schedule, Weekly Structure, to-dos and tasks;"
         },
         {
@@ -139,7 +139,7 @@
         },
         {
           "kind": "li",
-          "lead": "Pluto",
+          "lead": "SOLIA",
           "text": "carries out what you ask, such as adding, moving or deleting schedule blocks, editing your Weekly Structure, and creating or completing to-dos. Check that it understood you; you can edit or undo the result."
         },
         {
@@ -215,7 +215,7 @@
         {
           "kind": "li",
           "lead": "What it is:",
-          "text": "content you create in the Service — schedule blocks, goals, notes, templates, to-dos and tasks, messages, stories, photos and videos, voice commands and your conversation with Pluto, food-plan preferences and private recipes, bug reports and suggestions, profile details, and shared group or business records."
+          "text": "content you create in the Service — schedule blocks, goals, notes, templates, to-dos and tasks, messages, stories, photos and videos, voice commands and your conversation with SOLIA, food-plan preferences and private recipes, bug reports and suggestions, profile details, and shared group or business records."
         },
         {
           "kind": "li",
@@ -327,7 +327,7 @@
         },
         {
           "kind": "li",
-          "text": "create accounts to get around device, account, or usage limits, or to get the onboarding Pluto allowance again;"
+          "text": "create accounts to get around device, account, or usage limits, or to get the onboarding SOLIA allowance again;"
         },
         {
           "kind": "li",
@@ -356,13 +356,13 @@
         },
         {
           "kind": "li",
-          "lead": "Pluto during onboarding:",
-          "text": "while you complete onboarding you can speak or type to Pluto without a membership, up to a one-time allowance of US$2 of AI processing (measured as in section 15). The allowance is once per person: deleting your account and creating a new one does not reset it. We apply it using the sign-in fingerprints described in the Privacy Policy. Past it, continuing with Pluto requires a membership."
+          "lead": "SOLIA during onboarding:",
+          "text": "while you complete onboarding you can speak or type to SOLIA without a membership, up to a one-time allowance of US$2 of AI processing (measured as in section 15). The allowance is once per person: deleting your account and creating a new one does not reset it. We apply it using the sign-in fingerprints described in the Privacy Policy. Past it, continuing with SOLIA requires a membership."
         },
         {
           "kind": "li",
           "lead": "Members also get:",
-          "text": "the Fitness and Nutrition toolkits (including generated workouts, food logging, meal photos, barcode scanning, and weekly food plans and shopping lists); Pluto by voice or text after onboarding, on the Schedule, Weekly Structure, Templates and Schedule Targets; coaching reports; Ranked matches; and the Nutrition, Fitness and Coaching sections of the Data page."
+          "text": "the Fitness and Nutrition toolkits (including generated workouts, food logging, meal photos, barcode scanning, and weekly food plans and shopping lists); SOLIA by voice or text after onboarding, on the Schedule, Weekly Structure, Templates and Schedule Targets; coaching reports; Ranked matches; and the Nutrition, Fitness and Coaching sections of the Data page."
         },
         {
           "kind": "li",
@@ -460,7 +460,7 @@
         {
           "kind": "li",
           "lead": "Why there are limits:",
-          "text": "Pluto, the toolkits, food plans and coaching reports use paid AI processing. To keep them sustainable, each membership has one shared usage allowance across all of them, with a daily, weekly and monthly limit."
+          "text": "SOLIA, the toolkits, food plans and coaching reports use paid AI processing. To keep them sustainable, each membership has one shared usage allowance across all of them, with a daily, weekly and monthly limit."
         },
         {
           "kind": "li",
@@ -480,7 +480,7 @@
         {
           "kind": "li",
           "lead": "Per-section usage:",
-          "text": "the app shows how your usage splits between Pluto, the toolkits, food plans and coaching reports. That split is for your information; the limits apply to the total."
+          "text": "the app shows how your usage splits between SOLIA, the toolkits, food plans and coaching reports. That split is for your information; the limits apply to the total."
         },
         {
           "kind": "li",
@@ -490,7 +490,7 @@
         {
           "kind": "li",
           "lead": "When limits reset:",
-          "text": "limits are counted from the moment your membership starts, or from your last upgrade. A day is the 24 hours from that time of day, a week is seven of those days, and a month runs to the same date and time the next month (or the last day of a shorter month). Usage before that moment does not count, except that Pluto use during onboarding counts toward your first monthly limit if you join before finishing onboarding."
+          "text": "limits are counted from the moment your membership starts, or from your last upgrade. A day is the 24 hours from that time of day, a week is seven of those days, and a month runs to the same date and time the next month (or the last day of a shorter month). Usage before that moment does not count, except that SOLIA use during onboarding counts toward your first monthly limit if you join before finishing onboarding."
         },
         {
           "kind": "li",
@@ -710,7 +710,7 @@
       "key": "privacy",
       "title": "Solia Privacy Policy",
       "version": "1.0",
-      "updated": "2026-10-23",
+      "updated": "2026-11-16",
       "status": "Draft for test-cohort use. Not approved for public launch while [OPERATOR LEGAL NAME] remains unresolved.",
       "blocks": [
         {
@@ -743,12 +743,12 @@
         {
           "kind": "li",
           "lead": "Schedule",
-          "text": "— planned and actual blocks, your Weekly Structure, templates, recurring patterns, sleep and wake times, saved places attached to blocks, and check-ins, including how you felt (mood, energy, soreness, or pain). Core scheduling and coaching."
+          "text": "— planned and actual blocks, your Weekly Structure, templates, recurring patterns, sleep and wake times, and check-ins, including how you felt (mood, energy, soreness, or pain). Core scheduling and coaching."
         },
         {
           "kind": "li",
           "lead": "To-dos and tasks",
-          "text": "— your lists, what you marked done, partly done or skipped and your notes about it, and your tasks and their progress notes. Shown in your lists and used by Pluto and coaching to plan, carry over, and grade your to-dos."
+          "text": "— your lists, what you marked done, partly done or skipped and your notes about it, and your tasks and their progress notes. Shown in your lists and used by SOLIA and coaching to plan, carry over, and grade your to-dos."
         },
         {
           "kind": "li",
@@ -767,13 +767,13 @@
         },
         {
           "kind": "li",
-          "lead": "Voice and Pluto",
-          "text": "— your voice commands, their transcription, and your conversation with Pluto. Used to understand and carry out your request. See \"How AI features use your information\" for how speech is transcribed. Solia does not store the source audio."
+          "lead": "Voice and SOLIA",
+          "text": "— your voice commands, their transcription, and your conversation with SOLIA. Used to understand and carry out your request. See \"How AI features use your information\" for how speech is transcribed. Solia does not store the source audio."
         },
         {
           "kind": "li",
           "lead": "Location",
-          "text": "— with while-in-use permission only: places you save, used to attach places to blocks and estimate commutes; and, when you set up a food plan, your current location, a label for your area, a search radius, and the nearby stores you choose, all stored with that plan to find stores and estimate prices. We never collect location in the background."
+          "text": "— with while-in-use permission only: when you set up a food plan, your current location, a label for your area, a search radius, and the nearby stores you choose, all stored with that plan to find stores and estimate prices. We never collect location in the background."
         },
         {
           "kind": "li",
@@ -817,12 +817,12 @@
         {
           "kind": "li",
           "lead": "AI usage records",
-          "text": "— for each AI request: the feature, model, token counts, and cost, never the text. We add these up for each section (Pluto, Fitness, Nutrition, Food plans, Coaching reports) to apply your plan's daily, weekly and monthly usage limits and to charge usage credits. Also used for billing and abuse prevention."
+          "text": "— for each AI request: the feature, model, token counts, and cost, never the text. We add these up for each section (SOLIA, Fitness, Nutrition, Food plans, Coaching reports) to apply your plan's daily, weekly and monthly usage limits and to charge usage credits. Also used for billing and abuse prevention."
         },
         {
           "kind": "li",
           "lead": "Device and identity checks",
-          "text": "— when a new account is set up, Apple's App Attest confirms the request comes from a genuine copy of the app, and Apple's DeviceCheck keeps a small counter for the device so each device can set up a limited number of accounts (currently three in any 12 months). We also keep keyed one-way fingerprints (hashes) of your email address and Apple or Google account identifier, which cannot be read back as the original values. They are used only for two onboarding limits and the Solia Promise: the same sign-in cannot set up Solia again within 24 hours, the onboarding Pluto allowance is given only once per person, so we record against the fingerprint how much of it has been used, and the Solia Promise refund (Terms of Service, section 14) is given only once per person, so we record against the fingerprint whether it was given."
+          "text": "— when a new account is set up, Apple's App Attest confirms the request comes from a genuine copy of the app, and Apple's DeviceCheck keeps a small counter for the device so each device can set up a limited number of accounts (currently three in any 12 months). We also keep keyed one-way fingerprints (hashes) of your email address and Apple or Google account identifier, which cannot be read back as the original values. They are used only for two onboarding limits and the Solia Promise: the same sign-in cannot set up Solia again within 24 hours, the onboarding SOLIA allowance is given only once per person, so we record against the fingerprint how much of it has been used, and the Solia Promise refund (Terms of Service, section 14) is given only once per person, so we record against the fingerprint whether it was given."
         },
         {
           "kind": "p",
@@ -838,7 +838,7 @@
         },
         {
           "kind": "li",
-          "lead": "Pluto (voice and text):",
+          "lead": "SOLIA (voice and text):",
           "text": "what you said or typed, your conversation, and the parts of your account needed to act on it — your schedule, Weekly Structure, templates, to-dos and tasks, and, when relevant, your goals, lifestyle and family commitments, sleep, fitness and nutrition settings, targets, recent actual schedule (including energy levels), and saved coaching reports. Speech is transcribed by Apple or Google speech recognition on your device, or by OpenAI on our servers when that is unavailable."
         },
         {
@@ -849,7 +849,7 @@
         {
           "kind": "li",
           "lead": "Coaching reports:",
-          "text": "generated automatically on a schedule for members. They use your profile details (age, sex, height, weight, constraints, dietary restrictions, lifestyle; not your name), goals, planned and actual schedule (without saved places), check-ins (mood, energy, soreness, pain), workouts, meals and nutrients, sleep, to-dos, food-plan meals, and recent history. Each report's quote is found by a web search the AI runs, and the AI is instructed not to put personal information in that search."
+          "text": "generated automatically on a schedule for members. They use your profile details (age, sex, height, weight, constraints, dietary restrictions, lifestyle; not your name), goals, planned and actual schedule, check-ins (mood, energy, soreness, pain), workouts, meals and nutrients, sleep, to-dos, food-plan meals, and recent history. Each report's quote is found by a web search the AI runs, and the AI is instructed not to put personal information in that search."
         },
         {
           "kind": "li",
@@ -859,7 +859,7 @@
         {
           "kind": "li",
           "lead": "Food plans:",
-          "text": "your profile details (not your name, username, or bio), fitness settings, recent weigh-ins, nutrition targets, your schedule for the planning period (including saved places), logged meals, recent plans, everything you entered to set up the plan, and candidate recipes. Grocery prices are researched by a web search that receives your currency, shopping-area name, store names and addresses, and the shopping list (ingredients and amounts), but not your name or exact location."
+          "text": "your profile details (not your name, username, or bio), fitness settings, recent weigh-ins, nutrition targets, your schedule for the planning period, logged meals, recent plans, everything you entered to set up the plan, and candidate recipes. Grocery prices are researched by a web search that receives your currency, shopping-area name, store names and addresses, and the shopping list (ingredients and amounts), but not your name or exact location."
         },
         {
           "kind": "li",
@@ -874,7 +874,7 @@
         {
           "kind": "p",
           "lead": "Providers.",
-          "text": "OpenAI is the main AI provider, including for transcription and web search. Anthropic answers Pluto's requests and is the backup provider for the other features when OpenAI reports an outage; it can run web searches in that role. Solia does not opt API data into model training. Providers may keep requests for a limited period under their API terms, for example for abuse and safety monitoring."
+          "text": "OpenAI is the main AI provider, including for transcription and web search. Anthropic answers SOLIA's requests and is the backup provider for the other features when OpenAI reports an outage; it can run web searches in that role. Solia does not opt API data into model training. Providers may keep requests for a limited period under their API terms, for example for abuse and safety monitoring."
         },
         {
           "kind": "p",
@@ -902,7 +902,7 @@
         {
           "kind": "li",
           "lead": "Apple",
-          "text": "provides Sign in with Apple, App Attest and DeviceCheck, on-device speech recognition, and push delivery on iOS. Apple Maps draws the maps you see and receives your place searches, the coordinates used for commute estimates, and food-plan store searches (your typed area or your coordinates). When you search for music to add to a post, your search terms go from your device to Apple's iTunes Search service, and music previews play from Apple's servers."
+          "text": "provides Sign in with Apple, App Attest and DeviceCheck, on-device speech recognition, and push delivery on iOS. Apple Maps receives your food-plan store searches (your typed area or your coordinates). When you search for music to add to a post, your search terms go from your device to Apple's iTunes Search service, and music previews play from Apple's servers."
         },
         {
           "kind": "li",
@@ -931,7 +931,7 @@
         },
         {
           "kind": "p",
-          "text": "When you tap a directions link or a source link, the website or map app that opens handles your request under its own policy. We may also disclose information when required by law, to protect the safety, rights, or property of users or the public, or as part of an incorporation, merger, or sale, with notice to you. We do not sell or rent personal data, use it for targeted advertising, or show ads."
+          "text": "When you tap a source link, the website that opens handles your request under its own policy. We may also disclose information when required by law, to protect the safety, rights, or property of users or the public, or as part of an incorporation, merger, or sale, with notice to you. We do not sell or rent personal data, use it for targeted advertising, or show ads."
         },
         {
           "kind": "h",
@@ -999,8 +999,8 @@
         },
         {
           "kind": "li",
-          "lead": "Voice transcripts and Pluto conversation:",
-          "text": "the text of your voice commands and Pluto's replies is stored with your schedule and Weekly Structure while your account is active. Clear chat in the app removes the conversation, and account deletion removes it with the rest of your data. Solia never stores the audio. A per-request usage record (model, token counts, cost) is kept without the text for usage limits, credits, billing, and abuse prevention."
+          "lead": "Voice transcripts and your conversation with SOLIA:",
+          "text": "the text of your voice commands and SOLIA's replies is stored with your schedule and Weekly Structure while your account is active. Clear chat in the app removes the conversation, and account deletion removes it with the rest of your data. Solia never stores the audio. A per-request usage record (model, token counts, cost) is kept without the text for usage limits, credits, billing, and abuse prevention."
         },
         {
           "kind": "li",
@@ -1010,7 +1010,7 @@
         {
           "kind": "li",
           "lead": "Kept after deletion:",
-          "text": "the keyed fingerprints described under \"Device and identity checks\", with the time of the last onboarding report, how much of the onboarding Pluto allowance was used and whether the Solia Promise refund (Terms of Service, section 14) was given, are kept after you delete your account, so that deleting and re-creating an account cannot be used to get around those onboarding limits or to claim the Solia Promise twice. They are used for nothing else and are kept for as long as Solia has those limits. Apple keeps your device's DeviceCheck counter; we cannot erase it, and it holds no personal information. Shared catalog estimates for packaged foods and commute-time estimates contain no personal information and are not deleted."
+          "text": "the keyed fingerprints described under \"Device and identity checks\", with the time of the last onboarding report, how much of the onboarding SOLIA allowance was used and whether the Solia Promise refund (Terms of Service, section 14) was given, are kept after you delete your account, so that deleting and re-creating an account cannot be used to get around those onboarding limits or to claim the Solia Promise twice. They are used for nothing else and are kept for as long as Solia has those limits. Apple keeps your device's DeviceCheck counter; we cannot erase it, and it holds no personal information. Shared catalog estimates for packaged foods contain no personal information and are not deleted."
         },
         {
           "kind": "li",
@@ -1056,7 +1056,7 @@
         },
         {
           "kind": "li",
-          "text": "Edit or delete your schedule, to-dos, logs, food plans, and Nutrition settings at any time, and clear your Pluto conversation."
+          "text": "Edit or delete your schedule, to-dos, logs, food plans, and Nutrition settings at any time, and clear your conversation with SOLIA."
         },
         {
           "kind": "li",
@@ -1092,7 +1092,7 @@
       "key": "health",
       "title": "Solia Health & Fitness Disclaimer",
       "version": "1.0",
-      "updated": "2026-10-21",
+      "updated": "2026-11-16",
       "status": "Draft for test-cohort review. Part of the Terms of Service.",
       "blocks": [
         {
@@ -1102,7 +1102,7 @@
         {
           "kind": "p",
           "lead": "Not medical advice.",
-          "text": "Solia is not a medical device, and nothing in the app — including coaching reports, generated workouts and routines, exercise targets, food plans, recipes, calorie and macro targets, sleep guidance, scores, or Pluto's replies — is medical, nutritional, dietetic, or psychological advice. Content is AI-generated and may be wrong."
+          "text": "Solia is not a medical device, and nothing in the app — including coaching reports, generated workouts and routines, exercise targets, food plans, recipes, calorie and macro targets, sleep guidance, scores, or SOLIA's replies — is medical, nutritional, dietetic, or psychological advice. Content is AI-generated and may be wrong."
         },
         {
           "kind": "p",
