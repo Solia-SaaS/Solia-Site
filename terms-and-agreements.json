@@ -83,7 +83,7 @@
         {
           "kind": "li",
           "lead": "SOLIA,",
-          "text": "the assistant you speak or type to, which can read and change your schedule, Weekly Structure, to-dos and tasks;"
+          "text": "the assistant you speak or type to, which can read and change your schedule, Templates, to-dos and tasks;"
         },
         {
           "kind": "li",
@@ -140,7 +140,7 @@
         {
           "kind": "li",
           "lead": "SOLIA",
-          "text": "carries out what you ask, such as adding, moving or deleting schedule blocks, editing your Weekly Structure, and creating or completing to-dos. Check that it understood you; you can edit or undo the result."
+          "text": "carries out what you ask, such as adding, moving or deleting schedule blocks, editing your Templates, and creating or completing to-dos. Check that it understood you; you can edit or undo the result."
         },
         {
           "kind": "li",
@@ -170,7 +170,7 @@
         {
           "kind": "li",
           "lead": "Your nights:",
-          "text": "if you are not a member, Solia still adds each night's sleep to your schedule from your Weekly Structure, without a coaching report."
+          "text": "if you are not a member, Solia still adds each night's sleep to your schedule from your Templates, without a coaching report."
         },
         {
           "kind": "h",
@@ -352,7 +352,7 @@
         {
           "kind": "li",
           "lead": "Free with every account:",
-          "text": "the Schedule and Weekly Structure, edited by tap; tasks and to-dos; social features and messages; viewing the Ranked ladder and players' Ranked profiles; the Schedule and Tasks sections of the Data page; Settings; Help; and onboarding, including your onboarding report and first plan (within the onboarding limits in section 15)."
+          "text": "the Schedule and Templates, edited by tap; tasks and to-dos; social features and messages; viewing the Ranked ladder and players' Ranked profiles; the Schedule and Tasks sections of the Data page; Settings; Help; and onboarding, including your onboarding report and first plan (within the onboarding limits in section 15)."
         },
         {
           "kind": "li",
@@ -362,7 +362,7 @@
         {
           "kind": "li",
           "lead": "Members also get:",
-          "text": "the Fitness and Nutrition toolkits (including generated workouts, food logging, meal photos, barcode scanning, and weekly food plans and shopping lists); SOLIA by voice or text after onboarding, on the Schedule, Weekly Structure, Templates and Schedule Targets; coaching reports; Ranked matches; and the Nutrition, Fitness and Coaching sections of the Data page."
+          "text": "the Fitness and Nutrition toolkits (including generated workouts, food logging, meal photos, barcode scanning, and weekly food plans and shopping lists); SOLIA by voice or text after onboarding, on the Schedule and Templates; coaching reports; Ranked matches; and the Nutrition, Fitness and Coaching sections of the Data page."
         },
         {
           "kind": "li",
@@ -743,7 +743,7 @@
         {
           "kind": "li",
           "lead": "Schedule",
-          "text": "— planned and actual blocks, your Weekly Structure, templates, recurring patterns, sleep and wake times, and check-ins, including how you felt (mood, energy, soreness, or pain). Core scheduling and coaching."
+          "text": "— planned and actual blocks, your Templates, recurring patterns, sleep and wake times, and check-ins, including how you felt (mood, energy, soreness, or pain). Core scheduling and coaching."
         },
         {
           "kind": "li",
@@ -839,12 +839,12 @@
         {
           "kind": "li",
           "lead": "SOLIA (voice and text):",
-          "text": "what you said or typed, your conversation, and the parts of your account needed to act on it — your schedule, Weekly Structure, templates, to-dos and tasks, and, when relevant, your goals, lifestyle and family commitments, sleep, fitness and nutrition settings, targets, recent actual schedule (including energy levels), and saved coaching reports. Speech is transcribed by Apple or Google speech recognition on your device, or by OpenAI on our servers when that is unavailable."
+          "text": "what you said or typed, your conversation, and the parts of your account needed to act on it — your schedule, Templates, to-dos and tasks, and, when relevant, your goals, lifestyle and family commitments, sleep, fitness and nutrition settings, targets, recent actual schedule (including energy levels), and saved coaching reports. Speech is transcribed by Apple or Google speech recognition on your device, or by OpenAI on our servers when that is unavailable."
         },
         {
           "kind": "li",
           "lead": "Onboarding report:",
-          "text": "your intake answers, used to write your first report, Weekly Structure, and targets."
+          "text": "your intake answers, used to write your first report, Templates, and targets."
         },
         {
           "kind": "li",
@@ -1000,7 +1000,7 @@
         {
           "kind": "li",
           "lead": "Voice transcripts and your conversation with SOLIA:",
-          "text": "the text of your voice commands and SOLIA's replies is stored with your schedule and Weekly Structure while your account is active. Clear chat in the app removes the conversation, and account deletion removes it with the rest of your data. Solia never stores the audio. A per-request usage record (model, token counts, cost) is kept without the text for usage limits, credits, billing, and abuse prevention."
+          "text": "the text of your voice commands and SOLIA's replies is stored with your schedule and Templates while your account is active. Clear chat in the app removes the conversation, and account deletion removes it with the rest of your data. Solia never stores the audio. A per-request usage record (model, token counts, cost) is kept without the text for usage limits, credits, billing, and abuse prevention."
         },
         {
           "kind": "li",
